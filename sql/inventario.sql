@@ -11,10 +11,20 @@ CREATE TABLE CATEGORY (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+
+
 -- Tabla de tipos de materiales
 CREATE TABLE MATERIAL_TYPE (
     id_type INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE SUPPLY (
+    id_supply INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    descripcion VARCHAR(100),
+    id_supplier INT,
+    FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier)
 );
 
 -- Tabla de proveedores
@@ -27,31 +37,17 @@ CREATE TABLE SUPPLIER (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Tabla de materiales (general)
-CREATE TABLE MATERIAL (
-    id_material INT PRIMARY KEY AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL,
-    `description` TEXT,
-    quantity INT NOT NULL,
-    batch_number INT,
-    serial_number VARCHAR(255),
-    date_received DATE NOT NULL,
-    id_supplier INT,
-    id_type INT,
-    id_category INT,
-    rotation VARCHAR(50),
-    volume DECIMAL(5,2),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier),
-    FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type),
-    FOREIGN KEY (id_category) REFERENCES CATEGORY(id_category)
-);
+
+
 
 -- Tabla de materiales de hardware (especializada)
 CREATE TABLE MATERIAL_HARDWARE (
-    id_material INT PRIMARY KEY,
+    id_material INT PRIMARY KEY AUTO_INCREMENT,
     model VARCHAR(255),
+    brand VARCHAR(100),
+    power_consumption DECIMAL(5,2),
+    frecuency DECIMAL(5,2),
+    vram DECIMAL(5,2),
     speed DECIMAL(5,2),
     cores INT,
     threads INT,
@@ -60,9 +56,9 @@ CREATE TABLE MATERIAL_HARDWARE (
     capacity DECIMAL(5,2),
     hardware_type VARCHAR(50),
     read_speed DECIMAL(5,2),
-    write_speed DECIMAL(5,2),
-    FOREIGN KEY (id_material) REFERENCES MATERIAL(id_material)
+    write_speed DECIMAL(5,2)
 );
+
 
 -- Tabla de materiales físicos (especializada)
 CREATE TABLE MATERIAL_PHYSICAL (
@@ -72,9 +68,9 @@ CREATE TABLE MATERIAL_PHYSICAL (
     design VARCHAR(100),
     material_type VARCHAR(50),
     sensitivity VARCHAR(50),
-    connectivity VARCHAR(50),
-    FOREIGN KEY (id_material) REFERENCES MATERIAL(id_material)
+    connectivity VARCHAR(50)
 );
+
 
 -- Tabla de materiales componentes (especializada)
 CREATE TABLE MATERIAL_COMPONENT (
@@ -89,9 +85,42 @@ CREATE TABLE MATERIAL_COMPONENT (
     voltage DECIMAL(5,2),
     quantity INT,
     audio_channels INT,
-    component_type VARCHAR(50),
-    FOREIGN KEY (id_material) REFERENCES MATERIAL(id_material)
+    component_type VARCHAR(50)
 );
+
+CREATE TABLE MATERIAL_LINK (
+    id_material INT PRIMARY KEY,
+    id_material_hardware INT,
+    id_material_component INT,
+    id_material_physical INT,
+    FOREIGN KEY (id_material) REFERENCES RECEIVED_MATERIAL(id_material),
+    FOREIGN KEY (id_material_hardware) REFERENCES MATERIAL_HARDWARE(id_material),
+    FOREIGN KEY (id_material_component) REFERENCES MATERIAL_COMPONENT(id_material),
+    FOREIGN KEY (id_material_physical) REFERENCES MATERIAL_PHYSICAL(id_material)
+);
+
+-- Tabla de materiales (general)
+CREATE TABLE RECEIVED_MATERIAL (
+    id_material INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `description` TEXT,
+    quantity INT NOT NULL,
+    batch_number INT,
+    serial_number VARCHAR(255),
+    date_received DATE NOT NULL,
+    id_supply INT,
+    id_type INT,
+    id_category INT,
+    rotation VARCHAR(50),
+    volume DECIMAL(5,2),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply),
+    FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type),
+    FOREIGN KEY (id_category) REFERENCES CATEGORY(id_category)
+);
+
+
 
 -- Tabla de almacenes
 CREATE TABLE WAREHOUSE (
@@ -122,7 +151,7 @@ CREATE TABLE SUB_WAREHOUSE_MATERIAL (
     quantity INT NOT NULL,
     PRIMARY KEY (id_sub_warehouse, id_material),
     FOREIGN KEY (id_sub_warehouse) REFERENCES SUB_WAREHOUSE(id_sub_warehouse),
-    FOREIGN KEY (id_material) REFERENCES MATERIAL(id_material)
+    FOREIGN KEY (id_material) REFERENCES RECEIVED_MATERIAL (id_material)
 );
 
 -- Tabla de transacciones
@@ -135,7 +164,7 @@ CREATE TABLE TRANSACTIONS (
     transaction_date DATE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_material) REFERENCES MATERIAL(id_material),
+    FOREIGN KEY (id_material) REFERENCES RECEIVED_MATERIAL(id_material),
     FOREIGN KEY (id_sub_warehouse) REFERENCES SUB_WAREHOUSE(id_sub_warehouse)
 );
 
@@ -152,13 +181,14 @@ CREATE TABLE ORDERS (
     id_order INT PRIMARY KEY AUTO_INCREMENT,
     order_date DATE NOT NULL,
     id_status INT,
-    id_material INT,
+    id_supply INT,
     quantity INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_material) REFERENCES MATERIAL(id_material),
+    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply),
     FOREIGN KEY (id_status) REFERENCES STATUS(id_status)
 );
+
 
 -- Tabla de condiciones
 CREATE TABLE `CONDITION` (
