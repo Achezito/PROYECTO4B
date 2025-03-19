@@ -1,8 +1,10 @@
-import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import Dashboard from "./dashboard"; // Importar el componente Dashboard
+import Interfaz from "./warehouse/interfaz_api"; // Importar interfaz
+
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
@@ -14,7 +16,11 @@ function LoginScreen({ navigation }) {
     formData.append("username", username);
     formData.append("password", password);
 
-    fetch("http://localhost/WMS4B/PROYECTO4B/phpfiles/config/login.php", {
+    // cambiar el fetch por la direccion donde tiene el login.php
+    // Elihu: http://localhost/PROYECTO4B-1/phpfiles/config/login.php
+    //  Jese: http://localhost/WMS4B/PROYECTO4B/phpfiles/config/login.php
+
+    fetch("http://localhost/PROYECTO4B-1/phpfiles/config/login.php", {
       method: "POST",
       body: formData,
     })
@@ -50,6 +56,7 @@ function LoginScreen({ navigation }) {
         onChangeText={setPassword}
       />
       <Button title="Iniciar Sesión" onPress={handleLogin} />
+      <Button title="ir a dashboard" onPress={ () => { navigation.navigate('Interfaz'); } } />
       {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
     </View>
   );
@@ -63,6 +70,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Interfaz" component={Interfaz} />
       </Stack.Navigator>
     </NavigationContainer>
   );
