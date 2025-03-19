@@ -152,7 +152,7 @@ const getComponent =  async () => {
   }
 };
 
-const getPhysical =  async () => {
+const getPhysical =  async () => { 
   try {
       const response = await fetch("http://localhost/PROYECTO4B-1/phpfiles/react/material_physical_api.php", {
         method: 'GET'
