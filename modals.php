@@ -1,11 +1,20 @@
 <?php
-require_once ('phpfiles/modals/hardware.php');
+require_once ('phpfiles/modals/material_hardware.php');
+require_once ('phpfiles/modals/warehouse.php');
+require_once ('phpfiles/modals/category.php');
+require_once ('phpfiles/react/category_api.php');
 
-$procesadores = hardware::getHardware("processor");
+//$procesadores = hardware::getHardware("processor");
+//$warehouses = Warehouse::getWarehouse();
 
-//print_r($procesadores);
+$data = Category::getAllCategories();
+
+//print_r($data);
+
+echo json_encode($data);
 
 
+/*
 ?>
 
 <?php foreach($procesadores as $as) { ?>
@@ -22,6 +31,31 @@ $procesadores = hardware::getHardware("processor");
         </tr>
     <?php } ?>
 </table>
+
+<table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Ubicación</th>
+                <th>Capacidad</th>
+                <th>Creado</th>
+                <th>Actualizado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($warehouses as $warehouse) { ?>
+                <tr>
+                    <td><?php echo $warehouse->getIdWarehouse(); ?></td>
+                    <td><?php echo $warehouse->getName(); ?></td>
+                    <td><?php echo $warehouse->getLocation(); ?></td>
+                    <td><?php echo $warehouse->getCapacity(); ?></td>
+                    <td><?php echo $warehouse->getCreatedAt(); ?></td>
+                    <td><?php echo $warehouse->getUpdatedAt(); ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -52,4 +86,5 @@ $procesadores = hardware::getHardware("processor");
 <body>
     
 </body>
-</html>
+</html>*/
+?>
