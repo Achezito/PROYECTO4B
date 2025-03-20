@@ -5,7 +5,8 @@ const API_warehouse = 'http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_ap
 
 // API_URL es la direccion del archivo que se comunica con el model de la tabla para mandar el json (hice la carpeta react en phpFiles para poner ahi esos archivos)
 
-export default function interfaz_warehouse() {
+export default function interfaz_warehouse({ navigation}) {
+  console.log('Navigation:', navigation); // Verifica si navigation está disponible
   const [warehouses, setWarehouses] = useState([]);
   const [groupedWarehouses, setGroupedWarehouses] = useState([]); // agrupar en pares para tener buen estilo
 
@@ -175,7 +176,7 @@ return (
         <View style={styles.row}>
           <Text
             style={[styles.labelText, { backgroundColor: 'rgb(42, 126, 209)' }]}
-            onPress={() => alert(`Hola ${item[0]?.name}`)}
+            onPress={() => navigation.navigate('WarehouseDetails', { id: item[0]?.id_warehouse, name: item[0]?.name })}
           >
             {item[0]?.name}
           </Text>
@@ -184,7 +185,7 @@ return (
           {item[1] && (
             <Text
               style={[styles.labelText, { backgroundColor: 'rgb(42, 126, 209)' }]}
-              onPress={() => alert(`Hola ${item[1]?.name}`)}
+              onPress={() => navigation.navigate('WarehouseDetails', { id: item[1]?.id_warehouse, name: item[1]?.name })}
             >
               {item[1]?.name}
             </Text>
@@ -212,7 +213,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
     textAlign: 'center',
-    lineHeight: 150,
+    lineHeight: 50,
     fontSize: "18pt"
   },
   row: {

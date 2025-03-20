@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import Dashboard from "./dashboard"; // Importar el componente Dashboard
 import Interfaz from "./warehouse/interfaz_api"; // Importar interfaz
+import InterfazWarehouse from './warehouse/interfaz_api'; // Ruta correcta al archivo
+import WarehouseDetails from './warehouse/warehousedetails'; 
 
 
 function LoginScreen({ navigation }) {
@@ -18,7 +20,7 @@ function LoginScreen({ navigation }) {
 
     // cambiar el fetch por la direccion donde tiene el login.php
     // Elihu: http://localhost/PROYECTO4B-1/phpfiles/config/login.php
-    //  Jese: http://localhost/WMS4B/PROYECTO4B/phpfiles/config/login.php
+    
 
     fetch("http://localhost/PROYECTO4B-1/phpfiles/config/login.php", {
       method: "POST",
@@ -71,6 +73,8 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Interfaz" component={Interfaz} />
+        <Stack.Screen name="InterfazWarehouse" component={InterfazWarehouse} />
+        <Stack.Screen name="WarehouseDetails" component={WarehouseDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

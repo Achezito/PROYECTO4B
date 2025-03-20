@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 
+
 export default function interfaz_warehouse() {
   const { width } = useWindowDimensions();
 
@@ -21,19 +22,23 @@ export default function interfaz_warehouse() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgb(33, 37, 41)',
+   
     padding: 20,
   },
   labelText: {
-    height: 165,  // Cambié de "150px" a 150, porque en React Native no usa unidades como px.
-    width: 165,   // Lo mismo aquí.
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    textAlign: 'center',  // Para centrar el texto dentro del Text
-    lineHeight: 150,  // Para centrar el texto verticalmente en el Text
-    fontSize: "24pt"
+    labelText: {
+      color: 'white', // Asegúrate de que el texto sea visible
+      height: 150,
+      width: 150,
+      
+      borderRadius: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+      display: 'flex',
+      textAlign: 'center',
+      lineHeight: 10,
+      fontSize: 10,
+    },
   },
   row: {
     flexDirection: 'row',  // Cambié a 'row' para que los elementos estén en fila.

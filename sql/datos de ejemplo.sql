@@ -1,4 +1,6 @@
 -- Insertando en CATEGORY
+
+use inventario;
 INSERT INTO CATEGORY (name, description) VALUES ('Electrónicos', 'Materiales electrónicos y hardware');
 
 -- Insertando en MATERIAL_TYPE
@@ -35,7 +37,7 @@ INSERT INTO WAREHOUSE (name, location, capacity) VALUES ('Almacén Central', 'Ci
 
 -- Insertando en SUB_WAREHOUSE
 INSERT INTO SUB_WAREHOUSE (location, capacity, id_warehouse, id_category)
-VALUES ('Sector A', 200, 1, 1);
+VALUES ('Sector E', 200, 1, 1);
 
 -- Insertando en SUB_WAREHOUSE_MATERIAL
 INSERT INTO SUB_WAREHOUSE_MATERIAL (id_sub_warehouse, id_material, quantity)
@@ -53,12 +55,20 @@ INSERT INTO ORDERS (order_date, id_status, id_supply, quantity)
 VALUES ('2025-03-18', 1, 1, 10);
 
 -- Insertando en CONDITION
-INSERT INTO CONDITION (description) VALUES ('Nuevo');
+INSERT INTO `CONDITION` (`description`) VALUES ('Nuevo');
 
 -- Insertando en EQUIPMENT
 INSERT INTO EQUIPMENT (name, type, id_condition)
 VALUES ('Multímetro', 'Instrumento de medición', 1);
 
 -- Insertando en MAINTENANCE
-INSERT INTO MAINTENANCE (description, maintenance_date, id_equipment)
-VALUES ('Revisión general', '2025-03-18', 1);
+INSERT INTO MAINTENANCE (`description`, maintenance_date, id_equipment)
+VALUES ('Revisión general', '2025-03-18', 2);
+
+SELECT 
+sb.location as 'Subalmacén',
+w.name as 'Almacén'
+
+FROM sub_warehouse as sb
+INNER JOIN warehouse  as w on sb.id_warehouse = w.id_warehouse
+WHERE w.id_warehouse = 1;

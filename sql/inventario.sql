@@ -1,3 +1,5 @@
+create database inventario;
+
 USE inventario;
 
 ALTER DATABASE wms SET OFFLINE;

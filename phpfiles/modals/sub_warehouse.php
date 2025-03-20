@@ -113,4 +113,41 @@ class SubWarehouse {
             return "Sub-warehouse not found.";
         }
     }
+
+    public static function getSubWarehousesByWarehouseId($id_warehouse){
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+        $query = "
+        SELECT 
+        sb.id_sub_warehouse as 'ID',
+        sb.location as 'Subalmacén',
+        w.name as 'Almacén'
+        FROM sub_warehouse as sb
+        INNER JOIN warehouse  as w on sb.id_warehouse = w.id_warehouse
+        WHERE w.id_warehouse = ?;";
+        $command = $connection->prepare($query);
+        $command->bind_param('i', $id_warehouse);
+        $command->execute();
+        $command->bind_result(
+            $id_sub_warehouse,
+            $location,
+            $warehouse
+  
+        );
+
+        $subWarehouses = [];
+        while ($command->fetch()) {
+            $subWarehouses[] = [
+                "ID" => $id_sub_warehouse,
+                "Location" => $location,
+                "WareHouse" => $warehouse
+            ];
+            }
+        $command -> close();
+        $connection -> close();
+        return $subWarehouses;
+
+    }
 }
