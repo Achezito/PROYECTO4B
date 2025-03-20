@@ -107,4 +107,42 @@ class Transaction {
             return "Transacción no encontrada.";
         }
     }
+
+  
+public static function getTransactionsBySubWarehouseId($id_sub_warehouse) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Error en la conexión: " . $connection->connect_error;
+    }
+
+    $query = "
+    SELECT 
+        t.id_transaction AS 'ID Transacción',
+        t.transaction_date AS 'Fecha de Transacción',
+        t.type AS 'Tipo de Transacción',
+        t.quantity AS 'Cantidad',
+        sw.location AS 'Ubicación del Subalmacén',
+        rm.name AS 'Material',
+        rm.description AS 'Descripción del Material'
+    FROM TRANSACTIONS t
+    JOIN SUB_WAREHOUSE sw ON t.id_sub_warehouse = sw.id_sub_warehouse
+    JOIN RECEIVED_MATERIAL rm ON t.id_material = rm.id_material
+    WHERE sw.id_sub_warehouse = ?;
+    ";
+
+    $command = $connection->prepare($query);
+    $command->bind_param('i', $id_sub_warehouse);
+    $command->execute();
+    $result = $command->get_result();
+
+    $transactions = [];
+    while ($row = $result->fetch_assoc()) {
+        $transactions[] = $row;
+    }
+
+    $command->close();
+    $connection->close();
+
+    return $transactions;
+}
 }

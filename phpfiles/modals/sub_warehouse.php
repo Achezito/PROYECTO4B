@@ -150,4 +150,57 @@ class SubWarehouse {
         return $subWarehouses;
 
     }
+
+
+
+    public static function getMaterialsBySubWarehouseId($id_sub_warehouse) {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            error_log("Error en la conexión: " . $connection->connect_error);
+            return [];
+        }
+    
+        $query = "
+        SELECT 
+            sw.location AS 'Ubicación del Subalmacén',
+            c.name AS 'Categoría',
+            m.name AS 'Material',
+            m.description AS 'Descripción',
+            swm.quantity AS 'Cantidad Disponible'
+        FROM SUB_WAREHOUSE_MATERIAL swm
+        JOIN SUB_WAREHOUSE sw ON swm.id_sub_warehouse = sw.id_sub_warehouse
+        JOIN RECEIVED_MATERIAL m ON swm.id_material = m.id_material
+        JOIN CATEGORY c ON sw.id_category = c.id_category
+        WHERE sw.id_sub_warehouse = ?;
+        ";
+    
+        $command = $connection->prepare($query);
+        $command->bind_param('i', $id_sub_warehouse);
+        $command->execute();
+        $command->bind_result(
+            $location,
+            $category,
+            $material,
+            $description,
+            $quantity
+        );
+    
+        $materials = [];
+        while ($command->fetch()) {
+            $materials[] = [
+                "Ubicación del Subalmacén" => $location,
+                "Categoría" => $category,
+                "Material" => $material,
+                "Descripción" => $description,
+                "Cantidad Disponible" => $quantity
+            ];
+        }
+    
+        error_log("Materiales encontrados: " . json_encode($materials));
+    
+        $command->close();
+        $connection->close();
+    
+        return $materials;
+    }
 }

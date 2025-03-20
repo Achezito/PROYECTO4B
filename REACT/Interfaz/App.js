@@ -2,10 +2,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-import Dashboard from "./dashboard"; // Importar el componente Dashboard
+
 import Interfaz from "./warehouse/interfaz_api"; // Importar interfaz
 import InterfazWarehouse from './warehouse/interfaz_api'; // Ruta correcta al archivo
 import WarehouseDetails from './warehouse/warehousedetails'; 
+import SubWarehouseDetails from './warehouse/subwarehousedetails'; // Nueva pantalla
+import MaterialesSubWarehouse from './warehouse//subwarehouseOptions/materialesScreen'; // Nueva pantalla
+import OrdersScreen from "./warehouse/subwarehouseOptions/ordersScreen";
+import TransaccionesScreen from "./warehouse/subwarehouseOptions/transactionScreen";
+
 
 
 function LoginScreen({ navigation }) {
@@ -18,8 +23,6 @@ function LoginScreen({ navigation }) {
     formData.append("username", username);
     formData.append("password", password);
 
-    // cambiar el fetch por la direccion donde tiene el login.php
-    // Elihu: http://localhost/PROYECTO4B-1/phpfiles/config/login.php
     
 
     fetch("http://localhost/PROYECTO4B-1/phpfiles/config/login.php", {
@@ -29,9 +32,9 @@ function LoginScreen({ navigation }) {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          navigation.navigate("Dashboard"); // Navegar al Dashboard si el inicio de sesión es exitoso
+          navigation.navigate("Interfaz"); // Navegar al Dashboard si el inicio de sesión es exitoso
         } else {
-          navigation.navigate("Dashboard"); // Navegar al Dashboard si el inicio de sesión es exitoso
+          navigation.navigate("Interfaz"); // Navegar al Dashboard si el inicio de sesión es exitoso
           setErrorMessage(data.message || "Credenciales incorrectas");
         }
       })
@@ -71,10 +74,13 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Interfaz" component={Interfaz} />
         <Stack.Screen name="InterfazWarehouse" component={InterfazWarehouse} />
         <Stack.Screen name="WarehouseDetails" component={WarehouseDetails} />
+        <Stack.Screen name="MaterialesScreen" component={MaterialesSubWarehouse} />
+        <Stack.Screen name="SubWarehouseDetails" component={SubWarehouseDetails} />
+        <Stack.Screen name="OrdersScreen" component={OrdersScreen} />
+        <Stack.Screen name="TransaccionesScreen" component={TransaccionesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
