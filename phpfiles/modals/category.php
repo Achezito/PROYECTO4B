@@ -56,9 +56,24 @@ class Category {
                 "updated_at" => $updated_at
             ];
         }
-        
-
         return $categories;
+    }
+
+    public static function insert($name, $description) {
+        $connection = Conexion::get_connection();
+
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+
+        $command = $connection->prepare("INSERT INTO CATEGORY (`name`, `description`) VALUES (?, ?)");
+        $command->bind_param('ss', $name, $description);
+
+        if ($command->execute()) {
+            return "Categoría agregada correctamente";
+        } else {
+            return "Error al agregar la categoría: " . $connection->error;
+        }
     }
 
     // Obtener categoría por ID

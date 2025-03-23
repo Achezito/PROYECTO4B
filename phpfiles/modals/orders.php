@@ -117,6 +117,23 @@ class Order {
         }
     }
 
+    public static function insert($order_date, $id_status, $id_supply, $quantity) {
+        $connection = Conexion::get_connection();
+        
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $command = $connection->prepare("INSERT INTO ORDERS (order_date, id_status, id_supply, quantity) VALUES (?, ?, ?, ?)");
+        $command->bind_param('siii', $order_date, $id_status, $id_supply, $quantity);
+    
+        if ($command->execute()) {
+            return "Orden agregada correctamente";
+        } else {
+            return "Error al agregar orden: " . $connection->error;
+        }
+    }
+
     
 public static function getOrdersBySubWarehouseId($id_sub_warehouse) {
     $connection = Conexion::get_connection();

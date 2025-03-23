@@ -151,4 +151,22 @@ class ReceivedMaterial {
             return "Material not found.";
         }
     }
+
+    public static function insert($name, $description, $quantity, $batch_number, $serial_number, $date_received, $id_supply, $id_type, $id_category, $rotation, $volume) {
+        $connection = Conexion::get_connection();
+        
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $command = $connection->prepare("INSERT INTO RECEIVED_MATERIAL (`name`, `description`, quantity, batch_number, serial_number, date_received, id_supply, id_type, id_category, rotation, volume) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $command->bind_param('ssiiisiiisi', $name, $description, $quantity, $batch_number, $serial_number, $date_received, $id_supply, $id_type, $id_category, $rotation, $volume);
+    
+        if ($command->execute()) {
+            return "Material recibido agregado correctamente";
+        } else {
+            return "Error al agregar material recibido: " . $connection->error;
+        }
+    }
+    
 }

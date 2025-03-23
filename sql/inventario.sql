@@ -44,6 +44,7 @@ CREATE TABLE SUPPLY (
 );
 
 
+
 -- Tabla de materiales de hardware (especializada)
 CREATE TABLE MATERIAL_HARDWARE (
     id_material INT PRIMARY KEY AUTO_INCREMENT,
@@ -104,7 +105,7 @@ CREATE TABLE RECEIVED_MATERIAL (
     quantity INT NOT NULL,
     batch_number INT,
     serial_number VARCHAR(255),
-    date_received DATE NOT NULL,
+    date_received TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     id_supply INT,
     id_type INT,
     id_category INT,
@@ -116,6 +117,7 @@ CREATE TABLE RECEIVED_MATERIAL (
     FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type),
     FOREIGN KEY (id_category) REFERENCES CATEGORY(id_category)
 );
+
 
 CREATE TABLE MATERIAL_LINK (
     id_material INT PRIMARY KEY,
@@ -190,13 +192,23 @@ CREATE TABLE ORDERS (
     id_order INT PRIMARY KEY AUTO_INCREMENT,
     order_date DATE NOT NULL,
     id_status INT,
-    id_supply INT,
-    quantity INT NOT NULL,
+    quantity INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply),
     FOREIGN KEY (id_status) REFERENCES STATUS(id_status)
 );
+
+
+CREATE TABLE ORDER_SHIPMENT (
+    id_order_shipment INT PRIMARY KEY AUTO_INCREMENT,
+    id_order INT NOT NULL,
+    id_supply INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order),
+    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply)
+);
+
 
 
 -- Tabla de roles

@@ -34,13 +34,13 @@ class hardware {
 
     private static $selectHardware = "
     SELECT id_material, model, speed, cores, threads, cache_memory, tipo, capacity, read_speed, write_speed,
-    brand, power_consumption, vram, frecuency, hardware_type
-    FROM material_hardware WHERE hardware_type = ?;
+    brand, power_consumption, vram, frecuency, id_type
+    FROM material_hardware WHERE id_type = ?;
     ";
 
     private static $all = "
     SELECT id_material, model, speed, cores, threads, cache_memory, tipo, capacity, read_speed, write_speed,
-    brand, power_consumption, vram, frecuency, hardware_type
+    brand, power_consumption, vram, frecuency, id_type
     FROM material_hardware;
     ";
 
@@ -176,6 +176,26 @@ public static function getAllHardware() {
 
         return $hardware;
 }
+
+public static function insert($model, $brand, $power_consumption, $frecuency, $vram, $speed, $cores, $threads, $cache_memory, $tipo, $capacity, $read_speed, $write_speed, $id_type) {
+    $connection = Conexion::get_connection();
+    
+    if ($connection->connect_error) {
+        return "Error en la conexión: " . $connection->connect_error;
+    }
+
+    $command = $connection->prepare("INSERT INTO MATERIAL_HARDWARE (model, brand, power_consumption, frecuency, vram, speed, cores, threads, cache_memory, tipo, capacity, read_speed, write_speed, id_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $command->bind_param('ssddddddssdddd', $model, $brand, $power_consumption, $frecuency, $vram, $speed, $cores, $threads, $cache_memory, $tipo, $capacity, $read_speed, $write_speed, $id_type);
+
+    if ($command->execute()) {
+        return "Material hardware agregado correctamente";
+    } else {
+        return "Error al agregar material hardware: " . $connection->error;
+    }
+}
+
+
+
 
 
 public static function getHardware($type_hardware) {

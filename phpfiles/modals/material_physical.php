@@ -100,4 +100,22 @@ class MaterialPhysical {
             return "Material físico no encontrado.";
         }
     }
+
+    public static function insert($resolution, $size, $design, $material_type, $sensitivity, $connectivity, $id_type) {
+        $connection = Conexion::get_connection();
+        
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $command = $connection->prepare("INSERT INTO MATERIAL_PHYSICAL (resolution, size, design, material_type, sensitivity, connectivity, id_type) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $command->bind_param('ssssssi', $resolution, $size, $design, $material_type, $sensitivity, $connectivity, $id_type);
+    
+        if ($command->execute()) {
+            return "Material físico agregado correctamente";
+        } else {
+            return "Error al agregar material físico: " . $connection->error;
+        }
+    }
+    
 }

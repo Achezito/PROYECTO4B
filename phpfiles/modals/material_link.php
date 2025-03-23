@@ -50,19 +50,21 @@ class MaterialLink {
         return $data;
     }
 
-    // Insertar nuevo registro
-    public function insert() {
+    public static function insert($id_material, $id_material_hardware, $id_material_component, $id_material_physical) {
         $connection = Conexion::get_connection();
         
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
         }
-
-        $query = "INSERT INTO MATERIAL_LINK (id_material, id_material_hardware, id_material_component, id_material_physical) VALUES (?, ?, ?, ?)";
-        $command = $connection->prepare($query);
-        $command->bind_param('iiii', $this->id_material, $this->id_material_hardware, $this->id_material_component, $this->id_material_physical);
-
-        return $command->execute() ? true : $command->error;
+    
+        $command = $connection->prepare("INSERT INTO MATERIAL_LINK (id_material, id_material_hardware, id_material_component, id_material_physical) VALUES (?, ?, ?, ?)");
+        $command->bind_param('iiii', $id_material, $id_material_hardware, $id_material_component, $id_material_physical);
+    
+        if ($command->execute()) {
+            return "Enlace de material agregado correctamente";
+        } else {
+            return "Error al agregar enlace de material: " . $connection->error;
+        }
     }
 
     // Eliminar registro

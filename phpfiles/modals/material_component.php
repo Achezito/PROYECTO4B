@@ -109,6 +109,24 @@ class component{
     
         return $components;
     }
+
+    public static function insert($chipset, $form_factor, $socket_type, $RAM_slots, $max_RAM, $expansion_slots, $capacity, $voltage, $quantity, $audio_channels, $component_type, $id_type) {
+        $connection = Conexion::get_connection();
+        
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $command = $connection->prepare("INSERT INTO MATERIAL_COMPONENT (chipset, form_factor, socket_type, RAM_slots, max_RAM, expansion_slots, capacity, voltage, quantity, audio_channels, component_type, id_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $command->bind_param('sssiiddddsii', $chipset, $form_factor, $socket_type, $RAM_slots, $max_RAM, $expansion_slots, $capacity, $voltage, $quantity, $audio_channels, $component_type, $id_type);
+    
+        if ($command->execute()) {
+            return "Material componente agregado correctamente";
+        } else {
+            return "Error al agregar material componente: " . $connection->error;
+        }
+    }
+    
     
     
 }
