@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-const API_warehouse = 'http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php';
-
 // API_URL es la direccion del archivo que se comunica con el model de la tabla para mandar el json (hice la carpeta react en phpFiles para poner ahi esos archivos)
 
 export default function interfaz_warehouse({ navigation}) {
@@ -24,7 +22,7 @@ export default function interfaz_warehouse({ navigation}) {
 
   const getWarehouses = async () => {
     try {
-        const response = await fetch(API_warehouse, {
+        const response = await fetch("http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php", {
             method: 'GET'
         });
         const data = await response.json();

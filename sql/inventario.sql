@@ -17,20 +17,12 @@ CREATE TABLE CATEGORY (
 );
 
 
-
 -- Tabla de tipos de materiales
 CREATE TABLE MATERIAL_TYPE (
     id_type INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE SUPPLY (
-    id_supply INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100),
-    descripcion VARCHAR(100),
-    id_supplier INT,
-    FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier)
-);
 
 -- Tabla de proveedores
 CREATE TABLE SUPPLIER (
@@ -43,6 +35,13 @@ CREATE TABLE SUPPLIER (
 );
 
 
+CREATE TABLE SUPPLY (
+    id_supply INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    descripcion VARCHAR(100),
+    id_supplier INT,
+    FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier)
+);
 
 
 -- Tabla de materiales de hardware (especializada)
@@ -64,7 +63,6 @@ CREATE TABLE MATERIAL_HARDWARE (
     id_type int,
     FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type)
 );
-
 
 -- Tabla de materiales físicos (especializada)
 CREATE TABLE MATERIAL_PHYSICAL (
@@ -98,17 +96,6 @@ CREATE TABLE MATERIAL_COMPONENT (
     FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type)
 );
 
-CREATE TABLE MATERIAL_LINK (
-    id_material INT PRIMARY KEY,
-    id_material_hardware INT,
-    id_material_component INT,
-    id_material_physical INT,
-    FOREIGN KEY (id_material) REFERENCES RECEIVED_MATERIAL(id_material),
-    FOREIGN KEY (id_material_hardware) REFERENCES MATERIAL_HARDWARE(id_material),
-    FOREIGN KEY (id_material_component) REFERENCES MATERIAL_COMPONENT(id_material),
-    FOREIGN KEY (id_material_physical) REFERENCES MATERIAL_PHYSICAL(id_material)
-);
-
 -- Tabla de materiales (general)
 CREATE TABLE RECEIVED_MATERIAL (
     id_material INT PRIMARY KEY AUTO_INCREMENT,
@@ -130,6 +117,16 @@ CREATE TABLE RECEIVED_MATERIAL (
     FOREIGN KEY (id_category) REFERENCES CATEGORY(id_category)
 );
 
+CREATE TABLE MATERIAL_LINK (
+    id_material INT PRIMARY KEY,
+    id_material_hardware INT,
+    id_material_component INT,
+    id_material_physical INT,
+    FOREIGN KEY (id_material) REFERENCES RECEIVED_MATERIAL(id_material),
+    FOREIGN KEY (id_material_hardware) REFERENCES MATERIAL_HARDWARE(id_material),
+    FOREIGN KEY (id_material_component) REFERENCES MATERIAL_COMPONENT(id_material),
+    FOREIGN KEY (id_material_physical) REFERENCES MATERIAL_PHYSICAL(id_material)
+);
 
 
 -- Tabla de almacenes
@@ -202,6 +199,29 @@ CREATE TABLE ORDERS (
 );
 
 
+-- Tabla de roles
+CREATE TABLE ROLE (
+    id_role INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Tabla de usuarios
+CREATE TABLE USER (
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(100) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    id_role INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_role) REFERENCES ROLE(id_role)
+);
+
+/* no se usan de momento
+
+
 -- Tabla de condiciones
 CREATE TABLE `CONDITION` (
     id_condition INT PRIMARY KEY AUTO_INCREMENT,
@@ -231,23 +251,4 @@ CREATE TABLE MAINTENANCE (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_equipment) REFERENCES EQUIPMENT(id_equipment)
 );
-
--- Tabla de roles
-CREATE TABLE ROLE (
-    id_role INT PRIMARY KEY AUTO_INCREMENT,
-    `name` VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
--- Tabla de usuarios
-CREATE TABLE USER (
-    id_user INT PRIMARY KEY AUTO_INCREMENT,
-    `name` VARCHAR(100) NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    id_role INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_role) REFERENCES ROLE(id_role)
-);
+*/

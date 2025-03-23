@@ -3,9 +3,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import Dashboard from "./dashboard"; // Importar el componente Dashboard
-import Interfaz from "./warehouse/interfaz_api"; // Importar interfaz
-import InterfazWarehouse from './warehouse/interfaz_api'; // Ruta correcta al archivo
-import WarehouseDetails from './warehouse/warehousedetails'; 
+import { default as Interfaz, default as InterfazWarehouse } from "./warehouse/interfaz_api"; // Importar interfaz
+import Posts from './warehouse/posts';
+import WarehouseDetails from './warehouse/warehousedetails';
 
 
 function LoginScreen({ navigation }) {
@@ -59,6 +59,7 @@ function LoginScreen({ navigation }) {
       />
       <Button title="Iniciar Sesión" onPress={handleLogin} />
       <Button title="ir a dashboard" onPress={ () => { navigation.navigate('Interfaz'); } } />
+      <Button title="ir a los posts" onPress={ () => { navigation.navigate('Posts'); } } />
       {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
     </View>
   );
@@ -73,6 +74,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Interfaz" component={Interfaz} />
+        <Stack.Screen name="Posts" component={Posts} />
         <Stack.Screen name="InterfazWarehouse" component={InterfazWarehouse} />
         <Stack.Screen name="WarehouseDetails" component={WarehouseDetails} />
       </Stack.Navigator>

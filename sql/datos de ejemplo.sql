@@ -51,19 +51,19 @@ VALUES (1, 1, 'inbound', 5, '2025-03-18');
 INSERT INTO STATUS (description) VALUES ('Pendiente');
 
 -- Insertando en ORDERS
-INSERT INTO ORDERS (order_date, id_status, id_supply, quantity)
-VALUES ('2025-03-18', 1, 1, 10);
+INSERT INTO ORDERS (order_date, id_status, id_supply, quantity) VALUES
+('2025-03-18', 1, 1, 10);
 
 -- Insertando en CONDITION
 INSERT INTO `CONDITION` (`description`) VALUES ('Nuevo');
 
 -- Insertando en EQUIPMENT
-INSERT INTO EQUIPMENT (name, type, id_condition)
-VALUES ('Multímetro', 'Instrumento de medición', 1);
+INSERT INTO EQUIPMENT (name, type, id_condition) VALUES
+('Multímetro', 'Instrumento de medición', 1);
 
 -- Insertando en MAINTENANCE
 INSERT INTO MAINTENANCE (`description`, maintenance_date, id_equipment)
-VALUES ('Revisión general', '2025-03-18', 2);
+VALUES('Revisión general', '2025-03-18', 2);
 
 SELECT 
 sb.location as 'Subalmacén',
