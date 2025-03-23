@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function WarehouseDetails({ route }) {
+export default function WarehouseDetails({ route, navigation }) {
   const { id, name } = route.params;
   const [subWarehouses, setSubWarehouses] = useState([]);
 
@@ -29,11 +29,19 @@ export default function WarehouseDetails({ route }) {
         numColumns={2}
         columnWrapperStyle={styles.row}
         renderItem={({ item }) => (
-          <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() =>
+              navigation.navigate('SubWarehouseDetails', {
+                id: item.ID,
+                location: item.Location,
+              })
+            }
+          >
             <Icon name="warehouse" size={40} color="rgb(42, 126, 209)" style={styles.icon} />
             <Text style={styles.cardTitle}>Subalmacén ID: {item.ID}</Text>
-            <Text style={styles.cardText}>Ubicación: {item.Subalmacén}</Text>
-          </View>
+            <Text style={styles.cardText}>Ubicación: {item.Location}</Text>
+          </TouchableOpacity>
         )}
         ListEmptyComponent={
           <View style={styles.emptyContainer}>

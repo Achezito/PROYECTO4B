@@ -172,28 +172,45 @@ return (
       data={groupedWarehouses} // Usamos la lista agrupada
       renderItem={({ item }) => (
         <View style={styles.row}>
-          <Text
-            style={[styles.labelText, { backgroundColor: 'rgb(42, 126, 209)' }]}
-            onPress={() => navigation.navigate('WarehouseDetails', { id: item[0]?.id_warehouse, name: item[0]?.name })}
-          >
-            {item[0]?.name}
-          </Text>
-
+          <View style={styles.card}>
+            <Text
+              style={styles.cardTitle}
+              onPress={() =>
+                navigation.navigate('WarehouseDetails', {
+                  id: item[0]?.id_warehouse,
+                  name: item[0]?.name,
+                })
+              }
+            >
+              {item[0]?.name}
+            </Text>
+            <Text style={styles.cardSubtitle}>Capacidad: {item[0]?.capacity}</Text>
+            <Text style={styles.cardSubtitle}>Ubicación: {item[0]?.location}</Text>
+          </View>
 
           {item[1] && (
-            <Text
-              style={[styles.labelText, { backgroundColor: 'rgb(42, 126, 209)' }]}
-              onPress={() => navigation.navigate('WarehouseDetails', { id: item[1]?.id_warehouse, name: item[1]?.name })}
-            >
-              {item[1]?.name}
-            </Text>
+            <View style={styles.card}>
+              <Text
+                style={styles.cardTitle}
+                onPress={() =>
+                  navigation.navigate('WarehouseDetails', {
+                    id: item[1]?.id_warehouse,
+                    name: item[1]?.name,
+                  })
+                }
+              >
+                {item[1]?.name}
+              </Text>
+              <Text style={styles.cardSubtitle}>Capacidad: {item[1]?.capacity}</Text>
+              <Text style={styles.cardSubtitle}>Ubicación: {item[1]?.location}</Text>
+            </View>
           )}
         </View>
       )}
       keyExtractor={(item, index) => index.toString()}
     />
   </View>
-  );
+);
 
 }
 
@@ -203,23 +220,35 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(33, 37, 41)',
     padding: 20,
   },
-  labelText: {
-    height: 150,
-    width: 150,
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    textAlign: 'center',
-    lineHeight: 50,
-    fontSize: "18pt"
-  },
   row: {
-    flexDirection: 'row',  // Cambié a 'row' para que los elementos estén en fila.
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    gap: 30,  // Opcional: Para agregar espacio entre los elementos en la fila
-    marginBottom: 30,
-    marginTop: 10
-  }
+    marginBottom: 20,
+  },
+  card: {
+    flex: 1,
+    backgroundColor: 'white',
+    borderRadius: 15,
+    padding: 20,
+    marginHorizontal: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 6,
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'rgb(42, 126, 209)',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  cardSubtitle: {
+    fontSize: 16,
+    color: 'rgb(33, 37, 41)',
+    marginBottom: 5,
+    textAlign: 'center',
+  },
 });

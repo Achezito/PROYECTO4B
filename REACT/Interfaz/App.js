@@ -2,11 +2,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-import Dashboard from "./dashboard"; // Importar el componente Dashboard
+import Category from './POST/category';
+import Material_Components from './POST/material_component';
+import Orders from './POST/orders';
 import { default as Interfaz, default as InterfazWarehouse } from "./warehouse/interfaz_api"; // Importar interfaz
-import Posts from './warehouse/posts';
+import SubWarehouseDetails from './warehouse/subwarehousedetails';
 import WarehouseDetails from './warehouse/warehousedetails';
-
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
@@ -58,12 +59,23 @@ function LoginScreen({ navigation }) {
         onChangeText={setPassword}
       />
       <Button title="Iniciar Sesión" onPress={handleLogin} />
-      <Button title="ir a dashboard" onPress={ () => { navigation.navigate('Interfaz'); } } />
-      <Button title="ir a los posts" onPress={ () => { navigation.navigate('Posts'); } } />
+      <Button title="ir a almacenes" onPress={ () => { navigation.navigate('Interfaz'); } } />
+      <Button title="ir a los posts" onPress={ () => { navigation.navigate('Post'); } } />
       {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
     </View>
   );
 }
+
+function Post({ navigation }) {
+  return (
+      <View style={styles.container_POST}>
+        <Text style={styles.labelText} onPress={ () => { navigation.navigate("Category"); } }>Material</Text>
+        <Text style={styles.labelText} onPress={ () => { navigation.navigate("Orders"); } }>Orders</Text>
+        <Text style={styles.labelText} onPress={ () => { navigation.navigate("Material_Components"); } }>Material_Components</Text>
+      </View>
+    );
+}
+
 
 const Stack = createStackNavigator();
 
@@ -72,11 +84,14 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Interfaz" component={Interfaz} />
-        <Stack.Screen name="Posts" component={Posts} />
+        <Stack.Screen name="Post" component={Post}/>
+        <Stack.Screen name="Category" component={Category}/>
+        <Stack.Screen name="Orders" component={Orders}/>
+        <Stack.Screen name="Material_Components" component={Material_Components}/>
         <Stack.Screen name="InterfazWarehouse" component={InterfazWarehouse} />
         <Stack.Screen name="WarehouseDetails" component={WarehouseDetails} />
+        <Stack.Screen name="SubWarehouseDetails" component={SubWarehouseDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -87,6 +102,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16,
+  },
+  container_POST: {
+    flex: 1,
+    padding: 20,
+  },
+  labelText: {
+    backgroundColor: 'black',
+    color: 'white', // Asegúrate de que el texto sea visible
+    height: 150,
+    width: 150,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    textAlign: 'center',
+    lineHeight: 10,
+    fontSize: 10,
   },
   title: {
     fontSize: 24,

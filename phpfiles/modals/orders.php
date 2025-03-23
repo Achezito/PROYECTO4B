@@ -116,4 +116,44 @@ class Order {
             return "Order not found.";
         }
     }
+
+    
+public static function getOrdersBySubWarehouseId($id_sub_warehouse) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Error en la conexión: " . $connection->connect_error;
+    }
+
+    $query = "
+    SELECT 
+        o.id_order AS 'ID Orden',
+        o.order_date AS 'Fecha de Orden',
+        s.description AS 'Estado',
+        su.nombre AS 'Proveedor',
+        o.quantity AS 'Cantidad',
+        sw.location AS 'Ubicación del Subalmacén'
+    FROM ORDERS o
+    JOIN STATUS s ON o.id_status = s.id_status
+    JOIN SUPPLY su ON o.id_supply = su.id_supply
+    JOIN RECEIVED_MATERIAL rm ON o.id_supply = rm.id_supply
+    JOIN SUB_WAREHOUSE_MATERIAL swm ON rm.id_material = swm.id_material
+    JOIN SUB_WAREHOUSE sw ON swm.id_sub_warehouse = sw.id_sub_warehouse
+    WHERE sw.id_sub_warehouse = ?;
+    ";
+
+    $command = $connection->prepare($query);
+    $command->bind_param('i', $id_sub_warehouse);
+    $command->execute();
+    $result = $command->get_result();
+
+    $orders = [];
+    while ($row = $result->fetch_assoc()) {
+        $orders[] = $row;
+    }
+
+    $command->close();
+    $connection->close();
+
+    return $orders;
+}
 }
