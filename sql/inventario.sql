@@ -1,4 +1,7 @@
+-- Active: 1720557520067@@127.0.0.1@3306@inventario
+
 create database inventario;
+
 
 USE inventario;
 
@@ -56,9 +59,10 @@ CREATE TABLE MATERIAL_HARDWARE (
     cache_memory VARCHAR(50),
     tipo VARCHAR(50),
     capacity DECIMAL(5,2),
-    hardware_type VARCHAR(50),
     read_speed DECIMAL(5,2),
-    write_speed DECIMAL(5,2)
+    write_speed DECIMAL(5,2),
+    id_type int,
+    FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type)
 );
 
 
@@ -70,7 +74,9 @@ CREATE TABLE MATERIAL_PHYSICAL (
     design VARCHAR(100),
     material_type VARCHAR(50),
     sensitivity VARCHAR(50),
-    connectivity VARCHAR(50)
+    connectivity VARCHAR(50),
+    id_type int,
+    FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type)
 );
 
 
@@ -87,7 +93,9 @@ CREATE TABLE MATERIAL_COMPONENT (
     voltage DECIMAL(5,2),
     quantity INT,
     audio_channels INT,
-    component_type VARCHAR(50)
+    component_type VARCHAR(50),
+    id_type int,
+    FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type)
 );
 
 CREATE TABLE MATERIAL_LINK (
