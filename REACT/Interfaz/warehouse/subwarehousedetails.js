@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { MaterialIcons, FontAwesome5, Entypo } from '@expo/vector-icons'; // Asegúrate de instalar @expo/vector-icons
 
 export default function SubWarehouseDetails({ route, navigation }) {
   const { id, location } = route.params; // Recibe los parámetros de navegación
@@ -9,43 +10,81 @@ export default function SubWarehouseDetails({ route, navigation }) {
       navigation.navigate('MaterialesScreen', { id });
     } else if (option === 'Órdenes') {
       navigation.navigate('OrdersScreen', { id });
-    } else if (option === 'Suppliers') {
-      navigation.navigate('SuppliersScreen', { id });
     } else if (option === 'Transacciones') {
       navigation.navigate('TransaccionesScreen', { id });
+    } else if (option === 'NuevaTransaccion') {
+      navigation.navigate('NuevaTransaccionScreen', { id });
+    } else if (option === 'Proveedores') {
+      navigation.navigate('ProveedoresScreen', { id });
+    } else if (option === 'Suministros') {
+      navigation.navigate('Suministros', { id });
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Detalles del Subalmacén</Text>
-      <Text style={styles.text}>ID: {id}</Text>
-      <Text style={styles.text}>Ubicación: {location}</Text>
-
-      <View style={styles.menuContainer}>
-        <TouchableOpacity
-          style={styles.menuButton}
-          onPress={() => handleNavigation('Materiales')}
-        >
-          <Text style={styles.menuText}>Materiales</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.menuButton}
-          onPress={() => handleNavigation('Órdenes')}
-        >
-          <Text style={styles.menuText}>Órdenes</Text>
-        </TouchableOpacity>
-
-  
-
-        <TouchableOpacity
-          style={styles.menuButton}
-          onPress={() => handleNavigation('Transacciones')}
-        >
-          <Text style={styles.menuText}>Transacciones</Text>
-        </TouchableOpacity>
+      {/* Barra de navegación superior */}
+      <View style={styles.navbar}>
+        <Text style={styles.navbarTitle}>Subalmacén #{id}</Text>
       </View>
+
+      {/* Contenido principal */}
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.title}>Detalles del Subalmacén</Text>
+        <Text style={styles.text}>ID: {id}</Text>
+        <Text style={styles.text}>Ubicación: {location}</Text>
+
+        {/* Opciones del menú */}
+        <View style={styles.menuContainer}>
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation('Materiales')}
+          >
+            <MaterialIcons name="inventory" size={24} color="white" />
+            <Text style={styles.menuText}>Materiales</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation('Órdenes')}
+          >
+            <FontAwesome5 name="clipboard-list" size={24} color="white" />
+            <Text style={styles.menuText}>Órdenes</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation('Transacciones')}
+          >
+            <MaterialIcons name="swap-horiz" size={24} color="white" />
+            <Text style={styles.menuText}>Transacciones</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation('NuevaTransaccion')}
+          >
+            <MaterialIcons name="add-circle-outline" size={24} color="white" />
+            <Text style={styles.menuText}>Nueva Transacción</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation('Proveedores')}
+          >
+            <Entypo name="users" size={24} color="white" />
+            <Text style={styles.menuText}>Proveedores</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation('Suministros')}
+          >
+            <MaterialIcons name="storage" size={24} color="white" />
+            <Text style={styles.menuText}>Suministros</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -53,10 +92,23 @@ export default function SubWarehouseDetails({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'rgb(33, 37, 41)',
+  },
+  navbar: {
+    backgroundColor: 'rgb(42, 126, 209)', // Azul para la barra de navegación
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  navbarTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  content: {
     padding: 20,
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
@@ -75,13 +127,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   menuButton: {
+    flexDirection: 'row', // Ícono y texto en línea
+    alignItems: 'center',
     backgroundColor: 'rgb(42, 126, 209)', // Azul para los botones
     paddingVertical: 15,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     borderRadius: 10,
     marginBottom: 15,
-    width: '80%', // Botones más anchos
-    alignItems: 'center',
+    width: '90%', // Botones más anchos
+    justifyContent: 'space-between',
   },
   menuText: {
     fontSize: 18,

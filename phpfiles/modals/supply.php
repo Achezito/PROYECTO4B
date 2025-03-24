@@ -27,27 +27,39 @@ class Supply {
     public function setIdSupplier($id_supplier){ $this->id_supplier = $id_supplier; }
 
     // Obtener todos los suministros
-    public static function getSupplies(){
+ 
+    public static function getSupplies() {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
         }
-
-        $query = "SELECT id_supply, nombre, descripcion, id_supplier FROM SUPPLY";
+    
+        $query = "
+        SELECT 
+            sp.id_supply AS id_supply,
+            sp.quantity AS quantity,
+            sp.id_supplier AS id_supplier,
+            s.name AS supplier_name,
+            s.contact_info AS supplier_contact,
+            s.address AS supplier_address
+        FROM 
+            SUPPLY sp
+        JOIN 
+            SUPPLIER s ON sp.id_supplier = s.id_supplier;
+        ";
+    
         $command = $connection->prepare($query);
         $command->execute();
-        $command->bind_result($id_supply, $nombre, $descripcion, $id_supplier);
-
+        $result = $command->get_result();
+    
         $supplies = [];
-        while ($command->fetch()) {
-            $supplies[] = [
-                "id_supply" => $id_supply,
-                "nombre" => $nombre,
-                "descripcion" => $descripcion,
-                "id_supplier" => $id_supplier
-            ];
+        while ($row = $result->fetch_assoc()) {
+            $supplies[] = $row;
         }
-
+    
+        $command->close();
+        $connection->close();
+    
         return $supplies;
     }
 
@@ -74,5 +86,54 @@ class Supply {
         } else {
             return "Supply not found.";
         }
+    }
+
+
+    public static function getSuppliesBySubWarehouse($id_sub_warehouse) {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $query = "
+        SELECT 
+            sp.id_supply AS id_supply,
+            sp.quantity AS quantity,
+            sp.id_supplier AS id_supplier,
+            s.name AS supplier_name,
+            s.contact_info AS supplier_contact,
+            s.address AS supplier_address,
+            rm.description AS material_description,
+            rm.serial_number AS material_serial,
+            sw.location AS subwarehouse_location,
+            sw.capacity AS subwarehouse_capacity
+        FROM 
+            SUPPLY sp
+        JOIN 
+            SUPPLIER s ON sp.id_supplier = s.id_supplier
+        JOIN 
+            RECEIVED_MATERIAL rm ON sp.id_supply = rm.id_supply
+        JOIN 
+            SUB_WAREHOUSE_MATERIAL swm ON rm.id_material = swm.id_material
+        JOIN 
+            SUB_WAREHOUSE sw ON swm.id_sub_warehouse = sw.id_sub_warehouse
+        WHERE 
+            sw.id_sub_warehouse = ?;
+        ";
+    
+        $command = $connection->prepare($query);
+        $command->bind_param('i', $id_sub_warehouse);
+        $command->execute();
+        $result = $command->get_result();
+    
+        $supplies = [];
+        while ($row = $result->fetch_assoc()) {
+            $supplies[] = $row;
+        }
+    
+        $command->close();
+        $connection->close();
+    
+        return $supplies;
     }
 }

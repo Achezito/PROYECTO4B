@@ -15,6 +15,13 @@ import CreateWarehouseScreen from "./warehouse/warehouse_create";
 import UpdateWarehouseScreen  from "./warehouse/warehouse_update";
 import addSubWareHouse from "./warehouse/subwarehouseOptions/addSubWareHouse";
 import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubWareHouse";
+import NuevaTransaccionScreen from "./warehouse/subwarehouseOptions/nuevaTransaccionScreen";
+import ProveedoresScreen from "./warehouse/subwarehouseOptions/proveedoresScreen";
+import AddProveedorScreen from "./warehouse/subwarehouseOptions/addProveedorScreen";
+import EditProveedorScreen from "./warehouse/subwarehouseOptions/editProveedorScreen";
+import Suministros from "./warehouse/subwarehouseOptions/suministrosScreen";
+
+
 
 
 
@@ -95,20 +102,26 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Interfaz" component={Interfaz} />
-        <Stack.Screen name="Post" component={Post}/>
-        <Stack.Screen name="Category" component={Category}/>
-        <Stack.Screen name="Orders" component={Orders}/>
-        <Stack.Screen name="Material_Components" component={Material_Components}/>
+        <Stack.Screen name="Post" component={Post} />
+        <Stack.Screen name="Category" component={Category} />
+        <Stack.Screen name="Orders" component={Orders} />
+        <Stack.Screen name="Material_Components" component={Material_Components} />
         <Stack.Screen name="InterfazWarehouse" component={InterfazWarehouse} />
         <Stack.Screen name="WarehouseDetails" component={WarehouseDetails} />
         <Stack.Screen name="SubWarehouseDetails" component={SubWarehouseDetails} />
         <Stack.Screen name="MaterialesScreen" component={MaterialesScreen} />
-        <Stack.Screen name="TransaccionesScreen " component={TransaccionesScreen } />
+        <Stack.Screen name="TransaccionesScreen" component={TransaccionesScreen} />
         <Stack.Screen name="OrdersScreen" component={OrdersScreen} />
         <Stack.Screen name="CreateWarehouse" component={CreateWarehouseScreen} />
         <Stack.Screen name="UpdateWarehouse" component={UpdateWarehouseScreen} />
         <Stack.Screen name="AddSubWarehouse" component={addSubWareHouse} />
         <Stack.Screen name="UpdateSubWarehouse" component={UpdateSubWarehouseScreen} />
+        <Stack.Screen name="NuevaTransaccionScreen" component={NuevaTransaccionScreen} />
+        <Stack.Screen name="ProveedoresScreen" component={ProveedoresScreen} />
+        <Stack.Screen name="AddProveedorScreen" component={AddProveedorScreen} />
+<Stack.Screen name="EditProveedorScreen" component={EditProveedorScreen} />
+<Stack.Screen name= "Suministros" component={Suministros} />
+  
       </Stack.Navigator>
     </NavigationContainer>
   );

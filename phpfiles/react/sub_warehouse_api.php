@@ -22,16 +22,8 @@ $method = $_SERVER['REQUEST_METHOD']; // Se lee el método para manejar diferent
 switch ($method) {
     case 'GET': // Obtener datos
         $id_warehouse = isset($_GET['id']) ? intval($_GET['id']) : null;
-        $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
 
-        if ($id_sub_warehouse && $id_warehouse) {
-            // Si ambos parámetros están presentes, devuelve un error
-            echo json_encode(["error" => "No se pueden usar 'id' y 'id_sub_warehouse' al mismo tiempo"]);
-        } elseif ($id_sub_warehouse) {
-            // Llama al método para obtener los materiales del subalmacén
-            $materials = SubWarehouse::getMaterialsBySubWarehouseId($id_sub_warehouse);
-            echo json_encode($materials);
-        } elseif ($id_warehouse) {
+        if ($id_warehouse) {
             // Llama al método para obtener los subalmacenes por almacén
             $SubWarehouse = SubWarehouse::getSubWarehousesByWarehouseId($id_warehouse);
             echo json_encode($SubWarehouse);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TextInput } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TextInput, Alert } from 'react-native';
 
 export default function TransactionScreen({ route }) {
   const { id } = route.params; // Recibe el ID del subalmacén
@@ -14,27 +14,48 @@ export default function TransactionScreen({ route }) {
 
   useEffect(() => {
     // Filtra las transacciones en función del texto de búsqueda
-    const filtered = transactions.filter((item) =>
-      item['ID Transacción'].toString().includes(searchText) ||
-      item['Fecha de Transacción'].toLowerCase().includes(searchText.toLowerCase()) ||
-      item['Tipo de Transacción'].toLowerCase().includes(searchText.toLowerCase()) ||
-      item['Material'].toLowerCase().includes(searchText.toLowerCase()) ||
-      item['Descripción del Material'].toLowerCase().includes(searchText.toLowerCase())
-    );
+    const filtered = transactions.filter((item) => {
+      const idTransaccion = item['ID Transacción']?.toString() || '';
+      const fechaTransaccion = item['Fecha de Transacción']?.toLowerCase() || '';
+      const tipoTransaccion = item['Tipo de Transacción']?.toLowerCase() || '';
+      const material = item['Material']?.toLowerCase() || '';
+      const descripcion = item['Descripción del Material']?.toLowerCase() || '';
+
+      return (
+        idTransaccion.includes(searchText.toLowerCase()) ||
+        fechaTransaccion.includes(searchText.toLowerCase()) ||
+        tipoTransaccion.includes(searchText.toLowerCase()) ||
+        material.includes(searchText.toLowerCase()) ||
+        descripcion.includes(searchText.toLowerCase())
+      );
+    });
     setFilteredTransactions(filtered);
   }, [searchText, transactions]);
 
   const fetchTransactions = async () => {
     try {
+      setLoading(true); // Activa el indicador de carga
       const response = await fetch(
         `http://localhost/PROYECTO4B-1/phpfiles/react/transaction_api.php?id_sub_warehouse=${id}`
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       console.log('Transacciones recibidas:', data); // Verifica los datos en la consola
-      setTransactions(data);
-      setFilteredTransactions(data); // Inicializa las transacciones filtradas
+
+      if (Array.isArray(data)) {
+        setTransactions(data);
+        setFilteredTransactions(data); // Inicializa las transacciones filtradas
+      } else {
+        console.error('La respuesta no es un arreglo:', data);
+        Alert.alert('Error', 'No se pudieron cargar las transacciones.');
+      }
     } catch (error) {
       console.error('Error obteniendo transacciones:', error);
+      Alert.alert('Error', 'Hubo un problema al obtener las transacciones.');
     } finally {
       setLoading(false); // Cambia el estado de carga
     }

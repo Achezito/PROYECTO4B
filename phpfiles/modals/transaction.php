@@ -109,6 +109,8 @@ class Transaction {
     }
 
   
+ 
+ 
 public static function getTransactionsBySubWarehouseId($id_sub_warehouse) {
     $connection = Conexion::get_connection();
     if ($connection->connect_error) {
@@ -118,16 +120,16 @@ public static function getTransactionsBySubWarehouseId($id_sub_warehouse) {
     $query = "
     SELECT 
         t.id_transaction AS 'ID Transacción',
-        t.transaction_date AS 'Fecha de Transacción',
+        t.created_at AS 'Fecha de Transacción', -- Cambiado de transaction_date a created_at
         t.type AS 'Tipo de Transacción',
         t.quantity AS 'Cantidad',
         sw.location AS 'Ubicación del Subalmacén',
-        rm.name AS 'Material',
+        rm.serial_number AS 'Material',
         rm.description AS 'Descripción del Material'
     FROM TRANSACTIONS t
     JOIN SUB_WAREHOUSE sw ON t.id_sub_warehouse = sw.id_sub_warehouse
     JOIN RECEIVED_MATERIAL rm ON t.id_material = rm.id_material
-    WHERE sw.id_sub_warehouse = ?;
+    WHERE t.id_sub_warehouse = ?;
     ";
 
     $command = $connection->prepare($query);
@@ -144,5 +146,47 @@ public static function getTransactionsBySubWarehouseId($id_sub_warehouse) {
     $connection->close();
 
     return $transactions;
+}
+
+public static function insertTransaction($id_material, $id_sub_warehouse, $type, $quantity) {
+    try {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            throw new Exception("Error en la conexión: " . $connection->connect_error);
+        }
+
+        // Verificar si el material y el subalmacén existen
+        $queryCheck = "
+            SELECT COUNT(*) AS count
+            FROM SUB_WAREHOUSE_MATERIAL
+            WHERE id_material = ? AND id_sub_warehouse = ?;
+        ";
+        $stmtCheck = $connection->prepare($queryCheck);
+        $stmtCheck->bind_param('ii', $id_material, $id_sub_warehouse);
+        $stmtCheck->execute();
+        $resultCheck = $stmtCheck->get_result();
+        $rowCheck = $resultCheck->fetch_assoc();
+
+        if ($rowCheck['count'] === 0) {
+            throw new Exception("El material o el subalmacén no existen.");
+        }
+
+        // Insertar la transacción
+        $queryInsert = "
+            INSERT INTO TRANSACTIONS (id_material, id_sub_warehouse, `type`, quantity)
+            VALUES (?, ?, ?, ?);
+        ";
+        $stmtInsert = $connection->prepare($queryInsert);
+        $stmtInsert->bind_param('iisi', $id_material, $id_sub_warehouse, $type, $quantity);
+        $stmtInsert->execute();
+
+        $stmtInsert->close();
+        $connection->close();
+
+        return true;
+    } catch (Exception $e) {
+        error_log("Error al insertar transacción: " . $e->getMessage());
+        return $e->getMessage();
+    }
 }
 }

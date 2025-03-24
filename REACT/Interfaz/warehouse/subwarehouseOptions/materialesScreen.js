@@ -14,25 +14,43 @@ export default function MaterialsScreen({ route }) {
 
   useEffect(() => {
     // Filtra los materiales en función del texto de búsqueda
-    const filtered = materials.filter((item) =>
-      item.Material.toLowerCase().includes(searchText.toLowerCase()) ||
-      item.Categoría.toLowerCase().includes(searchText.toLowerCase()) ||
-      item.Descripción.toLowerCase().includes(searchText.toLowerCase())
-    );
+    const filtered = materials.filter((item) => {
+      const material = item.Material?.toLowerCase() || ''; // Maneja undefined
+      const categoria = item.Categoría?.toLowerCase() || ''; // Maneja undefined
+      const descripcion = item.Descripción?.toLowerCase() || ''; // Maneja undefined
+
+      return (
+        material.includes(searchText.toLowerCase()) ||
+        categoria.includes(searchText.toLowerCase()) ||
+        descripcion.includes(searchText.toLowerCase())
+      );
+    });
     setFilteredMaterials(filtered);
   }, [searchText, materials]);
 
   const fetchMaterials = async () => {
     try {
-      const response = await fetch(`http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php?id_sub_warehouse=${id}`);
+      setLoading(true); // Activa el indicador de carga
+      const response = await fetch(`http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_material_api.php?id_sub_warehouse=${id}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
-      console.log('Datos recibidos:', data); // Verifica los datos en la consola
-      setMaterials(data); // Actualiza el estado con los datos recibidos
-      setFilteredMaterials(data); // Inicializa los materiales filtrados
+      console.log('Datos recibidos:', data);
+
+      // Verifica que los datos sean un arreglo
+      if (Array.isArray(data)) {
+        setMaterials(data);
+        setFilteredMaterials(data);
+      } else {
+        console.error('La respuesta no es un arreglo:', data);
+        setMaterials([]);
+        setFilteredMaterials([]);
+      }
     } catch (error) {
-      console.error('Error obteniendo materiales:', error);
+      console.error('Error obteniendo materiales:', error.message);
     } finally {
-      setLoading(false); // Cambia el estado de carga
+      setLoading(false); // Desactiva el indicador de carga
     }
   };
 
@@ -52,15 +70,18 @@ export default function MaterialsScreen({ route }) {
         <ScrollView contentContainerStyle={styles.scrollContainer}>
           {filteredMaterials.map((item, index) => (
             <View key={index} style={styles.card}>
-              <Text style={styles.cardTitle}>{item.Material}</Text>
+             
+              <Text style={styles.cardTitle}> {item.Descripción}</Text>
+             
               <View style={styles.cardContent}>
-                <Text style={styles.cardText}>
-                  <Text style={styles.label}>Categoría: </Text>
-                  {item.Categoría}
+          
+                  <Text style={styles.cardText}>
+                  <Text style={styles.label}>Material: </Text>
+                  {item.Material}
                 </Text>
                 <Text style={styles.cardText}>
-                  <Text style={styles.label}>Descripción: </Text>
-                  {item.Descripción}
+                <Text style={styles.label}>Categoría: </Text>
+                {item.Categoría}
                 </Text>
                 <Text style={styles.cardText}>
                   <Text style={styles.label}>Cantidad: </Text>

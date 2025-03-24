@@ -41,29 +41,128 @@ class Supplier {
     public function setUpdatedAt($updated_at){ $this->updated_at = $updated_at; }
 
     // Obtener todos los proveedores
-    public static function getSuppliers(){
+
+public static function getSuppliers() {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Error en la conexión: " . $connection->connect_error;
+    }
+
+    $query = "
+    SELECT 
+        id_supplier,
+        name,
+        contact_info,
+        address,
+        created_at,
+        updated_at
+    FROM 
+        SUPPLIER;
+    ";
+
+    $command = $connection->prepare($query);
+    $command->execute();
+    $result = $command->get_result();
+
+    $suppliers = [];
+    while ($row = $result->fetch_assoc()) {
+        $suppliers[] = $row;
+    }
+
+    $command->close();
+    $connection->close();
+
+    return $suppliers;
+}
+ 
+public static function getSuppliersBySubWarehouse($id_sub_warehouse) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Error en la conexión: " . $connection->connect_error;
+    }
+
+    $query = "
+    SELECT
+        s.id_supplier,
+        s.name,
+        s.contact_info,
+        s.address,
+        s.created_at,
+        s.updated_at
+    FROM 
+        SUPPLIER s
+    JOIN 
+        SUPPLY sp ON s.id_supplier = sp.id_supplier
+    JOIN 
+        RECEIVED_MATERIAL rm ON sp.id_supply = rm.id_supply
+    JOIN 
+        SUB_WAREHOUSE_MATERIAL swm ON rm.id_material = swm.id_material
+    WHERE 
+        swm.id_sub_warehouse = ?;
+    ";
+
+    $command = $connection->prepare($query);
+    $command->bind_param('i', $id_sub_warehouse);
+    $command->execute();
+    $result = $command->get_result();
+
+    $suppliers = [];
+    while ($row = $result->fetch_assoc()) {
+        $suppliers[] = $row;
+    }
+
+    $command->close();
+    $connection->close();
+
+    return $suppliers;
+}
+    
+public static function createSupplier($name, $contact_info, $address) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Error en la conexión: " . $connection->connect_error;
+    }
+
+    $query = "INSERT INTO SUPPLIER (name, contact_info, address) VALUES (?, ?, ?)";
+    $command = $connection->prepare($query);
+    $command->bind_param('sss', $name, $contact_info, $address);
+
+    if ($command->execute()) {
+        $command->close();
+        $connection->close();
+        return true; // Éxito
+    } else {
+        $error = $command->error;
+        $command->close();
+        $connection->close();
+            return $error; // Error
+        }
+    }
+    
+        public static function updateSupplier($id_supplier, $name, $contact_info, $address) {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
         }
     
-        $query = "SELECT id_supplier, name, contact_info, address, created_at, updated_at FROM SUPPLIER";
+        $query = "UPDATE SUPPLIER SET name = ?, contact_info = ?, address = ? WHERE id_supplier = ?";
         $command = $connection->prepare($query);
-        $command->execute();
-        $command->bind_result($id_supplier, $name, $contact_info, $address, $created_at, $updated_at);
-
-        $suppliers = [];
-        while ($command->fetch()) {
-            $suppliers[] = [
-                "id_supplier" => $id_supplier,
-                "name" => $name,
-                "contact_info" => $contact_info,
-                "address" => $address,
-                "created_at" => $created_at,
-                "updated_at" => $updated_at
-            ];
+        $command->bind_param('sssi', $name, $contact_info, $address, $id_supplier);
+    
+        if ($command->execute()) {
+            $command->close();
+            $connection->close();
+            return true; // Éxito
+        } else {
+            $error = $command->error;
+            $command->close();
+            $connection->close();
+            return $error; // Error
         }
-
-        return $suppliers;
     }
+
+
+ 
+  
 }
+ ?>

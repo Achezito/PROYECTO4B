@@ -14,27 +14,49 @@ export default function OrdersScreen({ route }) {
 
   useEffect(() => {
     // Filtra las órdenes en función del texto de búsqueda
-    const filtered = orders.filter((item) =>
-      item['ID Orden'].toString().includes(searchText) ||
-      item['Fecha de Orden'].toLowerCase().includes(searchText.toLowerCase()) ||
-      item['Estado'].toLowerCase().includes(searchText.toLowerCase()) ||
-      item['Proveedor'].toLowerCase().includes(searchText.toLowerCase()) ||
-      item['Ubicación del Subalmacén'].toLowerCase().includes(searchText.toLowerCase())
-    );
+    const filtered = orders.filter((item) => {
+      const idOrden = item['ID Orden']?.toString() || ''; // Maneja undefined
+      const fechaOrden = item['Fecha de Orden']?.toLowerCase() || ''; // Maneja undefined
+      const estado = item['Estado']?.toLowerCase() || ''; // Maneja undefined
+      const proveedor = item['Proveedor']?.toLowerCase() || ''; // Maneja undefined
+      const ubicacion = item['Ubicación del Subalmacén']?.toLowerCase() || ''; // Maneja undefined
+
+      return (
+        idOrden.includes(searchText.toLowerCase()) ||
+        fechaOrden.includes(searchText.toLowerCase()) ||
+        estado.includes(searchText.toLowerCase()) ||
+        proveedor.includes(searchText.toLowerCase()) ||
+        ubicacion.includes(searchText.toLowerCase())
+      );
+    });
     setFilteredOrders(filtered);
   }, [searchText, orders]);
 
   const fetchOrders = async () => {
     try {
+      setLoading(true); // Activa el indicador de carga
       const response = await fetch(
         `http://localhost/PROYECTO4B-1/phpfiles/react/order_api.php?id_sub_warehouse=${id}`
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       console.log('Órdenes recibidas:', data); // Verifica los datos en la consola
-      setOrders(data);
-      setFilteredOrders(data); // Inicializa las órdenes filtradas
+
+      // Verifica que los datos sean un arreglo
+      if (Array.isArray(data)) {
+        setOrders(data);
+        setFilteredOrders(data); // Inicializa las órdenes filtradas
+      } else {
+        console.error('La respuesta no es un arreglo:', data);
+        setOrders([]);
+        setFilteredOrders([]);
+      }
     } catch (error) {
-      console.error('Error obteniendo órdenes:', error);
+      console.error('Error obteniendo órdenes:', error.message);
     } finally {
       setLoading(false); // Cambia el estado de carga
     }
