@@ -1,4 +1,7 @@
 use inventario;
+
+
+/* anterior procedimiento para registrar material 
 DELIMITER //
 CREATE PROCEDURE RegisterMaterial(
     IN p_name VARCHAR(255),
@@ -37,26 +40,82 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-CALL RegisterMaterial(
-    'Procesador Intel i7', 
-    'Procesador de 8 núcleos y 16 hilos', 
-    50, 
-    '2023-10-01', 
-    1, 
-    1,
-    'Alta', 
-    0.1
-);
+*/
+
+--nuevo procedimiento para almacenar materiales
+DELIMITER // 
+CREATE PROCEDURE RegisterMaterial(
+    IN p_description VARCHAR(255),
+    IN p_serial_number VARCHAR(255),
+    IN p_id_supply INT,
+    IN p_id_type INT,
+    IN p_id_category INT,
+    IN p_id_rotation INT,
+    IN p_volume DECIMAL(5,2)
+)
+BEGIN
+    DECLARE v_id_material INT;
+    DECLARE v_id_sub_warehouse INT;
+
+    -- Insertar el material en la tabla RECEIVED_MATERIAL
+    INSERT INTO RECEIVED_MATERIAL (`description`, serial_number, id_supply, id_type, id_category, id_rotation, volume)
+    VALUES (p_description, p_serial_number, p_id_supply, p_id_type, p_id_category, p_id_rotation, p_volume);
+
+    -- Obtener el ID del material recién insertado
+    SET v_id_material = LAST_INSERT_ID();
+
+    -- Si el material tiene una categoría, asignarlo al subalmacén correspondiente
+    IF p_id_category IS NOT NULL THEN
+        -- Obtener el subalmacén asociado a la categoría
+        SELECT id_sub_warehouse INTO v_id_sub_warehouse
+        FROM SUB_WAREHOUSE
+        WHERE id_category = p_id_category
+        LIMIT 1;
+
+        -- Si existe un subalmacén para la categoría, asignar el material
+        IF v_id_sub_warehouse IS NOT NULL THEN
+            INSERT INTO SUB_WAREHOUSE_MATERIAL (id_sub_warehouse, id_material, quantity)
+            VALUES (v_id_sub_warehouse, v_id_material, 1); -- Se registra con cantidad 1 por ser recibido
+        END IF;
+    END IF;
+END //
+
+DELIMITER ;
+
+
+
+
+
 -- Registrar un material sin categoría (se quedará en el almacén principal)
 CALL RegisterMaterial(
-    'Teclado USB', 
-    'Teclado estándar USB', 
-    100, 
-    '2023-10-01', 
-    2, 
-    NULL, -- Sin categoría
-    'Media', 
-    0.5
+    'Procesador de 8 núcleos y 16 hilos', --description
+    "1234", -- serial number
+    1, --suply
+    1, --type
+    null, -- category
+    1, -- rotation
+    0.1 --volume
+);
+
+
+CALL RegisterMaterial(
+    'Procesador de 8 núcleos y 16 hilos',
+    "1234",
+    1,
+    1,
+    1,
+    1,
+    0.1
+);
+
+CALL RegisterMaterial(
+    'Procesador de 8 núcleos y 16 hilos',
+    "1234",
+    1,
+    1,
+    null,
+    1,
+    0.1
 );
 
 

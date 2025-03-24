@@ -55,15 +55,16 @@ CREATE TABLE SUPPLIER (
 
 CREATE TABLE SUPPLY (
     id_supply INT AUTO_INCREMENT PRIMARY KEY,
+    id_order INT,
     quantity INT,
     id_supplier INT,
-    id_status INT,
+    id_status INT DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier),
-    FOREIGN KEY (id_status) REFERENCES STATUS(id_status)
+    FOREIGN KEY (id_status) REFERENCES STATUS(id_status),
+    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order)
 );
-
 
 
 -- Tabla de materiales de hardware (especializada)
@@ -130,18 +131,21 @@ CREATE TABLE RECEIVED_MATERIAL (
     `description` VARCHAR(255),
     serial_number VARCHAR(255),
     id_supply INT,
-    id_type INT,
     id_category INT,
     id_rotation INT,
     volume DECIMAL(5,2),
+    id_material_hardware INT,
+    id_material_component INT,
+    id_material_physical INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply),
     FOREIGN KEY (id_rotation) REFERENCES ROTATION(id_rotation),
-    FOREIGN KEY (id_type) REFERENCES MATERIAL_TYPE(id_type),
-    FOREIGN KEY (id_category) REFERENCES CATEGORY(id_category)
+    FOREIGN KEY (id_category) REFERENCES CATEGORY(id_category),
+    FOREIGN KEY (id_material_hardware) REFERENCES MATERIAL_HARDWARE(id_material),
+    FOREIGN KEY (id_material_component) REFERENCES MATERIAL_COMPONENT(id_material),
+    FOREIGN KEY (id_material_physical) REFERENCES MATERIAL_PHYSICAL(id_material)
 );
-
 
 
 CREATE TABLE MATERIAL_LINK (
@@ -208,24 +212,12 @@ CREATE TABLE TRANSACTIONS (
 -- Tabla de órdenes
 CREATE TABLE ORDERS (
     id_order INT PRIMARY KEY AUTO_INCREMENT,
-    id_status INT,
+    id_status INT DEFAULT 1,
     supply_quantity INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_status) REFERENCES STATUS(id_status)
 );
-
-
-CREATE TABLE ORDER_SHIPMENT (
-    id_order_shipment INT PRIMARY KEY AUTO_INCREMENT,
-    id_order INT NOT NULL,
-    id_supply INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order),
-    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply)
-);
-
 
 
 -- Tabla de roles
