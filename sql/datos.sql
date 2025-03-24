@@ -86,6 +86,142 @@ INSERT INTO ORDERS (id_order, supply_quantity) VALUES
 (1, 2),
 (2, 3);
 
+----------------------- Material Component ----------------------
+INSERT INTO MATERIAL_COMPONENT (id_material, model, brand, chipset, form_factor, socket_type, RAM_slots, max_RAM, expansion_slots, capacity, voltage, id_type, id_supplier) VALUES
+(1, 'Z490 AORUS MASTER', 'Gigabyte', 'Intel Z490', 'ATX', 'LGA 1200', 4, 64.00, 2, 450.00, 1.20, 1, 1),
+(2, 'ROG Strix B550-F', 'Asus', 'AMD B550', 'ATX', 'AM4', 4, 64.00, 2, 380.00, 1.10, 2, 3),
+(3, 'MSI B450 TOMAHAWK', 'MSI', 'AMD B450', 'ATX', 'AM4', 4, 64.00, 1, 320.00, 1.20, 3, 3),
+(4, 'Z390 AORUS PRO', 'Gigabyte', 'Intel Z390', 'ATX', 'LGA 1151', 4, 64.00, 2, 420.00, 1.20, 4, 4),
+(5, 'X570 TUF GAMING', 'Asus', 'AMD X570', 'ATX', 'AM4', 4, 64.00, 2, 500.00, 1.20, 5, 5),
+(6, 'B460M-A', 'Asus', 'Intel B460', 'Micro-ATX', 'LGA 1200', 2, 32.00, 1, 280.00, 1.20, 1, 6),
+(7, 'TUF Gaming B550M-PLUS', 'Asus', 'AMD B550', 'Micro-ATX', 'AM4', 4, 64.00, 2, 360.00, 1.10, 2, 2),
+(8, 'MSI MAG B550M MORTAR', 'MSI', 'AMD B550', 'Micro-ATX', 'AM4', 4, 64.00, 2, 390.00, 1.10, 3, 3),
+(9, 'B450M DS3H', 'Gigabyte', 'AMD B450', 'Micro-ATX', 'AM4', 2, 32.00, 1, 270.00, 1.20, 4, 4),
+(10, 'B460M Pro-VDH', 'MSI', 'Intel B460', 'Micro-ATX', 'LGA 1200', 2, 32.00, 1, 290.00, 1.20, 5, 5),
+(11, 'B550-A PRO', 'MSI', 'AMD B550', 'ATX', 'AM4', 4, 64.00, 2, 440.00, 1.20, 1, 1),
+(12, 'B460M Steel Legend', 'ASRock', 'Intel B460', 'Micro-ATX', 'LGA 1200', 2, 32.00, 1, 310.00, 1.20, 2, 2),
+(13, 'ASRock X570 Phantom Gaming', 'ASRock', 'AMD X570', 'ATX', 'AM4', 4, 64.00, 2, 470.00, 1.20, 3, 3),
+(14, 'MSI MEG Z490 GODLIKE', 'MSI', 'Intel Z490', 'ATX', 'LGA 1200', 4, 64.00, 2, 520.00, 1.20, 4, 4),
+(15, 'ASUS Prime Z590-A', 'Asus', 'Intel Z590', 'ATX', 'LGA 1200', 4, 64.00, 2, 500.00, 1.20, 5, 5),
+(16, 'Gigabyte AORUS B550 PRO', 'Gigabyte', 'AMD B550', 'ATX', 'AM4', 4, 64.00, 2, 440.00, 1.20, 1, 1),
+(17, 'MSI MPG Z490 GAMING EDGE', 'MSI', 'Intel Z490', 'ATX', 'LGA 1200', 4, 64.00, 2, 480.00, 1.20, 2, 2),
+(18, 'Gigabyte X570 AORUS ELITE', 'Gigabyte', 'AMD X570', 'ATX', 'AM4', 4, 64.00, 2, 500.00, 1.20, 3, 3),
+(19, 'Z370 Pro4', 'ASRock', 'Intel Z370', 'ATX', 'LGA 1151', 4, 64.00, 2, 410.00, 1.20, 4, 4),
+(20, 'MSI Z490-A PRO', 'MSI', 'Intel Z490', 'ATX', 'LGA 1200', 4, 64.00, 2, 450.00, 1.20, 5, 5);
+
+INSERT INTO MATERIAL_COMPONENT (id_material, capacity, voltage, type, brand, model, id_type, id_supplier) VALUES 
+(21, 4000, 3.7, 'Lithium-ion', 'Samsung', 'EB-BG975ABY', 3, 1),
+(22, 3000, 3.8, 'Lithium-ion', 'LG', 'LG G5 Battery', 3, 2),
+(23, 3500, 3.7, 'Lithium-ion', 'Sony', 'Xperia Z3 Battery', 3, 3),
+(24, 5000, 3.8, 'Lithium-ion', 'Motorola', 'Moto G Power Battery', 3, 4),
+(25, 3500, 3.7, 'Lithium-ion', 'Apple', 'iPhone 6S Battery', 3, 5),
+(26, 4000, 3.8, 'Lithium-ion', 'Huawei', 'P30 Pro Battery', 3, 6),
+(27, 2800, 3.7, 'Lithium-ion', 'Nokia', 'Nokia 7 Plus Battery', 3, 7),
+(28, 4500, 3.8, 'Lithium-ion', 'OnePlus', 'OnePlus 8T Battery', 3, 8),
+(29, 3200, 3.7, 'Lithium-ion', 'Google', 'Pixel 4 Battery', 3, 9),
+(30, 3700, 3.7, 'Lithium-ion', 'Xiaomi', 'Mi 10 Battery', 3, 10),
+(31, 2900, 3.8, 'Lithium-ion', 'Oppo', 'Oppo Reno2 Battery', 3, 1),
+(32, 3600, 3.7, 'Lithium-ion', 'Realme', 'Realme 7 Pro Battery', 3, 2),
+(33, 4200, 3.7, 'Lithium-ion', 'Vivo', 'Vivo V21e Battery', 3, 3),
+(34, 5000, 3.8, 'Lithium-ion', 'Samsung', 'Galaxy S21 Ultra Battery', 3, 4),
+(35, 2500, 3.7, 'Lithium-ion', 'Lenovo', 'Moto E Battery', 3, 5),
+(36, 3700, 3.7, 'Lithium-ion', 'Asus', 'Zenfone 7 Battery', 3, 6),
+(37, 4100, 3.8, 'Lithium-ion', 'HTC', 'HTC U11 Battery', 3, 7),
+(38, 4200, 3.7, 'Lithium-ion', 'Blackberry', 'KeyOne Battery', 3, 8),
+(39, 3800, 3.7, 'Lithium-ion', 'Sony', 'Xperia XZ Premium Battery', 3, 9),
+(40, 4500, 3.8, 'Lithium-ion', 'LG', 'V40 ThinQ Battery', 3, 10);
+
+
+INSERT INTO MATERIAL_COMPONENT (id_material, capacity, type, brand, model, id_type, id_supplier) VALUES
+(41, 150, 'Air Cooling', 'Cooler Master', 'Hyper 212 EVO', 11, 1),
+(42, 200, 'Air Cooling', 'NZXT', 'KRaken X73', 11, 2),
+(43, 180, 'Liquid Cooling', 'Corsair', 'iCUE H100i Elite Capellix', 11, 3),
+(44, 160, 'Air Cooling', 'Noctua', 'NH-D15', 11, 4),
+(45, 250, 'Liquid Cooling', 'Corsair', 'Hydro Series H150i Pro', 11, 5),
+(46, 120, 'Air Cooling', 'be quiet!', 'Dark Rock Pro 4', 11, 6),
+(47, 220, 'Liquid Cooling', 'Cooler Master', 'MasterLiquid ML360R', 11, 7),
+(48, 140, 'Air Cooling', 'DeepCool', 'Gammaxx 400 V2', 11, 8),
+(49, 100, 'Air Cooling', 'ARCTIC', 'Freezer 34 eSports', 11, 9),
+(50, 180, 'Liquid Cooling', 'NZXT', 'Kraken Z63', 11, 10),
+(51, 160, 'Air Cooling', 'Scythe', 'Mugen 5 Rev.B', 11, 1),
+(52, 250, 'Liquid Cooling', 'EKWB', 'EK-AIO 360 D-RGB', 11, 2),
+(53, 140, 'Air Cooling', 'Thermaltake', 'Frio Silent 12', 11, 3),
+(54, 210, 'Liquid Cooling', 'Corsair', 'iCUE H115i Elite Capellix', 11, 4),
+(55, 200, 'Air Cooling', 'Phanteks', 'PH-TC14PE', 11, 5),
+(56, 150, 'Air Cooling', 'Cryorig', 'R1 Ultimate', 11, 6),
+(57, 170, 'Liquid Cooling', 'MSI', 'MAG CoreLiquid 360R', 11, 7),
+(58, 120, 'Air Cooling', 'Zalman', 'CNPS10X Performa+', 11, 8),
+(59, 220, 'Liquid Cooling', 'Gigabyte', 'AORUS Liquid Cooler 360', 11, 9),
+(60, 180, 'Air Cooling', 'SilverStone', 'Argon AR07', 11, 10);
+
+
+INSERT INTO MATERIAL_COMPONENT (id_material, type, quantity, brand, model, id_type, id_supplier) VALUES --ports
+(61, 'USB 3.0', 4, 'Intel', 'USB 3.0 Port', 12, 1),
+(62, 'HDMI', 1, 'Samsung', 'HDMI 2.1', 12, 2),
+(63, 'Ethernet', 1, 'TP-Link', 'Gigabit Ethernet', 12, 3),
+(64, 'USB-C', 2, 'Apple', 'Thunderbolt 3', 12, 4),
+(65, 'DisplayPort', 1, 'Nvidia', 'DisplayPort 1.4', 12, 5),
+(66, 'Thunderbolt', 1, 'Intel', 'Thunderbolt 3', 12, 6),
+(67, 'VGA', 1, 'AMD', 'VGA 1080p', 12, 7),
+(68, 'Audio Jack', 2, 'Realtek', 'Audio Jack 3.5mm', 12, 8),
+(69, 'USB 2.0', 2, 'Asus', 'USB 2.0 Port', 12, 9),
+(70, 'SD Card Slot', 1, 'Kingston', 'MicroSD Slot', 12, 10),
+(71, 'USB 3.0', 3, 'Intel', 'USB 3.0 Port', 12, 1),
+(72, 'HDMI', 1, 'Samsung', 'HDMI 2.1', 12, 2),
+(73, 'Ethernet', 1, 'TP-Link', 'Gigabit Ethernet', 12, 3),
+(74, 'USB-C', 1, 'Apple', 'Thunderbolt 3', 12, 4),
+(75, 'DisplayPort', 1, 'Nvidia', 'DisplayPort 1.4', 12, 5),
+(76, 'Thunderbolt', 1, 'Intel', 'Thunderbolt 3', 12, 6),
+(77, 'VGA', 1, 'AMD', 'VGA 1080p', 12, 7),
+(78, 'Audio Jack', 1, 'Realtek', 'Audio Jack 3.5mm', 12, 8),
+(79, 'USB 2.0', 2, 'Asus', 'USB 2.0 Port', 12, 9),
+(80, 'SD Card Slot', 1, 'Kingston', 'MicroSD Slot', 12, 10);
+
+INSERT INTO MATERIAL_COMPONENT (id_material, type, brand, model, id_type, id_supplier) VALUES --- sound card
+(81, 'Integrated', 'Realtek', 'ALC1150', 13, 1),
+(82, 'External', 'Creative', 'Sound Blaster X3', 13, 2),
+(83, 'Integrated', 'Realtek', 'ALC892', 13, 3),
+(84, 'External', 'Asus', 'Xonar U7 MKII', 13, 4),
+(85, 'Integrated', 'Intel', 'High Definition Audio', 13, 5),
+(86, 'External', 'Focusrite', 'Scarlett 2i2', 13, 6),
+(87, 'Integrated', 'Realtek', 'ALC269', 13, 7),
+(88, 'External', 'Behringer', 'UFO202', 13, 8),
+(89, 'Integrated', 'Realtek', 'ALC892', 13, 9),
+(90, 'External', 'MOTU', 'M4 Audio Interface', 13, 10),
+(91, 'Integrated', 'Realtek', 'ALC1220', 13, 1),
+(92, 'External', 'Sennheiser', 'GSX 1000', 13, 2),
+(93, 'Integrated', 'Realtek', 'ALC897', 13, 3),
+(94, 'External', 'FiiO', 'K3', 13, 4),
+(95, 'Integrated', 'Intel', 'High Definition Audio', 13, 5),
+(96, 'External', 'Behringer', 'UMC22', 13, 6),
+(97, 'Integrated', 'Realtek', 'ALC888', 13, 7),
+(98, 'External', 'Focusrite', 'Scarlett Solo', 13, 8),
+(99, 'Integrated', 'Realtek', 'ALC1220', 13, 9),
+(100, 'External', 'PreSonus', 'AudioBox USB 96', 13, 10);
+
+INSERT INTO MATERIAL_COMPONENT (id_material, voltage, brand, model, id_type, id_supplier) VALUES
+(101, 15, 'JBL', 'Flip 5', 14, 1),
+(102, 30, 'Sony', 'SRS-XB12', 14, 2),
+(103, 20, 'Bose', 'SoundLink Mini', 14, 3),
+(104, 25, 'Logitech', 'Z313', 14, 4),
+(105, 18, 'Anker', 'Soundcore 2', 14, 5),
+(106, 35, 'Creative', 'Pebble V2', 14, 6),
+(107, 12, 'Ultimate Ears', 'BOOM 3', 14, 7),
+(108, 40, 'Harman Kardon', 'SoundSticks 4', 14, 8),
+(109, 16, 'Marshall', 'Emberton', 14, 9),
+(110, 50, 'Edifier', 'R980T', 14, 10),
+(111, 14, 'JBL', 'Charge 4', 14, 1),
+(112, 45, 'Bose', 'SoundTouch 10', 14, 2),
+(113, 22, 'Sony', 'SRS-XB43', 14, 3),
+(114, 30, 'Logitech', 'Z906', 14, 4),
+(115, 24, 'Anker', 'Soundcore Flare', 14, 5),
+(116, 28, 'Harman Kardon', 'Onyx Studio 4', 14, 6),
+(117, 20, 'Bose', 'Home Speaker 500', 14, 7),
+(118, 38, 'Sony', 'HT-S350', 14, 8),
+(119, 18, 'Ultimate Ears', 'MEGABOOM 3', 14, 9),
+(120, 60, 'Edifier', 'S350DB', 14, 10);
+
+
 
 ----------------------- Material Hardware -----------------------
 INSERT INTO MATERIAL_HARDWARE (id_material, model, brand, speed, cores, threads, cache_memory, power_consumption, id_type, id_supplier) VALUES  -- insert de procesadores
@@ -189,6 +325,119 @@ INSERT INTO MATERIAL_HARDWARE (id_material, model, brand, cores, power_consumpti
 ----------------------- Material Physical -----------------------
 INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, size, design, material_type, sensitivity, connectivity) VALUES  -- insert de pantalla
 (1, '3840x2160', '15.6 inches', 'Slim Bezel', 'OLED', 'High', 'HDMI, DisplayPort');
+
+INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, size, sensitivity, model, brand, id_type, id_supplier) VALUES 
+(2, '1920x1080', '15.6"', 'Touchscreen', 'Inspiron 15 5000', 'Dell', 5, 1),
+(3, '2560x1440', '17.3"', 'Non-Touch', 'XPS 17', 'Dell', 5, 2),
+(4, '3840x2160', '13.3"', 'Touchscreen', 'MacBook Pro 13', 'Apple', 5, 3),
+(5, '1366x768', '14.0"', 'Non-Touch', 'Lenovo IdeaPad 14"', 'Lenovo', 5, 4),
+(6, '1920x1200', '16.0"', 'Non-Touch', 'ThinkPad T14', 'Lenovo', 5, 5),
+(7, '2560x1600', '14.5"', 'Touchscreen', 'Surface Laptop 3', 'Microsoft', 5, 6),
+(8, '1920x1080', '13.3"', 'Non-Touch', 'MacBook Air 13"', 'Apple', 5, 7),
+(9, '3840x2160', '15.6"', 'Touchscreen', 'XPS 15', 'Dell', 5, 8),
+(10, '1280x800', '12.5"', 'Non-Touch', 'Chromebook 12"', 'HP', 5, 9),
+(11, '1920x1080', '17.3"', 'Non-Touch', 'TUF Gaming A17', 'ASUS', 5, 10),
+(12, '2560x1440', '14.0"', 'Touchscreen', 'Surface Pro 7', 'Microsoft', 5, 1),
+(13, '1366x768', '11.6"', 'Non-Touch', 'Chromebook 11"', 'HP', 5, 2),
+(14, '1920x1080', '16.1"', 'Touchscreen', 'Envy x360', 'HP', 5, 3),
+(15, '3840x2400', '16.0"', 'Non-Touch', 'MacBook Pro 16"', 'Apple', 5, 4),
+(16, '1920x1080', '14.1"', 'Non-Touch', 'ThinkPad X1 Carbon', 'Lenovo', 5, 5),
+(17, '2560x1440', '17.0"', 'Touchscreen', 'Precision 5000 Series', 'Dell', 5, 6),
+(18, '1920x1200', '15.6"', 'Non-Touch', 'Latitude 5510', 'Dell', 5, 7),
+(19, '3840x2160', '13.3"', 'Touchscreen', 'MacBook Pro 13"', 'Apple', 5, 8),
+(20, '1920x1080', '15.6"', 'Non-Touch', 'Inspiron 15 3000', 'Dell', 5, 9),
+(21, '1366x768', '12.0"', 'Non-Touch', 'Acer Aspire 12"', 'Acer', 5, 10);
+
+INSERT INTO MATERIAL_PHYSICAL (id_material, size, design, sensitivity, model, brand, id_type, id_supplier) VALUES -- Teclados
+(22, 'Full-size', 'Chiclet, RGB Backlit', 'Mechanical', 'K95 RGB Platinum', 'Corsair', 6, 8),
+(23, 'Compact', 'Low-Profile, White Backlit', 'Membrane', 'MX Keys', 'Logitech', 6, 9),
+(24, 'Tenkeyless', 'Mechanical, Per-key RGB', 'Mechanical', 'Razer BlackWidow V3', 'Razer', 6, 10),
+(25, 'Full-size', 'Standard', 'Membrane', 'K120', 'Logitech', 6, 1),
+(26, 'Mechanical', 'RGB Backlit', 'Mechanical', 'G Pro X', 'Logitech', 6, 9),
+(27, 'Wireless', 'Ultra-thin', 'Membrane', 'K780 Multi-Device', 'Logitech', 6, 2),
+(28, 'Compact', 'Gaming, RGB', 'Mechanical', 'Huntsman Mini', 'Razer', 6, 6),
+(29, 'Standard', 'No Backlight', 'Membrane', 'MK120', 'Microsoft', 6, 6),
+(30, 'Mechanical', 'High Durability', 'Mechanical', 'SteelSeries Apex Pro', 'SteelSeries', 6, 7),
+(31, 'Full-size', 'White LED Backlit', 'Membrane', 'DeskBoard', 'Keychron', 6, 8),
+(32, 'Low-Profile', 'Minimalist', 'Membrane', 'Pavilion 500', 'HP', 6, 9),
+(33, 'Gaming', 'RGB Backlit', 'Mechanical', 'Corsair K70 RGB MK.2', 'Corsair', 6, 10),
+(34, 'Standard', 'Office Use', 'Membrane', 'Classic 104', 'Microsoft', 6, 4),
+(35, 'Compact', 'Ultra-lightweight', 'Membrane', 'Logitech K380', 'Logitech', 6, 3),
+(36, 'Gaming', 'Per-key RGB', 'Mechanical', 'Razer Huntsman Elite', 'Razer', 6, 4),
+(37, 'Standard', 'No Numpad', 'Membrane', 'M100', 'Logitech', 6, 7),
+(38, 'Mechanical', 'RGB, Durable', 'Mechanical', 'HyperX Alloy FPS Pro', 'HyperX', 6, 6),
+(39, 'Slim', 'Silent Typing', 'Membrane', 'Ultra Slim', 'Microsoft', 6, 7),
+(40, 'Gaming', 'High Response', 'Mechanical', 'SteelSeries Apex 7', 'SteelSeries', 6, 8),
+(41, 'Compact', 'Standard', 'Membrane', 'Keychron K6', 'Keychron', 6, 9);
+
+
+
+INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, size, design, model, brand, id_type, id_supplier) VALUES -- Touchpad
+(42, NULL, '4.5"x3.1"', 'Glass Precision Touchpad', 'Precision Touchpad', 'Dell', 7, 1),
+(43, NULL, '5.3"x3.2"', 'Haptic Feedback, Click Anywhere', 'TouchPad X', 'HP', 7, 2),
+(44, NULL, '4.7"x3.0"', 'Standard Multi-Touch', 'TouchPad 101', 'Lenovo', 7, 3),
+(45, NULL, '4.6"x3.2"', 'Precision Touchpad', 'Multi-Precision', 'Asus', 7, 4),
+(46, NULL, '5.0"x3.0"', 'Responsive Touchpad', 'EcoTouch', 'Acer', 7, 5),
+(47, NULL, '4.5"x3.0"', 'Smooth Glass Surface', 'Glass Surface 500', 'Apple', 7, 6),
+(48, NULL, '5.2"x3.1"', 'Responsive, Multi-Touch', 'UltraTouch', 'Microsoft', 7, 7),
+(49, NULL, '5.0"x3.3"', 'Standard Click Touchpad', 'ClickPad', 'HP', 7, 8),
+(50, NULL, '4.8"x3.2"', 'Glass Precision Touchpad', 'Precision Touch', 'Dell', 7, 9),
+(51, NULL, '4.9"x3.1"', 'Haptic Feedback', 'FeelPad', 'Logitech', 7, 10),
+(52, NULL, '4.6"x3.0"', 'Standard Touchpad', 'SmoothGlide', 'Lenovo', 7, 1),
+(53, NULL, '5.1"x3.2"', 'Force Touch', 'ForceTouchPad', 'Apple', 7, 2),
+(54, NULL, '5.0"x3.1"', 'Standard Precision', 'PrecisionPad', 'Microsoft', 7, 3),
+(55, NULL, '4.8"x3.0"', 'Responsive Glass Surface', 'ClearTouch', 'Asus', 7, 4),
+(56, NULL, '5.4"x3.3"', 'Click Anywhere', 'AnyClick Pad', 'Acer', 7, 5),
+(57, NULL, '5.2"x3.0"', 'Precision Touchpad', 'TouchPlus', 'HP', 7, 6),
+(58, NULL, '4.7"x3.1"', 'Responsive, Multi-Touch', 'QuickTouch', 'Dell', 7, 7),
+(59, NULL, '4.9"x3.2"', 'Smooth Glass Precision', 'PrecisionGlass', 'Logitech', 7, 8),
+(60, NULL, '5.0"x3.0"', 'Click Anywhere', 'TouchClick', 'Lenovo', 7, 9),
+(61, NULL, '5.1"x3.3"', 'Haptic Feedback', 'PadFeel', 'Microsoft', 7, 10);
+
+INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, design, model, brand, id_type, id_supplier) VALUES -- Cámaras para laptops
+(62, '720p', 'Integrated Webcam', 'HD Webcam 720p', 'Logitech', 8, 1),
+(63, '1080p', 'Webcam', 'C920 HD Pro', 'Logitech', 8, 2),
+(64, '4K', 'Webcam', 'Brio Ultra HD', 'Logitech', 8, 3),
+(65, '720p', 'Integrated Webcam', 'HD Camera', 'HP', 8, 4),
+(66, '1080p', 'Webcam', 'WEBCAM 1080p', 'Acer', 8, 5),
+(67, '720p', 'Integrated Webcam', 'Built-in HD Camera', 'Dell', 8, 6),
+(68, '1080p', 'Webcam', 'C922 Pro Stream', 'Logitech', 8, 7),
+(69, '720p', 'Integrated Webcam', 'HP HD Webcam', 'HP', 8, 8),
+(70, '1080p', 'Webcam', 'P920 HD Webcam', 'Lenovo', 8, 9),
+(71, '720p', 'Integrated Webcam', 'HD Camera', 'Asus', 8, 10),
+(72, '1080p', 'Webcam', 'C930e Business Webcam', 'Logitech', 8, 1),
+(73, '720p', 'Integrated Webcam', 'HD Webcam', 'MSI', 8, 2),
+(74, '1080p', 'Webcam', 'ASUS ROG Webcam', 'Asus', 8, 3),
+(75, '720p', 'Integrated Webcam', 'EliteBook HD Webcam', 'HP', 8, 4),
+(76, '1080p', 'Webcam', 'Logitech StreamCam', 'Logitech', 8, 5),
+(77, '4K', 'Webcam', 'Brio 4K Pro', 'Logitech', 8, 6),
+(78, '720p', 'Integrated Webcam', 'Acer HD Webcam', 'Acer', 8, 7),
+(79, '1080p', 'Webcam', 'Lenovo 1080p Camera', 'Lenovo', 8, 8),
+(80, '720p', 'Integrated Webcam', 'Toshiba Built-in Webcam', 'Toshiba', 8, 9),
+(81, '1080p', 'Webcam', 'Razer Kiyo', 'Razer', 8, 10);
+
+
+INSERT INTO MATERIAL_PHYSICAL (id_material, material_type, design, model, brand, id_type, id_supplier) VALUES -- Chasis para laptops
+(82, 'Aluminum', 'Slim, High Durability', 'XPS 13 Chassis', 'Dell', 9, 1),
+(83, 'Plastic', 'Compact, Lightweight', 'Inspiron Chassis', 'Dell', 9, 2),
+(84, 'Aluminum', 'Premium, Sleek', 'MacBook Air Chassis', 'Apple', 9, 3),
+(85, 'Magnesium Alloy', 'Ultra-thin, Reinforced', 'ThinkPad Chassis', 'Lenovo', 9, 4),
+(86, 'Plastic', 'Ergonomic, Textured', 'Envy 13 Chassis', 'HP', 9, 5),
+(87, 'Aluminum', 'Sleek, Modern', 'ZenBook Chassis', 'Asus', 9, 6),
+(88, 'Plastic', 'Shockproof, Durable', 'Predator Chassis', 'Acer', 9, 7),
+(89, 'Aluminum', 'Lightweight, High Performance', 'EliteBook Chassis', 'HP', 9, 8),
+(90, 'Magnesium Alloy', 'Durable, Lightweight', 'Surface Laptop Chassis', 'Microsoft', 9, 9),
+(91, 'Aluminum', 'Premium, Slim', 'Pavilion Chassis', 'HP', 9, 10),
+(92, 'Aluminum', 'Thin, Light', 'Razer Blade Stealth Chassis', 'Razer', 9, 1),
+(93, 'Plastic', 'Textured, Lightweight', 'Lenovo IdeaPad Chassis', 'Lenovo', 9, 2),
+(94, 'Magnesium Alloy', 'Modern, Sleek', 'MacBook Pro Chassis', 'Apple', 9, 3),
+(95, 'Aluminum', 'Luxury, Ultra-thin', 'Spectre x360 Chassis', 'HP', 9, 4),
+(96, 'Plastic', 'Robust, Shock-resistant', 'Toughbook Chassis', 'Panasonic', 9, 5),
+(97, 'Aluminum', 'Stylish, Slim', 'Acer Swift Chassis', 'Acer', 9, 6),
+(98, 'Magnesium Alloy', 'Elegant, Lightweight', 'ASUS VivoBook Chassis', 'Asus', 9, 7),
+(99, 'Aluminum', 'Premium, Ultra-light', 'Latitude Chassis', 'Dell', 9, 8),
+(100, 'Plastic', 'Slim, Durable', 'Chromebook Chassis', 'HP', 9, 9),
+(101, 'Aluminum', 'Rugged, Performance', 'Toughbook 55 Chassis', 'Panasonic', 9, 10);
 
 
 ----------------------- RECEIVED_MATERIAL -----------------------

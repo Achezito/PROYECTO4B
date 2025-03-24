@@ -92,6 +92,8 @@ CREATE TABLE MATERIAL_HARDWARE (
 -- Tabla de materiales físicos (especializada)
 CREATE TABLE MATERIAL_PHYSICAL (
     id_material INT PRIMARY KEY,
+    model VARCHAR(255),
+    brand VARCHAR(100),
     resolution VARCHAR(50),
     size VARCHAR(50),
     design VARCHAR(100),
@@ -104,10 +106,11 @@ CREATE TABLE MATERIAL_PHYSICAL (
     FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier)
 );
 
-
 -- Tabla de materiales componentes (especializada)
 CREATE TABLE MATERIAL_COMPONENT (
     id_material INT PRIMARY KEY,
+    model VARCHAR(255),
+    brand VARCHAR(100),
     chipset VARCHAR(100),
     form_factor VARCHAR(50),
     socket_type VARCHAR(50),
@@ -124,6 +127,7 @@ CREATE TABLE MATERIAL_COMPONENT (
     FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier)
 );
 
+alter table MATERIAL_COMPONENT CHANGE socket_type type VARCHAR(50)
 
 -- Tabla de materiales (general)
 CREATE TABLE RECEIVED_MATERIAL (
