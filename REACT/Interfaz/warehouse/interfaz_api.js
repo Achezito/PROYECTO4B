@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-// API_URL es la direccion del archivo que se comunica con el model de la tabla para mandar el json (hice la carpeta react en phpFiles para poner ahi esos archivos)
-
-export default function interfaz_warehouse({ navigation}) {
-  console.log('Navigation:', navigation); // Verifica si navigation está disponible
+export default function interfaz_warehouse({ navigation }) {
   const [warehouses, setWarehouses] = useState([]);
-  const [groupedWarehouses, setGroupedWarehouses] = useState([]); // agrupar en pares para tener buen estilo
-
+  const [groupedWarehouses, setGroupedWarehouses] = useState([]); // Agrupar en pares para tener buen estilo
+  const [menuVisible, setMenuVisible] = useState(false); // Controla la visibilidad del menú
   useEffect(() => { getWarehouses(); }, []); // El use effect es para mandar a llamar los datos al cargar la pantalla
   useEffect(() => { getCategories(); }, []);
   useEffect(() => { getOrders(); }, []);
@@ -167,6 +165,37 @@ const getPhysical =  async () => {
 
 return (
   <View style={styles.container}>
+    {/* Menú tipo hamburguesa */}
+    <TouchableOpacity
+      style={styles.menuButton}
+      onPress={() => setMenuVisible(!menuVisible)} // Alterna la visibilidad del menú
+    >
+      <Icon name="menu" size={30} color="white" />
+    </TouchableOpacity>
+
+    {menuVisible && (
+      <View style={styles.menu}>
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => {
+            setMenuVisible(false);
+            navigation.navigate('CreateWarehouse'); // Navega a la pantalla para añadir un almacén
+          }}
+        >
+          <Text style={styles.menuText}>Añadir Almacén</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => {
+            setMenuVisible(false);
+            navigation.navigate('UpdateWarehouse'); // Navega a la pantalla para actualizar un almacén
+          }}
+        >
+          <Text style={styles.menuText}>Actualizar Almacén</Text>
+        </TouchableOpacity>
+      </View>
+    )}
+
     <FlatList
       style={styles.list}
       data={groupedWarehouses} // Usamos la lista agrupada
@@ -211,44 +240,74 @@ return (
     />
   </View>
 );
-
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'rgb(33, 37, 41)',
-    padding: 20,
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  card: {
-    flex: 1,
-    backgroundColor: 'white',
-    borderRadius: 15,
-    padding: 20,
-    marginHorizontal: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 6,
-  },
-  cardTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'rgb(42, 126, 209)',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  cardSubtitle: {
-    fontSize: 16,
-    color: 'rgb(33, 37, 41)',
-    marginBottom: 5,
-    textAlign: 'center',
-  },
+container: {
+  flex: 1,
+  backgroundColor: 'rgb(33, 37, 41)',
+  padding: 20,
+},
+menuButton: {
+  position: 'absolute',
+  top: 20,
+  right: 20,
+  zIndex: 10,
+  backgroundColor: 'rgb(42, 126, 209)',
+  borderRadius: 50,
+  padding: 10,
+},
+menu: {
+  position: 'absolute',
+  top: 70,
+  right: 20,
+  backgroundColor: 'white',
+  borderRadius: 10,
+  padding: 10,
+  zIndex: 10,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.3,
+  shadowRadius: 5,
+  elevation: 5,
+},
+menuItem: {
+  paddingVertical: 10,
+  paddingHorizontal: 20,
+},
+menuText: {
+  fontSize: 16,
+  color: 'rgb(33, 37, 41)',
+},
+row: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  marginBottom: 20,
+},
+card: {
+  flex: 1,
+  backgroundColor: 'white',
+  borderRadius: 15,
+  padding: 20,
+  marginHorizontal: 10,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.3,
+  shadowRadius: 5,
+  elevation: 6,
+},
+cardTitle: {
+  fontSize: 20,
+  fontWeight: 'bold',
+  color: 'rgb(42, 126, 209)',
+  marginBottom: 10,
+  textAlign: 'center',
+},
+cardSubtitle: {
+  fontSize: 16,
+  color: 'rgb(33, 37, 41)',
+  marginBottom: 5,
+  textAlign: 'center',
+},
 });

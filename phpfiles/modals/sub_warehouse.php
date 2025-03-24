@@ -151,6 +151,65 @@ class SubWarehouse {
 
     }
 
+    
+public static function updateSubWarehouse($id_sub_warehouse, $location, $capacity, $id_category) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Error de conexión a la base de datos: " . $connection->connect_error;
+    }
+
+    $query = "UPDATE sub_warehouse SET location = ?, capacity = ?, id_category = ? WHERE id_sub_warehouse = ?";
+    $statement = $connection->prepare($query);
+
+    if (!$statement) {
+        return "Error preparando la consulta: " . $connection->error;
+    }
+
+    $statement->bind_param("siii", $location, $capacity, $id_category, $id_sub_warehouse);
+    $result = $statement->execute();
+
+    if ($result) {
+        $statement->close();
+        $connection->close();
+        return true; // Actualización exitosa
+    } else {
+        $error = $statement->error;
+        $statement->close();
+        $connection->close();
+        return $error; // Devuelve el error si ocurre
+    }
+}
+  
+    
+    
+    
+    public static function createSubWarehouse($location, $capacity, $warehouse_id, $id_category) {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error de conexión a la base de datos: " . $connection->connect_error;
+        }
+    
+        $query = "INSERT INTO sub_warehouse (location, capacity, id_warehouse, id_category) VALUES (?, ?, ?, ?)";
+        $statement = $connection->prepare($query);
+    
+        if (!$statement) {
+            return "Error preparando la consulta: " . $connection->error;
+        }
+    
+        $statement->bind_param("siii", $location, $capacity, $warehouse_id, $id_category);
+        $result = $statement->execute();
+    
+        if ($result) {
+            $statement->close();
+            $connection->close();
+            return true;
+        } else {
+            $error = $statement->error;
+            $statement->close();
+            $connection->close();
+            return $error;
+        }
+    }
 
 
     public static function getMaterialsBySubWarehouseId($id_sub_warehouse) {

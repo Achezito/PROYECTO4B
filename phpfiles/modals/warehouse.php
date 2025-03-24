@@ -80,39 +80,63 @@ class Warehouse {
 
 // Todavia no voy a usar estos metodos, primero los metodos para obtener los datos y luego para insertar o actualizar
 
-    public function createWarehouse(){
-        $connection = Conexion::get_connection();
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
-        }
 
-        $query = "INSERT INTO WAREHOUSE (name, location, capacity) VALUES (?, ?, ?)";
-        $command = $connection->prepare($query);
-        $command->bind_param('ssi', $this->name, $this->location, $this->capacity);
-
-        if ($command->execute()) {
-            return "Warehouse created successfully.";
-        } else {
-            return "Error creating warehouse: " . $command->error;
-        }
+public static function createWarehouse($name, $location, $capacity) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Database connection error: " . $connection->connect_error;
     }
 
-    public function updateWarehouse(){
-        $connection = Conexion::get_connection();
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
-        }
+    $query = "INSERT INTO warehouse (name, location, capacity) VALUES (?, ?, ?)";
+    $statement = $connection->prepare($query);
 
-        $query = "UPDATE WAREHOUSE SET name = ?, location = ?, capacity = ? WHERE id_warehouse = ?";
-        $command = $connection->prepare($query);
-        $command->bind_param('ssii', $this->name, $this->location, $this->capacity, $this->id_warehouse);
-
-        if ($command->execute()) {
-            return "Warehouse updated successfully.";
-        } else {
-            return "Error updating warehouse: " . $command->error;
-        }
+    if (!$statement) {
+        return "Error preparing statement: " . $connection->error;
     }
+
+    $statement->bind_param("ssi", $name, $location, $capacity); // "ssi" indica string, string, integer
+    $result = $statement->execute();
+
+    if ($result) {
+        $statement->close();
+        $connection->close();
+        return true; // Inserción exitosa
+    } else {
+        $error = $statement->error;
+        $statement->close();
+        $connection->close();
+        return $error; // Devuelve el error si ocurre
+    }
+}
+
+
+public static function updateWarehouse($id, $name, $location, $capacity) {
+    $connection = Conexion::get_connection();
+    if ($connection->connect_error) {
+        return "Database connection error: " . $connection->connect_error;
+    }
+
+    $query = "UPDATE warehouse SET name = ?, location = ?, capacity = ? WHERE id_warehouse = ?";
+    $statement = $connection->prepare($query);
+
+    if (!$statement) {
+        return "Error preparing statement: " . $connection->error;
+    }
+
+    $statement->bind_param("ssii", $name, $location, $capacity, $id); // "ssii" indica string, string, integer, integer
+    $result = $statement->execute();
+
+    if ($result) {
+        $statement->close();
+        $connection->close();
+        return true; // Actualización exitosa
+    } else {
+        $error = $statement->error;
+        $statement->close();
+        $connection->close();
+        return $error; // Devuelve el error si ocurre
+    }
+}
 
     public static function deleteWarehouse($id_warehouse){
         $connection = Conexion::get_connection();
@@ -130,4 +154,38 @@ class Warehouse {
             return "Error deleting warehouse: " . $command->error;
         }
     }
+
+    public static function getWarehouseById($id_warehouse){
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+
+        $query = "SELECT id_warehouse, name, location, capacity, created_at, updated_at FROM WAREHOUSE WHERE id_warehouse = ?";
+        $command = $connection->prepare($query);
+        $command->bind_param('i', $id_warehouse);
+        $command->execute();
+        $command->bind_result(
+            $id_warehouse,
+            $name,
+            $location,
+            $capacity,
+            $created_at,
+            $updated_at
+        );
+
+        if ($command->fetch()) {
+            return [
+                "id_warehouse" => $id_warehouse,
+                "name" => $name,
+                "location" => $location,
+                "capacity" => $capacity,
+                "created_at" => $created_at,
+                "updated_at" => $updated_at
+            ];
+        } else {
+            return "Warehouse not found.";
+        }
+    }
+
 }
