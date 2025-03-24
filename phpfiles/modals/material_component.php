@@ -15,6 +15,8 @@ class component{
     private $quantity;
     private $audio_channels;
     private $component_type;
+    private $id_supplier;
+    private $id_type;
 
     // Constructor
     public function __construct($id_material = null, $chipset = null, $form_factor = null, $type = null, $RAM_slots = null, $max_RAM = null, $expansion_slots = null){
@@ -73,7 +75,7 @@ class component{
             return "Error en la conexion" . $connection->connect_error;
         }
 
-        $command = $connection->prepare("SELECT id_material, chipset, form_factor, socket_type, RAM_slots, max_RAM, expansion_slots, capacity, voltage, quantity, audio_channels, component_type FROM MATERIAL_COMPONENT");
+        $command = $connection->prepare("SELECT id_material, chipset, form_factor, type, RAM_slots, max_RAM, expansion_slots, capacity, voltage, quantity, audio_channels, id_type, id_supplier  FROM MATERIAL_COMPONENT");
         $command->execute();
         $command->bind_result(
             $id_material,
@@ -87,7 +89,8 @@ class component{
             $voltage,
             $quantity,
             $audio_channels,
-            $component_type
+            $id_type,
+            $id_supplier
         );
 
         while ($command->fetch()) {
@@ -103,7 +106,8 @@ class component{
                 "voltage" => $voltage,
                 "quantity" => $quantity,
                 "audio_channels" => $audio_channels,
-                "component_type" => $component_type
+                "id_type" => $id_type,
+                "id_supplier" => $id_supplier
             ];
         }
     

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert, Picker } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Alert, Picker, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function NuevaTransaccionScreen({ route, navigation }) {
   const { id } = route.params; // ID del subalmacén

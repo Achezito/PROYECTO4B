@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function interfaz_warehouse({ navigation }) {
@@ -48,7 +48,7 @@ const getCategories = async () => {
       const data = await response.json();
       console.log("Categorias ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo Categorias:');
   }
 };
 
@@ -60,7 +60,7 @@ const getOrders = async () => {
       const data = await response.json();
       console.log("Ordenes ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo Ordenes:');
   }
 };
 
@@ -72,7 +72,7 @@ const getReceivedMaterial = async () => {
       const data = await response.json();
       console.log("Materiales recibidos ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo materiales recibidos:');
   }
 };
 
@@ -85,7 +85,7 @@ const getSub_warehouse =  async () => {
       const data = await response.json();
       console.log("subwarehouse",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo sub almacenes:');
   }
 };
 
@@ -97,7 +97,7 @@ const getSupply =  async () => {
       const data = await response.json();
       console.log("supply ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo supplys:');
   }
 };
 
@@ -109,7 +109,7 @@ const getSupplier =  async () => {
       const data = await response.json();
       console.log("proveedor   ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo supplier:');
   }
 };
 
@@ -121,7 +121,7 @@ const getTransaction =  async () => {
       const data = await response.json();
       console.log("Transacciones   ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo transaciones:');
   }
 };
 
@@ -133,7 +133,7 @@ const getHardware =  async () => {
       const data = await response.json();
       console.log("Hardware   ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo hardware:');
   }
 };
 
@@ -145,7 +145,7 @@ const getComponent =  async () => {
       const data = await response.json();
       console.log("Component   ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo component:');
   }
 };
 
@@ -157,7 +157,7 @@ const getPhysical =  async () => {
       const data = await response.json();
       console.log("Physical   ",data);
   } catch (error) {
-      console.error('Error obteniendo almacenes:');
+      console.error('Error obteniendo fisicos:');
   }
 };
 

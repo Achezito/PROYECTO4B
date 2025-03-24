@@ -7,19 +7,19 @@ import Material_Components from './POST/material_component';
 import Orders from './POST/orders';
 import { default as Interfaz, default as InterfazWarehouse } from "./warehouse/interfaz_api"; // Importar interfaz
 import SubWarehouseDetails from './warehouse/subwarehousedetails';
-import WarehouseDetails from './warehouse/warehousedetails';
-import MaterialesScreen from './warehouse/subwarehouseOptions/materialesScreen';
-import OrdersScreen from './warehouse/subwarehouseOptions/ordersScreen';
-import TransaccionesScreen from './warehouse/subwarehouseOptions/transactionScreen';
-import CreateWarehouseScreen from "./warehouse/warehouse_create";
-import UpdateWarehouseScreen  from "./warehouse/warehouse_update";
-import addSubWareHouse from "./warehouse/subwarehouseOptions/addSubWareHouse";
-import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubWareHouse";
-import NuevaTransaccionScreen from "./warehouse/subwarehouseOptions/nuevaTransaccionScreen";
-import ProveedoresScreen from "./warehouse/subwarehouseOptions/proveedoresScreen";
 import AddProveedorScreen from "./warehouse/subwarehouseOptions/addProveedorScreen";
+import addSubWareHouse from "./warehouse/subwarehouseOptions/addSubWareHouse";
 import EditProveedorScreen from "./warehouse/subwarehouseOptions/editProveedorScreen";
+import MaterialesScreen from './warehouse/subwarehouseOptions/materialesScreen';
+import NuevaTransaccionScreen from "./warehouse/subwarehouseOptions/nuevaTransaccionScreen";
+import OrdersScreen from './warehouse/subwarehouseOptions/ordersScreen';
+import ProveedoresScreen from "./warehouse/subwarehouseOptions/proveedoresScreen";
 import Suministros from "./warehouse/subwarehouseOptions/suministrosScreen";
+import TransaccionesScreen from './warehouse/subwarehouseOptions/transactionScreen';
+import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubWareHouse";
+import CreateWarehouseScreen from "./warehouse/warehouse_create";
+import UpdateWarehouseScreen from "./warehouse/warehouse_update";
+import WarehouseDetails from './warehouse/warehousedetails';
 
 
 

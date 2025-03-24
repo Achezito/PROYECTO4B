@@ -4,20 +4,18 @@ require_once __DIR__ . '/../config/conection.php';
 
 class Order {
     private $id_order;
-    private $order_date;
     private $id_status;
     private $id_supply;
-    private $quantity;
+    private $supply_quantity;
     private $created_at;
     private $updated_at;
 
     // Constructor
     public function __construct($id_order, $order_date, $id_status, $id_supply, $quantity, $created_at, $updated_at){
         $this->id_order = $id_order;
-        $this->order_date = $order_date;
         $this->id_status = $id_status;
         $this->id_supply = $id_supply;
-        $this->quantity = $quantity;
+        $this->supply_quantity = $quantity;
         $this->created_at = $created_at;
         $this->updated_at = $updated_at;
     }
@@ -26,17 +24,14 @@ class Order {
     public function getIdOrder(){ return $this->id_order; }
     public function setIdOrder($id_order){ $this->id_order = $id_order; }
 
-    public function getOrderDate(){ return $this->order_date; }
-    public function setOrderDate($order_date){ $this->order_date = $order_date; }
-
     public function getIdStatus(){ return $this->id_status; }
     public function setIdStatus($id_status){ $this->id_status = $id_status; }
 
     public function getIdSupply(){ return $this->id_supply; }
     public function setIdSupply($id_supply){ $this->id_supply = $id_supply; }
 
-    public function getQuantity(){ return $this->quantity; }
-    public function setQuantity($quantity){ $this->quantity = $quantity; }
+    public function getQuantity(){ return $this->supply_quantity; }
+    public function setQuantity($supply_quantity){ $this->supply_quantity = $supply_quantity; }
 
     public function getCreatedAt(){ return $this->created_at; }
     public function setCreatedAt($created_at){ $this->created_at = $created_at; }
@@ -51,15 +46,13 @@ class Order {
             return "Error en la conexión: " . $connection->connect_error;
         }
     
-        $query = "SELECT id_order, order_date, id_status, id_supply, quantity, created_at, updated_at FROM ORDERS";
+        $query = "SELECT id_order, id_status, supply_quantity, created_at, updated_at FROM ORDERS";
         $command = $connection->prepare($query);
         $command->execute();
         $command->bind_result(
             $id_order,
-            $order_date,
             $id_status,
-            $id_supply,
-            $quantity,
+            $supply_quantity,
             $created_at,
             $updated_at
         );
@@ -68,10 +61,8 @@ class Order {
         while ($command->fetch()) {
             $orders[] = [
                 "id_order" => $id_order,
-                "order_date" => $order_date,
                 "id_status" => $id_status,
-                "id_supply" => $id_supply,
-                "quantity" => $quantity,
+                "supply_quantity" => $supply_quantity,
                 "created_at" => $created_at,
                 "updated_at" => $updated_at
             ];

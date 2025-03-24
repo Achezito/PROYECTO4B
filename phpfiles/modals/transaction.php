@@ -9,18 +9,16 @@ class Transaction {
     private $id_sub_warehouse;
     private $type;
     private $quantity;
-    private $transaction_date;
     private $created_at;
     private $updated_at;
 
     // Constructor
-    public function __construct($id_transaction, $id_material, $id_sub_warehouse, $type, $quantity, $transaction_date, $created_at, $updated_at) {
+    public function __construct($id_transaction, $id_material, $id_sub_warehouse, $type, $quantity, $created_at, $updated_at) {
         $this->id_transaction = $id_transaction;
         $this->id_material = $id_material;
         $this->id_sub_warehouse = $id_sub_warehouse;
         $this->type = $type;
         $this->quantity = $quantity;
-        $this->transaction_date = $transaction_date;
         $this->created_at = $created_at;
         $this->updated_at = $updated_at;
     }
@@ -41,9 +39,6 @@ class Transaction {
     public function getQuantity() { return $this->quantity; }
     public function setQuantity($quantity) { $this->quantity = $quantity; }
 
-    public function getTransactionDate() { return $this->transaction_date; }
-    public function setTransactionDate($transaction_date) { $this->transaction_date = $transaction_date; }
-
     public function getCreatedAt() { return $this->created_at; }
     public function setCreatedAt($created_at) { $this->created_at = $created_at; }
 
@@ -57,10 +52,10 @@ class Transaction {
             return "Error en la conexión: " . $connection->connect_error;
         }
 
-        $query = "SELECT id_transaction, id_material, id_sub_warehouse, type, quantity, transaction_date, created_at, updated_at FROM TRANSACTIONS";
+        $query = "SELECT id_transaction, id_material, id_sub_warehouse, type, quantity, created_at, updated_at FROM TRANSACTIONS";
         $command = $connection->prepare($query);
         $command->execute();
-        $command->bind_result($id_transaction, $id_material, $id_sub_warehouse, $type, $quantity, $transaction_date, $created_at, $updated_at);
+        $command->bind_result($id_transaction, $id_material, $id_sub_warehouse, $type, $quantity, $created_at, $updated_at);
 
         $transactions = [];
         while ($command->fetch()) {
@@ -70,7 +65,6 @@ class Transaction {
                 "id_sub_warehouse" => $id_sub_warehouse,
                 "type" => $type,
                 "quantity" => $quantity,
-                "transaction_date" => $transaction_date,
                 "created_at" => $created_at,
                 "updated_at" => $updated_at
             ];

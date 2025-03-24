@@ -31,16 +31,18 @@ class hardware {
     private $power_consumption;
     private $vram;
     private $frecuency;
+    private $id_type;
+    private $id_supplier;
 
     private static $selectHardware = "
     SELECT id_material, model, speed, cores, threads, cache_memory, tipo, capacity, read_speed, write_speed,
-    brand, power_consumption, vram, frecuency, id_type
+    brand, power_consumption, vram, frecuency, id_type, id_supplier
     FROM material_hardware WHERE id_type = ?;
     ";
 
     private static $all = "
     SELECT id_material, model, speed, cores, threads, cache_memory, tipo, capacity, read_speed, write_speed,
-    brand, power_consumption, vram, frecuency, id_type
+    brand, power_consumption, vram, frecuency, id_type, id_supplier
     FROM material_hardware;
     ";
 
@@ -150,13 +152,15 @@ public static function getAllHardware() {
         $power_consumption,
         $vram,
         $frecuency,
-        $hardware_type
+        $id_type,
+        $id_supplier
     );
 
     $hardware = [];
         while ($command->fetch()) {
             $hardware[] = [
                 "id_material" => $id_material,
+                "brand" => $brand,
                 "model" => $model,
                 "speed" => $speed,
                 "cores" => $cores,
@@ -166,11 +170,11 @@ public static function getAllHardware() {
                 "capacity" => $capacity,
                 "read_speed" => $read_speed,
                 "write_speed" => $write_speed,
-                "brand" => $brand,
                 "power_consumption" => $power_consumption,
                 "vram" => $vram,
                 "frecuency" => $frecuency,
-                "hardware_type" => $hardware_type
+                "id_type" => $id_type,
+                "id_supplier" => $id_supplier,
             ];
         }
 

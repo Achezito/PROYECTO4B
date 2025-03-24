@@ -474,9 +474,8 @@ INSERT INTO SUB_WAREHOUSE_MATERIAL (id_sub_warehouse, id_material, quantity) VAL
 
 
 ----------------------- TRANSACTIONS -----------------------
-INSERT INTO TRANSACTIONS (id_material, id_sub_warehouse, type, quantity, transaction_date) VALUES
-(2, 3, 'inbound', 40, '2025-03-20'),
-(1, 1, 'inbound', 30, '2025-03-20');
+INSERT INTO TRANSACTIONS (id_material, id_sub_warehouse, type, quantity) VALUES
+(4, 1, 'inbound', 30);
 
 
 
