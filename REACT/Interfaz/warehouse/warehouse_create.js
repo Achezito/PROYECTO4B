@@ -1,20 +1,55 @@
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-export default function CreateWarehouseScreen() {
+export default function CreateWarehouseScreen({ navigation }) {
   const [warehouseName, setWarehouseName] = useState('');
   const [location, setLocation] = useState('');
   const [capacity, setCapacity] = useState('');
+  const [loading, setLoading] = useState(false); // Estado para manejar el indicador de carga
 
-  const handleCreateWarehouse = () => {
+  const handleCreateWarehouse = async () => {
     if (!warehouseName || !location || !capacity) {
       Alert.alert('Error', 'Please fill out all fields before submitting.');
       return;
     }
-    Alert.alert('Success', `Warehouse "${warehouseName}" created successfully!`);
-    setWarehouseName('');
-    setLocation('');
-    setCapacity('');
+
+    if (isNaN(capacity) || parseInt(capacity, 10) <= 0) {
+      Alert.alert('Error', 'Capacity must be a positive number.');
+      return;
+    }
+
+    setLoading(true); // Activa el indicador de carga
+
+    try {
+      const response = await fetch('http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: warehouseName,
+          location: location,
+          capacity: parseInt(capacity, 10),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        Alert.alert('Success', `Warehouse "${warehouseName}" created successfully!`);
+        setWarehouseName('');
+        setLocation('');
+        setCapacity('');
+        navigation.goBack(); // Regresa a la pantalla anterior
+      } else {
+        Alert.alert('Error', result.message || 'Failed to create warehouse.');
+      }
+    } catch (error) {
+      console.error('Error creating warehouse:', error);
+      Alert.alert('Error', 'An error occurred while creating the warehouse.');
+    } finally {
+      setLoading(false); // Desactiva el indicador de carga
+    }
   };
 
   return (
@@ -46,8 +81,8 @@ export default function CreateWarehouseScreen() {
         onChangeText={setCapacity}
       />
 
-      <TouchableOpacity style={styles.button} onPress={handleCreateWarehouse}>
-        <Text style={styles.buttonText}>Create Warehouse</Text>
+      <TouchableOpacity style={styles.button} onPress={handleCreateWarehouse} disabled={loading}>
+        <Text style={styles.buttonText}>{loading ? 'Creating...' : 'Create Warehouse'}</Text>
       </TouchableOpacity>
     </View>
   );

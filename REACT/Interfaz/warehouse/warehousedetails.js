@@ -3,11 +3,12 @@ import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity } from '
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function WarehouseDetails({ route, navigation }) {
-  const { id, name } = route.params;
-  const [subWarehouses, setSubWarehouses] = useState([]);
+  const { id, name } = route.params; // Recibe el ID y el nombre del almacén desde la navegación
+  const [subWarehouses, setSubWarehouses] = useState([]); // Lista de subalmacenes
+  const [menuVisible, setMenuVisible] = useState(false); // Controla la visibilidad del menú
 
   useEffect(() => {
-    fetchSubWarehouses();
+    fetchSubWarehouses(); // Carga los subalmacenes al montar el componente
   }, []);
 
   const fetchSubWarehouses = async () => {
@@ -22,6 +23,37 @@ export default function WarehouseDetails({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      {/* Menú tipo hamburguesa */}
+      <TouchableOpacity
+        style={styles.menuButton}
+        onPress={() => setMenuVisible(!menuVisible)} // Alterna la visibilidad del menú
+      >
+        <Icon name="menu" size={30} color="white" />
+      </TouchableOpacity>
+
+      {menuVisible && (
+        <View style={styles.menu}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => {
+              setMenuVisible(false);
+              navigation.navigate('AddSubWarehouse', { warehouseId: id }); // Navega a la pantalla para añadir un subalmacén
+            }}
+          >
+            <Text style={styles.menuText}>Añadir Subalmacén</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => {
+              setMenuVisible(false);
+              navigation.navigate('UpdateSubWarehouse', { warehouseId: id }); // Navega directamente a la pantalla de actualización
+            }}
+          >
+            <Text style={styles.menuText}>Actualizar Subalmacén</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
       <Text style={styles.title}>Almacén: {name}</Text>
       <FlatList
         data={subWarehouses}
@@ -35,6 +67,15 @@ export default function WarehouseDetails({ route, navigation }) {
               navigation.navigate('SubWarehouseDetails', {
                 id: item.ID,
                 location: item.Location,
+              })
+            }
+            onLongPress={() =>
+              navigation.navigate('UpdateSubWarehouse', {
+                id: item.ID,
+                location: item.Location,
+                capacity: item.Capacity,
+                id_category: item.IdCategory,
+                warehouseId: id,
               })
             }
           >
@@ -59,6 +100,37 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgb(33, 37, 41)', // Fondo oscuro
     padding: 20,
+  },
+  menuButton: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    zIndex: 10,
+    backgroundColor: 'rgb(42, 126, 209)',
+    borderRadius: 50,
+    padding: 10,
+  },
+  menu: {
+    position: 'absolute',
+    top: 70,
+    right: 20,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 10,
+    zIndex: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  menuItem: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  menuText: {
+    fontSize: 16,
+    color: 'rgb(33, 37, 41)',
   },
   title: {
     fontSize: 24,

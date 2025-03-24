@@ -8,6 +8,15 @@ import Orders from './POST/orders';
 import { default as Interfaz, default as InterfazWarehouse } from "./warehouse/interfaz_api"; // Importar interfaz
 import SubWarehouseDetails from './warehouse/subwarehousedetails';
 import WarehouseDetails from './warehouse/warehousedetails';
+import MaterialesScreen from './warehouse/subwarehouseOptions/materialesScreen';
+import OrdersScreen from './warehouse/subwarehouseOptions/ordersScreen';
+import TransaccionesScreen from './warehouse/subwarehouseOptions/transactionScreen';
+import CreateWarehouseScreen from "./warehouse/warehouse_create";
+import UpdateWarehouseScreen  from "./warehouse/warehouse_update";
+import addSubWareHouse from "./warehouse/subwarehouseOptions/addSubWareHouse";
+import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubWareHouse";
+
+
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
@@ -69,9 +78,10 @@ function LoginScreen({ navigation }) {
 function Post({ navigation }) {
   return (
       <View style={styles.container_POST}>
-        <Text style={styles.labelText} onPress={ () => { navigation.navigate("Category"); } }>Material</Text>
+        <Text style={styles.labelText} onPress={ () => { navigation.navigate("Category"); } }>Categoria</Text>
         <Text style={styles.labelText} onPress={ () => { navigation.navigate("Orders"); } }>Orders</Text>
         <Text style={styles.labelText} onPress={ () => { navigation.navigate("Material_Components"); } }>Material_Components</Text>
+     
       </View>
     );
 }
@@ -92,6 +102,13 @@ export default function App() {
         <Stack.Screen name="InterfazWarehouse" component={InterfazWarehouse} />
         <Stack.Screen name="WarehouseDetails" component={WarehouseDetails} />
         <Stack.Screen name="SubWarehouseDetails" component={SubWarehouseDetails} />
+        <Stack.Screen name="MaterialesScreen" component={MaterialesScreen} />
+        <Stack.Screen name="TransaccionesScreen " component={TransaccionesScreen } />
+        <Stack.Screen name="OrdersScreen" component={OrdersScreen} />
+        <Stack.Screen name="CreateWarehouse" component={CreateWarehouseScreen} />
+        <Stack.Screen name="UpdateWarehouse" component={UpdateWarehouseScreen} />
+        <Stack.Screen name="AddSubWarehouse" component={addSubWareHouse} />
+        <Stack.Screen name="UpdateSubWarehouse" component={UpdateSubWarehouseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
