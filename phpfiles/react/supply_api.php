@@ -17,12 +17,14 @@ $method = $_SERVER['REQUEST_METHOD']; // Se lee el método para manejar diferent
 
 switch ($method) {
     case 'GET': // Obtener suministros
-        if (isset($_GET['id_sub_warehouse'])) {
-            // Obtener suministros relacionados con un subalmacén específico
-            $id_sub_warehouse = intval($_GET['id_sub_warehouse']);
+        $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
+        $id_order = isset($_GET['id_order']) ? intval($_GET['id_order']) : null;
+
+        if ($id_sub_warehouse) {
             $supplies = Supply::getSuppliesBySubWarehouse($id_sub_warehouse);
+        } else if ($id_order) {
+            $supplies = Supply::getSuppliesByOrder($id_order);
         } else {
-            // Obtener todos los suministros
             $supplies = Supply::getSupplies();
         }
 

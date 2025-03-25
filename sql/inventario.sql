@@ -217,11 +217,15 @@ CREATE TABLE TRANSACTIONS (
 CREATE TABLE ORDERS (
     id_order INT PRIMARY KEY AUTO_INCREMENT,
     id_status INT DEFAULT 1,
-    supply_quantity INT,
+    supply_quantity INT ,
+    confirmation INT DEFAULT 3,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_status) REFERENCES STATUS(id_status)
+    FOREIGN KEY (id_status) REFERENCES STATUS(id_status),
+    FOREIGN KEY (confirmation) REFERENCES STATUS(id_status)
 );
+
+
 
 
 -- Tabla de roles

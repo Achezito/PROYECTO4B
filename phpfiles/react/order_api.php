@@ -19,39 +19,44 @@ try {
     switch ($method) {
         case 'GET': // Obtener órdenes
             $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
+            $confirmation = isset($_GET['confirmation']) ? intval($_GET['confirmation']) : null;
+            $status = isset($_GET['status']) ? intval($_GET['status']) : null;
+            $fecha = isset($_GET['fecha']) ? $_GET['fecha'] : null;
+            $id_order = isset($_GET['id_order']) ? $_GET['id_order'] : null;
 
-            if ($id_sub_warehouse) {
-                $orders = Order::getOrdersBySubWarehouseId($id_sub_warehouse);
-            } else {
-                $orders = Order::getOrders();
+            try {
+                if ($id_sub_warehouse) {
+                    $orders = Order::getOrdersBySubWarehouseId($id_sub_warehouse);
+                } else if ($confirmation) {
+                    $orders = Order::getOrdersByConfirmation($confirmation);
+                } else if ($status) {
+                    $orders = Order::getOrdersByStatus($status);
+                } else if ($fecha) {
+                    $orders = Order::getOrdersByDateOrder($fecha);
+                } else if ($id_order) {
+                    $orders = Order::getOrderById($id_order);
+                } else {
+                    $orders = Order::getOrders();
+                }
+
+                if (is_array($orders) && !empty($orders)) {
+                    echo json_encode($orders, JSON_PRETTY_PRINT);
+                } else if (is_array($orders) && empty($orders)) {
+                    echo json_encode(["message" => "No se encontraron órdenes"]);
+                } else {
+                    echo json_encode(["error" => "Error al obtener las órdenes."]);
+                }
+                
+            } catch (\Throwable $th) {
+                echo "No se pudieron Encontrar Ordenes";
             }
 
-            if (is_array($orders) && !empty($orders)) {
-                echo json_encode($orders, JSON_PRETTY_PRINT);
-            } elseif (is_array($orders) && empty($orders)) {
-                echo json_encode(["message" => "No se encontraron órdenes para el subalmacén especificado."]);
-                http_response_code(404); // Not Found
-            } else {
-                echo json_encode(["error" => "Error al obtener las órdenes."]);
-                http_response_code(500); // Internal Server Error
-            }
             break;
 
         case 'POST': // Agregar nueva orden
-            $data = json_decode(file_get_contents("php://input"), true);
 
-            if (
-                isset($data['order_date']) &&
-                isset($data['id_status']) &&
-                isset($data['id_supply']) &&
-                isset($data['quantity'])
-            ) {
-                $response = Order::insert(
-                    $data['order_date'],
-                    intval($data['id_status']),
-                    intval($data['id_supply']),
-                    intval($data['quantity'])
-                );
+            if ( isset($_POST['quantity'])) {
+                $response = Order::insert(0);
 
                 if ($response === true) {
                     echo json_encode(["message" => "Orden creada exitosamente."]);
@@ -60,12 +65,8 @@ try {
                     echo json_encode(["error" => $response]);
                     http_response_code(500); // Internal Server Error
                 }
-            } else {
-                echo json_encode(["error" => "Datos incompletos para crear la orden."]);
-                http_response_code(400); // Bad Request
             }
-            break;
-
+            
         default:
             echo json_encode(["error" => "Método no permitido."]);
             http_response_code(405); // Method Not Allowed

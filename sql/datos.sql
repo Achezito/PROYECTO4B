@@ -73,7 +73,10 @@ INSERT INTO SUPPLIER (id_supplier, name, contact_info, address) VALUES
 ----------------------- STATUS -----------------------
 INSERT INTO STATUS (id_status, description) VALUES
 (1, 'Pendiente'),
-(2, 'Entregado');
+(2, 'Entregado'),
+(3, 'Sin Confirmar'),
+(4, 'Por Confirmar');
+
 
 
 ----------------------- Supply -----------------------
