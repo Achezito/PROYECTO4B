@@ -20,6 +20,7 @@ import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubW
 import CreateWarehouseScreen from "./warehouse/warehouse_create";
 import UpdateWarehouseScreen from "./warehouse/warehouse_update";
 import WarehouseDetails from './warehouse/warehousedetails';
+import Dashboard from "./dashboard";
 
 
 
@@ -121,6 +122,7 @@ export default function App() {
         <Stack.Screen name="AddProveedorScreen" component={AddProveedorScreen} />
 <Stack.Screen name="EditProveedorScreen" component={EditProveedorScreen} />
 <Stack.Screen name= "Suministros" component={Suministros} />
+<Stack.Screen name="Dashboard" component={Dashboard} />
   
       </Stack.Navigator>
     </NavigationContainer>
