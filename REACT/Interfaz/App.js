@@ -29,6 +29,7 @@ import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubW
 import CreateWarehouseScreen from "./warehouse/warehouse_create";
 import UpdateWarehouseScreen from "./warehouse/warehouse_update";
 import WarehouseDetails from './warehouse/warehousedetails';
+import Dashboard from "./dashboard";
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
@@ -172,6 +173,7 @@ export default function App() {
         <Stack.Screen name="NuevaTransaccionScreen" component={NuevaTransaccionScreen} />
         <Stack.Screen name="ProveedoresScreen" component={ProveedoresScreen} />
         <Stack.Screen name="AddProveedorScreen" component={AddProveedorScreen} />
+<<<<<<< HEAD
         <Stack.Screen name="EditProveedorScreen" component={EditProveedorScreen} />
         <Stack.Screen name= "Suministros" component={Suministros} />
         <Stack.Screen name= "AllOrders" component={AllOrders} />
@@ -179,6 +181,12 @@ export default function App() {
         <Stack.Screen name= "AllProovedores" component={AllProovedores} />
         <Stack.Screen name= "Dashboard" component={Dashboard} />
         <Stack.Screen name= "AllTransactions" component={AllTransactions} />
+=======
+<Stack.Screen name="EditProveedorScreen" component={EditProveedorScreen} />
+<Stack.Screen name= "Suministros" component={Suministros} />
+<Stack.Screen name="Dashboard" component={Dashboard} />
+  
+>>>>>>> 141088917f28011a233d3ff0df9716eb81231f3c
       </Stack.Navigator>
     </NavigationContainer>
   );
