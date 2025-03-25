@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 export default function interfaz_warehouse({ navigation }) {
   const [warehouses, setWarehouses] = useState([]);
@@ -34,7 +35,6 @@ export default function interfaz_warehouse({ navigation }) {
         }
 
         setGroupedWarehouses(groupedData);
-
     } catch (error) {
         console.error('Error obteniendo almacenes:', error);
     }
@@ -149,7 +149,7 @@ const getComponent =  async () => {
   }
 };
 
-const getPhysical =  async () => { 
+const getPhysical =  async () => {
   try {
       const response = await fetch("http://localhost/PROYECTO4B-1/phpfiles/react/material_physical_api.php", {
         method: 'GET'
@@ -161,16 +161,20 @@ const getPhysical =  async () => {
   }
 };
 
-//console.log(warehouses);
 
 return (
   <View style={styles.container}>
+    <View style={styles.header}>
+      <Text style={styles.title}> Almacenes </Text>
+    </View>
+
+
     {/* Menú tipo hamburguesa */}
     <TouchableOpacity
       style={styles.menuButton}
       onPress={() => setMenuVisible(!menuVisible)} // Alterna la visibilidad del menú
     >
-      <Icon name="menu" size={30} color="white" />
+      <Icon name="plus" size={40} color="white" />
     </TouchableOpacity>
 
     {menuVisible && (
@@ -249,28 +253,29 @@ container: {
   padding: 20,
 },
 menuButton: {
-  position: 'absolute',
-  top: 20,
-  right: 20,
-  zIndex: 10,
-  backgroundColor: 'rgb(42, 126, 209)',
-  borderRadius: 50,
-  padding: 10,
-},
+    position: 'absolute',
+      top: Dimensions.get('window').height - 160,
+     left: Dimensions.get('window').width - 90,
+    zIndex: 10,
+    backgroundColor: 'rgb(42, 126, 209)',
+    borderRadius: 50,
+    padding: 15,
+    fontSize: 50
+  },
 menu: {
-  position: 'absolute',
-  top: 70,
-  right: 20,
-  backgroundColor: 'white',
-  borderRadius: 10,
-  padding: 10,
-  zIndex: 10,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.3,
-  shadowRadius: 5,
-  elevation: 5,
-},
+    position: 'absolute',
+    top: Dimensions.get('window').height - 280,
+     left: Dimensions.get('window').width - 240,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 10,
+    zIndex: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
+  },
 menuItem: {
   paddingVertical: 10,
   paddingHorizontal: 20,
@@ -310,4 +315,26 @@ cardSubtitle: {
   marginBottom: 5,
   textAlign: 'center',
 },
+header: {
+  width:"100%",
+  display:'flex',
+  alignItems: "center",
+  marginBottom: 20
+},
+title: {
+  display:'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontWeight: 'bold',
+  color: 'rgb(42, 126, 209)',
+  width:"60%",
+  padding:12,
+  fontSize: 24,
+  borderRadius: 20,
+  backgroundColor: 'white',
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.3,
+  shadowRadius: 5,
+}
 });

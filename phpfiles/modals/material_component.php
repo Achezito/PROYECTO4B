@@ -75,41 +75,69 @@ class component{
             return "Error en la conexion" . $connection->connect_error;
         }
 
-        $command = $connection->prepare("SELECT id_material, chipset, form_factor, type, RAM_slots, max_RAM, expansion_slots, capacity, voltage, quantity, audio_channels, id_type, id_supplier  FROM MATERIAL_COMPONENT");
-        $command->execute();
-        $command->bind_result(
-            $id_material,
-            $chipset,
-            $form_factor,
-            $type,
-            $RAM_slots,
-            $max_RAM,
-            $expansion_slots,
-            $capacity,
-            $voltage,
-            $quantity,
-            $audio_channels,
-            $id_type,
-            $id_supplier
-        );
+        $command = $connection->prepare("SELECT 
+        mc.id_material, 
+        mc.model, 
+        mc.brand,
+        mc.chipset, 
+        mc.form_factor, 
+        mc.type, 
+        mc.RAM_slots, 
+        mc.max_RAM, 
+        mc.expansion_slots, 
+        mc.capacity, 
+        mc.voltage, 
+        mc.quantity, 
+        mc.audio_channels, 
+        mt.name AS material_type_name, 
+        s.name AS supplier_name
+    FROM MATERIAL_COMPONENT mc
+    JOIN MATERIAL_TYPE mt ON mc.id_type = mt.id_type
+    JOIN SUPPLIER s ON mc.id_supplier = s.id_supplier
+    ORDER BY mc.id_material");
 
-        while ($command->fetch()) {
-            $components[] = [
-                "id_material" => $id_material,
-                "chipset" => $chipset,
-                "form_factor" => $form_factor,
-                "type" => $type,
-                "RAM_slots" => $RAM_slots,
-                "max_RAM" => $max_RAM,
-                "expansion_slots" => $expansion_slots,
-                "capacity" => $capacity,
-                "voltage" => $voltage,
-                "quantity" => $quantity,
-                "audio_channels" => $audio_channels,
-                "id_type" => $id_type,
-                "id_supplier" => $id_supplier
-            ];
-        }
+$command->execute();
+
+$command->bind_result(
+    $id_material,
+    $model,
+    $brand,
+    $chipset,
+    $form_factor,
+    $type,
+    $RAM_slots,
+    $max_RAM,
+    $expansion_slots,
+    $capacity,
+    $voltage,
+    $quantity,
+    $audio_channels,
+    $material_type_name,
+    $supplier_name
+);
+
+$components = []; 
+
+while ($command->fetch()) {
+    $components[] = [
+        "id_material" => $id_material,
+        "model" => $model,
+        "brand" => $brand,
+        "chipset" => $chipset,
+        "form_factor" => $form_factor,
+        "type" => $type,
+        "RAM_slots" => $RAM_slots,
+        "max_RAM" => $max_RAM,
+        "expansion_slots" => $expansion_slots,
+        "capacity" => $capacity,
+        "voltage" => $voltage,
+        "quantity" => $quantity,
+        "audio_channels" => $audio_channels,
+        "material_type_name" => $material_type_name,
+        "supplier_name" => $supplier_name
+    ];
+}
+
     
         return $components;
     }

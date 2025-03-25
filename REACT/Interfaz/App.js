@@ -1,14 +1,23 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import React, { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import React, { useRef, useState } from "react";
+import { Button, Dimensions, StyleSheet, Text, TextInput, View } from 'react-native';
 import Category from './POST/category';
 import Material_Components from './POST/material_component';
 import Orders from './POST/orders';
+
+import { Animated, ScrollView, TouchableOpacity } from "react-native";
+import IconsFont from 'react-native-vector-icons/FontAwesome';
+import IconDashboard from 'react-native-vector-icons/MaterialIcons';
+import Dashboard from './dashboard';
 import { default as Interfaz, default as InterfazWarehouse } from "./warehouse/interfaz_api"; // Importar interfaz
 import SubWarehouseDetails from './warehouse/subwarehousedetails';
 import AddProveedorScreen from "./warehouse/subwarehouseOptions/addProveedorScreen";
 import addSubWareHouse from "./warehouse/subwarehouseOptions/addSubWareHouse";
+import AllOrders from './warehouse/subwarehouseOptions/AllOrdersScreen';
+import AllProovedores from './warehouse/subwarehouseOptions/AllproveedoresScreen';
+import AllSuministros from "./warehouse/subwarehouseOptions/AllSuministroScreen";
+import AllTransactions from './warehouse/subwarehouseOptions/AlltransactionScreen';
 import EditProveedorScreen from "./warehouse/subwarehouseOptions/editProveedorScreen";
 import MaterialesScreen from './warehouse/subwarehouseOptions/materialesScreen';
 import NuevaTransaccionScreen from "./warehouse/subwarehouseOptions/nuevaTransaccionScreen";
@@ -21,23 +30,16 @@ import CreateWarehouseScreen from "./warehouse/warehouse_create";
 import UpdateWarehouseScreen from "./warehouse/warehouse_update";
 import WarehouseDetails from './warehouse/warehousedetails';
 
-
-
-
-
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Función para manejar el login
   const handleLogin = () => {
     const formData = new FormData();
     formData.append("username", username);
     formData.append("password", password);
-
-    // cambiar el fetch por la direccion donde tiene el login.php
-    // Elihu: http://localhost/PROYECTO4B-1/phpfiles/config/login.php
-    
 
     fetch("http://localhost/PROYECTO4B-1/phpfiles/config/login.php", {
       method: "POST",
@@ -48,7 +50,6 @@ function LoginScreen({ navigation }) {
         if (data.success) {
           navigation.navigate("Dashboard"); // Navegar al Dashboard si el inicio de sesión es exitoso
         } else {
-          navigation.navigate("Dashboard"); // Navegar al Dashboard si el inicio de sesión es exitoso
           setErrorMessage(data.message || "Credenciales incorrectas");
         }
       })
@@ -58,9 +59,60 @@ function LoginScreen({ navigation }) {
       });
   };
 
+  const { width } = Dimensions.get('window');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const translateX = useRef(new Animated.Value(-width)).current;
+
+  const toggleMenu = () => {
+    Animated.timing(translateX, {
+      toValue: menuOpen ? -width : 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+    setMenuOpen(!menuOpen);
+  };
+
+const sections = [
+      { title: 'Dashboard', icon: 'bar-chart', screen: 'Dashboard' },
+      { title: 'Recepcion', icon: 'inbox', screen: 'Dashboard' },
+      { title: 'Proveedores', icon: 'local-shipping', screen: 'AllProovedores' },
+      { title: 'Suministros', icon: 'inventory', screen: 'AllSuministros' },
+      { title: 'Almacenes', icon: 'store', screen: 'InterfazWarehouse' },
+      { title: 'Órdenes', icon: 'assignment', screen: 'AllOrders' },
+      { title: 'Reportes', icon: 'description', screen: 'AllTransactions' },
+    ];
+
   return (
     <View style={styles.container}>
+
+      <TouchableOpacity onPress={toggleMenu} style={styles.menuButton}>
+        <IconDashboard name="menu" size={30} color="white" />
+      </TouchableOpacity>
+
+      <Animated.View style={[styles.sidebar, { transform: [{ translateX }] }]}>
+        <ScrollView contentContainerStyle={styles.ScrollView_container}>
+
+        <TouchableOpacity onPress={toggleMenu} style={styles.closeButton}>
+          <IconsFont name="close" size={30} color="black" />
+        </TouchableOpacity>
+
+          <View style={styles.grid}>
+            {sections.map((section, index) => (
+              <TouchableOpacity
+                key={index}
+                style={styles.card}
+                onPress={() => navigation.navigate(section.screen)}
+              >
+                <IconDashboard name={section.icon} size={40} color="#4CAF50" />
+                <Text style={styles.cardText}>{section.title}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      </Animated.View>
+
       <Text style={styles.title}>Inicio de Sesión</Text>
+
       <TextInput
         style={styles.input}
         placeholder="Usuario"
@@ -75,12 +127,13 @@ function LoginScreen({ navigation }) {
         onChangeText={setPassword}
       />
       <Button title="Iniciar Sesión" onPress={handleLogin} />
-      <Button title="ir a almacenes" onPress={ () => { navigation.navigate('Interfaz'); } } />
-      <Button title="ir a los posts" onPress={ () => { navigation.navigate('Post'); } } />
+      <Button title="Ir a Almacenes" onPress={() => navigation.navigate('Interfaz')} />
+      <Button title="Ir a los Posts" onPress={() => navigation.navigate('Post')} />
       {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
     </View>
   );
 }
+
 
 function Post({ navigation }) {
   return (
@@ -88,11 +141,11 @@ function Post({ navigation }) {
         <Text style={styles.labelText} onPress={ () => { navigation.navigate("Category"); } }>Categoria</Text>
         <Text style={styles.labelText} onPress={ () => { navigation.navigate("Orders"); } }>Orders</Text>
         <Text style={styles.labelText} onPress={ () => { navigation.navigate("Material_Components"); } }>Material_Components</Text>
-     
       </View>
+
+      
     );
 }
-
 
 const Stack = createStackNavigator();
 
@@ -119,9 +172,13 @@ export default function App() {
         <Stack.Screen name="NuevaTransaccionScreen" component={NuevaTransaccionScreen} />
         <Stack.Screen name="ProveedoresScreen" component={ProveedoresScreen} />
         <Stack.Screen name="AddProveedorScreen" component={AddProveedorScreen} />
-<Stack.Screen name="EditProveedorScreen" component={EditProveedorScreen} />
-<Stack.Screen name= "Suministros" component={Suministros} />
-  
+        <Stack.Screen name="EditProveedorScreen" component={EditProveedorScreen} />
+        <Stack.Screen name= "Suministros" component={Suministros} />
+        <Stack.Screen name= "AllOrders" component={AllOrders} />
+        <Stack.Screen name= "AllSuministros" component={AllSuministros} />
+        <Stack.Screen name= "AllProovedores" component={AllProovedores} />
+        <Stack.Screen name= "Dashboard" component={Dashboard} />
+        <Stack.Screen name= "AllTransactions" component={AllTransactions} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -132,6 +189,36 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16,
+  },
+  menuButton: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    backgroundColor: "#007bff",
+    padding: 10,
+    borderRadius: 5,
+  },
+  sidebar: {
+    position: "absolute",
+    top: 1,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#333",
+    zIndex:1
+  },
+  menuItem: {
+    color: "white",
+    fontSize: 18,
+    marginBottom: 20,
+  },
+  closeButton: {
+    color: "#333",
+    position: "absolute",
+    top: 10,
+    right: 10,
+    padding: 10,
+    zIndex:1
   },
   container_POST: {
     flex: 1,
@@ -167,5 +254,45 @@ const styles = StyleSheet.create({
     color: "red",
     textAlign: "center",
     marginTop: 8,
+  },
+  ScrollView_container: {
+    flexGrow: 1,
+    padding: 20,
+    paddingTop: 70,
+    width: "100%",
+    height: "100%",
+    backgroundColor: '#f5f5f5',
+    alignItems: 'center',
+  },
+  ScrollView_title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 20,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  card: {
+    width: '45%',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    marginBottom: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  cardText: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center',
   },
 });

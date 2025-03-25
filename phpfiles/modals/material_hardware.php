@@ -41,9 +41,27 @@ class hardware {
     ";
 
     private static $all = "
-    SELECT id_material, model, speed, cores, threads, cache_memory, tipo, capacity, read_speed, write_speed,
-    brand, power_consumption, vram, frecuency, id_type, id_supplier
-    FROM material_hardware;
+    SELECT 
+    mh.id_material, 
+    mh.model, 
+    mh.speed, 
+    mh.cores, 
+    mh.threads, 
+    mh.cache_memory, 
+    mh.tipo, 
+    mh.capacity, 
+    mh.read_speed, 
+    mh.write_speed, 
+    mh.brand, 
+    mh.power_consumption, 
+    mh.vram, 
+    mh.frecuency, 
+    mt.name AS material_type_name, 
+    s.name AS supplier_name
+FROM material_hardware mh
+LEFT JOIN MATERIAL_TYPE mt ON mh.id_type = mt.id_type
+LEFT JOIN SUPPLIER s ON mh.id_supplier = s.id_supplier;
+;
     ";
 
     public function getIdMaterial() { return $this->id_material; }

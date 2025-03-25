@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function SuministrosScreen({ route, navigation }) {
   const { id_sub_warehouse } = route.params || {}; // ID del subalmacén (si se pasa como parámetro)

@@ -38,6 +38,7 @@ INSERT INTO CATEGORY (id_category, `name`, `description`) VALUES
 
 
 ----------------------- Material Type -----------------------
+
 INSERT INTO MATERIAL_TYPE (id_type, `name`) VALUES
 (1,'Procesador'),
 (2,'Memoria RAM'),
@@ -52,7 +53,8 @@ INSERT INTO MATERIAL_TYPE (id_type, `name`) VALUES
 (11,'Unidad De Ventilacion'),
 (12,'Puerto'),
 (13,'Tarjeta De Sonido'),
-(14,'Altavoces');
+(14,'Altavoces'),
+(15,'Batteria (Fuente de Alimentacion)');
 
 
 ----------------------- Supplier -----------------------

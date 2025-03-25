@@ -36,16 +36,26 @@ class Supply {
     
         $query = "
         SELECT 
-            sp.id_supply AS id_supply,
-            sp.quantity AS quantity,
-            sp.id_supplier AS id_supplier,
-            s.name AS supplier_name,
-            s.contact_info AS supplier_contact,
-            s.address AS supplier_address
-        FROM 
-            SUPPLY sp
-        JOIN 
-            SUPPLIER s ON sp.id_supplier = s.id_supplier;
+    sp.id_supply AS id_supply,
+    sp.id_order AS order_id,
+    st.description AS supply_status,
+    sp.quantity AS quantity,
+    s.name AS supplier_name,
+    s.contact_info AS supplier_contact,
+    s.address AS supplier_address,
+    COALESCE(mh.model, mc.model, mp.model) AS material_model,
+    mt.name AS material_type
+FROM SUPPLY sp
+JOIN SUPPLIER s ON sp.id_supplier = s.id_supplier
+LEFT JOIN ORDERS o ON sp.id_order = o.id_order
+LEFT JOIN STATUS st ON sp.id_status = st.id_status
+LEFT JOIN MATERIAL_LINK ml ON sp.id_supply = ml.id_supply
+LEFT JOIN MATERIAL_HARDWARE mh ON ml.id_material_hardware = mh.id_material
+LEFT JOIN MATERIAL_COMPONENT mc ON ml.id_material_component = mc.id_material
+LEFT JOIN MATERIAL_PHYSICAL mp ON ml.id_material_physical = mp.id_material
+LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type);
+
+
         ";
     
         $command = $connection->prepare($query);

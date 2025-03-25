@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity } from 'react-native';
+import { Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function WarehouseDetails({ route, navigation }) {
@@ -28,7 +28,7 @@ export default function WarehouseDetails({ route, navigation }) {
         style={styles.menuButton}
         onPress={() => setMenuVisible(!menuVisible)} // Alterna la visibilidad del menú
       >
-        <Icon name="menu" size={30} color="white" />
+        <Icon name="plus" size={40} color="white" />
       </TouchableOpacity>
 
       {menuVisible && (
@@ -53,13 +53,37 @@ export default function WarehouseDetails({ route, navigation }) {
           </TouchableOpacity>
         </View>
       )}
-
+      
       <Text style={styles.title}>Almacén: {name}</Text>
-      <FlatList
+{/* estilo anterior
+  <FlatList
         data={subWarehouses}
         keyExtractor={(item, index) => index.toString()}
         numColumns={2}
         columnWrapperStyle={styles.row}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() =>
+              navigation.navigate('SubWarehouseDetails', {
+                id: item.ID,
+                location: item.Location,
+              })
+            }
+            onLongPress={() =>
+              navigation.navigate('UpdateSubWarehouse', {
+                id: item.ID,
+                location: item.Location,
+                capacity: item.Capacity,
+                id_category: item.IdCategory,
+                warehouseId: id,
+              })
+            }
+          >
+*/}
+      <FlatList
+        data={subWarehouses}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
@@ -100,20 +124,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgb(33, 37, 41)', // Fondo oscuro
     padding: 20,
+    display: 'flex',
+    alignItems: 'center'
   },
   menuButton: {
     position: 'absolute',
-    top: 20,
-    right: 20,
+      top: Dimensions.get('window').height - 160,
+     left: Dimensions.get('window').width - 90,
     zIndex: 10,
     backgroundColor: 'rgb(42, 126, 209)',
     borderRadius: 50,
-    padding: 10,
+    padding: 15,
+    fontSize: 50
   },
   menu: {
     position: 'absolute',
-    top: 70,
-    right: 20,
+    top: Dimensions.get('window').height - 280,
+     left: Dimensions.get('window').width - 240,
     backgroundColor: 'white',
     borderRadius: 10,
     padding: 10,
@@ -142,7 +169,7 @@ const styles = StyleSheet.create({
   row: {
     justifyContent: 'space-between',
     marginBottom: 15,
-  },
+  },/* estilo anterior
   card: {
     backgroundColor: 'white',
     borderRadius: 15, // Bordes más redondeados
@@ -154,6 +181,19 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 6,
     width: Dimensions.get('window').width / 2 - 30,
+    alignItems: 'center', // Centra el contenido
+  },*/
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 15, // Bordes más redondeados
+    padding: 20,
+    marginBottom: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 6,
+    width: Dimensions.get('window').width - 80,
     alignItems: 'center', // Centra el contenido
   },
   icon: {

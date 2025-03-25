@@ -73,7 +73,22 @@ class MaterialPhysical {
             return "Error en la conexión: " . $connection->connect_error;
         }
 
-        $query = "SELECT id_material, model, brand, resolution, size, design, material_type, sensitivity, connectivity, id_type, id_supplier FROM MATERIAL_PHYSICAL";
+        $query = "SELECT 
+        mp.id_material, 
+        mp.model, 
+        mp.brand, 
+        mp.resolution, 
+        mp.size, 
+        mp.design, 
+        mp.material_type, 
+        mp.sensitivity, 
+        mp.connectivity, 
+        mt.name AS material_type_name, 
+        s.name AS supplier_name
+    FROM MATERIAL_PHYSICAL mp
+    JOIN MATERIAL_TYPE mt ON mp.id_type = mt.id_type
+    JOIN SUPPLIER s ON mp.id_supplier = s.id_supplier
+    ORDER BY mp.id_material";
         $command = $connection->prepare($query);
         $command->execute();
         $command->bind_result($id_material, $model, $brand, $resolution, $size, $design, $material_type, $sensitivity, $connectivity, $id_type, $id_supplier);

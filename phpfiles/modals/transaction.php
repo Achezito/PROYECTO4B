@@ -52,23 +52,28 @@ class Transaction {
             return "Error en la conexión: " . $connection->connect_error;
         }
 
-        $query = "SELECT id_transaction, id_material, id_sub_warehouse, type, quantity, created_at, updated_at FROM TRANSACTIONS";
-        $command = $connection->prepare($query);
-        $command->execute();
-        $command->bind_result($id_transaction, $id_material, $id_sub_warehouse, $type, $quantity, $created_at, $updated_at);
+        $query = "
+    SELECT 
+        t.id_transaction AS 'ID Transaccion',
+        t.created_at AS 'Fecha de Transaccion', -- Cambiado de transaction_date a created_at
+        t.type AS 'Tipo de Transaccion',
+        t.quantity AS 'Cantidad',
+        sw.location AS 'Almacen de destino',
+        rm.serial_number AS 'Material',
+        rm.description AS 'Descripcion del Material'
+    FROM TRANSACTIONS t
+    JOIN SUB_WAREHOUSE sw ON t.id_sub_warehouse = sw.id_sub_warehouse
+    JOIN RECEIVED_MATERIAL rm ON t.id_material = rm.id_material
+    ";
 
-        $transactions = [];
-        while ($command->fetch()) {
-            $transactions[] = [
-                "id_transaction" => $id_transaction,
-                "id_material" => $id_material,
-                "id_sub_warehouse" => $id_sub_warehouse,
-                "type" => $type,
-                "quantity" => $quantity,
-                "created_at" => $created_at,
-                "updated_at" => $updated_at
-            ];
-        }
+    $command = $connection->prepare($query);
+    $command->execute();
+    $result = $command->get_result();
+
+    $transactions = [];
+    while ($row = $result->fetch_assoc()) {
+        $transactions[] = $row;
+    }
 
         return $transactions;
     }

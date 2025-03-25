@@ -46,7 +46,14 @@ class Order {
             return "Error en la conexión: " . $connection->connect_error;
         }
     
-        $query = "SELECT id_order, id_status, supply_quantity, created_at, updated_at FROM ORDERS";
+        $query = "SELECT 
+        o.id_order, 
+        s.description AS status_name, 
+        o.supply_quantity, 
+        o.created_at, 
+        o.updated_at
+    FROM ORDERS o
+    JOIN STATUS s ON o.id_status = s.id_status";
         $command = $connection->prepare($query);
         $command->execute();
         $command->bind_result(
