@@ -20,19 +20,38 @@ header("Content-Type: application/json");
 $method = $_SERVER['REQUEST_METHOD']; // Se lee el método para manejar diferentes acciones
 
 switch ($method) {
-    case 'GET': // Obtener datos
-        $id_warehouse = isset($_GET['id']) ? intval($_GET['id']) : null;
-
-        if ($id_warehouse) {
-            // Llama al método para obtener los subalmacenes por almacén
-            $SubWarehouse = SubWarehouse::getSubWarehousesByWarehouseId($id_warehouse);
-            echo json_encode($SubWarehouse);
-        } else {
-            // Si no se proporciona ningún parámetro, devuelve todos los subalmacenes
-            $SubWarehouse = SubWarehouse::getSubWarehouses();
-            echo json_encode($SubWarehouse);
-        }
-        break;
+    case 'GET':
+      
+        case 'GET':
+            error_log("Método GET llamado");
+            if (isset($_GET['distribution']) && $_GET['distribution'] === 'true') {
+                error_log("Obteniendo distribución de materiales");
+                $distribution = SubWarehouse::getMaterialDistribution();
+                if (!$distribution) {
+                    error_log("Error: No se pudo obtener la distribución de materiales.");
+                    echo json_encode(["error" => "No se pudo obtener la distribución de materiales"]);
+                    http_response_code(500); // Internal Server Error
+                    exit();
+                }
+                echo json_encode($distribution);
+            } else {
+                $id_warehouse = isset($_GET['id']) ? intval($_GET['id']) : null;
+                error_log("Obteniendo subalmacenes para el ID de almacén: $id_warehouse");
+                if ($id_warehouse) {
+                    $SubWarehouse = SubWarehouse::getSubWarehousesByWarehouseId($id_warehouse);
+                    if (!$SubWarehouse) {
+                        error_log("Error: No se pudieron obtener los subalmacenes para el ID de almacén: $id_warehouse");
+                        echo json_encode(["error" => "No se pudieron obtener los subalmacenes"]);
+                        http_response_code(500); // Internal Server Error
+                        exit();
+                    }
+                    echo json_encode($SubWarehouse);
+                } else {
+                    $SubWarehouse = SubWarehouse::getSubWarehouses();
+                    echo json_encode($SubWarehouse);
+                }
+            }
+            break;
 
     case 'POST': // Añadir un nuevo subalmacén
         $data = json_decode(file_get_contents("php://input"), true); // Decodifica el JSON enviado desde el cliente

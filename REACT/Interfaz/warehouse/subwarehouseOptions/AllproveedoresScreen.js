@@ -44,18 +44,44 @@ export default function ProveedoresScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20,
-    backgroundColor: 'rgb(33, 37, 41)',},
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 , color: 'white'},
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#FFF3E0', // Fondo naranja claro
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#E65100', // Naranja oscuro
+  },
   addButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#FF9800', // Botón naranja
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
     marginBottom: 20,
   },
-  addButtonText: { color: 'white', fontSize: 18, fontWeight: 'bold' },
-  card: { padding: 15, marginBottom: 10, backgroundColor: '#f9f9f9', borderRadius: 10 },
-  cardTitle: { fontSize: 18, fontWeight: 'bold' },
-  cardText: { fontSize: 16 },
+  addButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  card: {
+    padding: 15,
+    marginBottom: 10,
+    backgroundColor: '#FFE0B2', // Fondo de las tarjetas naranja claro
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#FFB74D', // Borde naranja
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#E65100', // Naranja oscuro
+  },
+  cardText: {
+    fontSize: 16,
+    color: '#BF360C', // Naranja más oscuro
+  },
 });

@@ -92,10 +92,10 @@ export default function SubWarehouseDetails({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgb(33, 37, 41)',
+    backgroundColor: '#FFF3E0', // Fondo naranja claro
   },
   navbar: {
-    backgroundColor: 'rgb(42, 126, 209)', // Azul para la barra de navegación
+    backgroundColor: '#FF9800', // Naranja para la barra de navegación
     paddingVertical: 15,
     paddingHorizontal: 20,
     alignItems: 'center',
@@ -113,12 +113,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#E65100', // Naranja oscuro
     marginBottom: 16,
   },
   text: {
     fontSize: 18,
-    color: 'white',
+    color: '#BF360C', // Naranja más oscuro
     marginBottom: 8,
   },
   menuContainer: {
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   menuButton: {
     flexDirection: 'row', // Ícono y texto en línea
     alignItems: 'center',
-    backgroundColor: 'rgb(42, 126, 209)', // Azul para los botones
+    backgroundColor: '#FF9800', // Naranja para los botones
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 10,

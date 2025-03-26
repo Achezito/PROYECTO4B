@@ -1,4 +1,4 @@
--- Active: 1720557520067@@127.0.0.1@3306@inventario
+-- Active: 1742707096914@@127.0.0.1@3306@inventario
 
 
 
@@ -26,6 +26,16 @@ CREATE TABLE STATUS (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+SELECT * FROM RECEIVED_MATERIAL
+WHERE id_material NOT IN (SELECT id_material FROM SUB_WAREHOUSE_MATERIAL);
+
+SELECT rm.description, sw.location AS sub_warehouse, swm.quantity
+FROM SUB_WAREHOUSE_MATERIAL swm
+JOIN RECEIVED_MATERIAL rm ON swm.id_material = rm.id_material
+JOIN SUB_WAREHOUSE sw ON swm.id_sub_warehouse = sw.id_sub_warehouse
+WHERE sw.id_sub_warehouse = 1;
+
+
 
 
 CREATE TABLE ROTATION (
@@ -34,7 +44,7 @@ CREATE TABLE ROTATION (
     `description` VARCHAR(255) NOT NULL
 );
 
-
+DESCRIBE RECEIVED_MATERIAL;
 -- Tabla de tipos de materiales
 CREATE TABLE MATERIAL_TYPE (
     id_type INT PRIMARY KEY AUTO_INCREMENT,
@@ -224,6 +234,7 @@ CREATE TABLE ORDERS (
     FOREIGN KEY (id_status) REFERENCES STATUS(id_status),
     FOREIGN KEY (confirmation) REFERENCES STATUS(id_status)
 );
+
 
 
 

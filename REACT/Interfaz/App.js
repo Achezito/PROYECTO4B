@@ -29,6 +29,7 @@ import UpdateSubWarehouseScreen from "./warehouse/subwarehouseOptions/updateSubW
 import CreateWarehouseScreen from "./warehouse/warehouse_create";
 import UpdateWarehouseScreen from "./warehouse/warehouse_update";
 import WarehouseDetails from './warehouse/warehousedetails';
+import RecepcionScreen from './warehouse/subwarehouseOptions/recepcionScreen';
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
@@ -50,6 +51,7 @@ function LoginScreen({ navigation }) {
         if (data.success) {
           navigation.navigate("Dashboard"); // Navegar al Dashboard si el inicio de sesión es exitoso
         } else {
+          navigation.navigate("Dashboard"); 
           setErrorMessage(data.message || "Credenciales incorrectas");
         }
       })
@@ -80,59 +82,42 @@ const sections = [
       { title: 'Almacenes', icon: 'store', screen: 'InterfazWarehouse' },
       { title: 'Órdenes', icon: 'assignment', screen: 'AllOrders' },
       { title: 'Reportes', icon: 'description', screen: 'AllTransactions' },
+      
     ];
 
-  return (
-    <View style={styles.container}>
-
-      <TouchableOpacity onPress={toggleMenu} style={styles.menuButton}>
-        <IconDashboard name="menu" size={30} color="white" />
-      </TouchableOpacity>
-
-      <Animated.View style={[styles.sidebar, { transform: [{ translateX }] }]}>
-        <ScrollView contentContainerStyle={styles.ScrollView_container}>
-
-        <TouchableOpacity onPress={toggleMenu} style={styles.closeButton}>
-          <IconsFont name="close" size={30} color="black" />
-        </TouchableOpacity>
-
-          <View style={styles.grid}>
-            {sections.map((section, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.card}
-                onPress={() => navigation.navigate(section.screen)}
-              >
-                <IconDashboard name={section.icon} size={40} color="#4CAF50" />
-                <Text style={styles.cardText}>{section.title}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </ScrollView>
-      </Animated.View>
-
-      <Text style={styles.title}>Inicio de Sesión</Text>
-
-      <TextInput
-        style={styles.input}
-        placeholder="Usuario"
-        value={username}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Contraseña"
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}
-      />
-      <Button title="Iniciar Sesión" onPress={handleLogin} />
-      <Button title="Ir a Almacenes" onPress={() => navigation.navigate('Interfaz')} />
-      <Button title="Ir a los Posts" onPress={() => navigation.navigate('Post')} />
-      {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
-    </View>
-  );
-}
+    return (
+      <View style={styles.loginContainer}>
+        <View style={styles.loginCard}>
+          <Text style={styles.loginTitle}>Bienvenido</Text>
+          <Text style={styles.loginSubtitle}>Inicia sesión para continuar</Text>
+  
+          <TextInput
+            style={styles.input}
+            placeholder="Usuario"
+            placeholderTextColor="#FFB74D"
+            value={username}
+            onChangeText={setUsername}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Contraseña"
+            placeholderTextColor="#FFB74D"
+            secureTextEntry
+            value={password}
+            onChangeText={setPassword}
+          />
+  
+          {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
+  
+          <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+            <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
+          </TouchableOpacity>
+  
+        
+        </View>
+      </View>
+    );
+  }
 
 
 function Post({ navigation }) {
@@ -179,120 +164,77 @@ export default function App() {
         <Stack.Screen name= "AllProovedores" component={AllProovedores} />
         <Stack.Screen name= "Dashboard" component={Dashboard} />
         <Stack.Screen name= "AllTransactions" component={AllTransactions} />
+        <Stack.Screen name= "RecepcionScreen" component={RecepcionScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  loginContainer: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFF3E0",
     padding: 16,
   },
-  menuButton: {
-    position: "absolute",
-    top: 50,
-    left: 20,
-    backgroundColor: "#007bff",
-    padding: 10,
-    borderRadius: 5,
-  },
-  sidebar: {
-    position: "absolute",
-    top: 1,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "#333",
-    zIndex:1
-  },
-  menuItem: {
-    color: "white",
-    fontSize: 18,
-    marginBottom: 20,
-  },
-  closeButton: {
-    color: "#333",
-    position: "absolute",
-    top: 10,
-    right: 10,
-    padding: 10,
-    zIndex:1
-  },
-  container_POST: {
-    flex: 1,
-    padding: 20,
-  },
-  labelText: {
-    backgroundColor: 'black',
-    color: 'white', // Asegúrate de que el texto sea visible
-    height: 150,
-    width: 150,
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    textAlign: 'center',
-    lineHeight: 10,
-    fontSize: 10,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 16,
-    textAlign: "center",
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 4,
-    padding: 8,
-    marginBottom: 16,
-  },
-  error: {
-    color: "red",
-    textAlign: "center",
-    marginTop: 8,
-  },
-  ScrollView_container: {
-    flexGrow: 1,
-    padding: 20,
-    paddingTop: 70,
-    width: "100%",
-    height: "100%",
-    backgroundColor: '#f5f5f5',
-    alignItems: 'center',
-  },
-  ScrollView_title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 20,
-  },
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  card: {
-    width: '45%',
-    backgroundColor: '#fff',
+  loginCard: {
+    width: "90%",
+    backgroundColor: "#FFFFFF",
     borderRadius: 10,
     padding: 20,
-    marginBottom: 20,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 5,
+    alignItems: "center",
   },
-  cardText: {
-    marginTop: 10,
+  loginTitle: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#FF6F00",
+    marginBottom: 10,
+  },
+  loginSubtitle: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-    textAlign: 'center',
+    color: "#FF8A65",
+    marginBottom: 20,
+  },
+  input: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: "#FFCC80",
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 16,
+    backgroundColor: "#FFF8E1",
+    color: "#FF6F00",
+  },
+  error: {
+    color: "#D32F2F",
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  loginButton: {
+    width: "100%",
+    backgroundColor: "#FF6F00",
+    padding: 15,
+    borderRadius: 5,
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  loginButtonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  registerButton: {
+    marginTop: 10,
+  },
+  registerButtonText: {
+    color: "#FF6F00",
+    fontSize: 14,
+    textDecorationLine: "underline",
   },
 });
