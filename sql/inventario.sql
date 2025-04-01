@@ -59,12 +59,19 @@ CREATE TABLE SUPPLY (
     quantity INT,
     id_supplier INT,
     id_status INT DEFAULT 1,
+    id_material_hardware INT,
+    id_material_component INT,
+    id_material_physical INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier),
     FOREIGN KEY (id_status) REFERENCES STATUS(id_status),
-    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order)
-);
+    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order),
+    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply),
+    FOREIGN KEY (id_material_hardware) REFERENCES MATERIAL_HARDWARE(id_material),
+    FOREIGN KEY (id_material_component) REFERENCES MATERIAL_COMPONENT(id_material),
+    FOREIGN KEY (id_material_physical) REFERENCES MATERIAL_PHYSICAL(id_material)
+    );
 
 
 -- Tabla de materiales de hardware (especializada)
@@ -248,8 +255,11 @@ CREATE TABLE USER (
     FOREIGN KEY (id_role) REFERENCES ROLE(id_role)
 );
 
-/* no se usan de momento
 
+
+
+
+/* no se usan de momento
 
 -- Tabla de condiciones
 CREATE TABLE `CONDITION` (

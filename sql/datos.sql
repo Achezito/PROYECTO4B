@@ -3,10 +3,14 @@ use inventario;
 -- Crear roles
 
 
+
 INSERT INTO ROLE (`name`) VALUES ('Admin'), ('Usuario');
 
 -- Crear usuario de prueba (Contraseña: 123456)
 INSERT INTO USER (`name`, password_hash, email, id_role) VALUES ('Admin', SHA1('123456'), 'admin@example.com', 1);
+
+
+INSERT INTO USER (`name`, password_hash, email, id_role) VALUES ('User', SHA1('123456'), 'usuario@example.com', 2);
 
 
 SELECT 
@@ -80,10 +84,17 @@ INSERT INTO STATUS (id_status, description) VALUES
 
 
 ----------------------- Supply -----------------------
-INSERT INTO SUPPLY (id_supply, quantity, id_supplier) VALUES
-(1, 30, 1),
-(2, 30, 2),
-(3, 30, 3);
+INSERT INTO SUPPLY (id_supply, quantity, id_supplier, id_order, id_material_hardware, id_material_component, id_material_physical) VALUES
+(5, 30, 1, 1, null , 5 , null);
+
+
+INSERT INTO SUPPLY (id_supply, quantity, id_supplier, id_order, id_material_hardware, id_material_component, id_material_physical) VALUES
+(1, 30, 1, 1, 2 , null , null),
+(2, 30, 2, 1, null , 3 , null),
+(3, 30, 2, 1, null , null , 4),
+(4, 30, 1, 1, 1 , null , null),
+(5, 30, 1, 1, null , 5 , null);
+
 
 
 ----------------------- ORDERS -----------------------
