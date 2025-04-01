@@ -2,7 +2,8 @@
 
 require_once __DIR__ . '/../config/conection.php';
 
-class SubWarehouse {
+class SubWarehouse
+{
     private $id_sub_warehouse;
     private $location;
     private $capacity;
@@ -11,7 +12,8 @@ class SubWarehouse {
     private $created_at;
     private $updated_at;
 
-    public function __construct($id_sub_warehouse, $location, $capacity, $id_warehouse, $id_category, $created_at, $updated_at){
+    public function __construct($id_sub_warehouse, $location, $capacity, $id_warehouse, $id_category, $created_at, $updated_at)
+    {
         $this->id_sub_warehouse = $id_sub_warehouse;
         $this->location = $location;
         $this->capacity = $capacity;
@@ -21,29 +23,72 @@ class SubWarehouse {
         $this->updated_at = $updated_at;
     }
 
-    public function getIdSubWarehouse(){ return $this->id_sub_warehouse; }
-    public function setIdSubWarehouse($id_sub_warehouse){ $this->id_sub_warehouse = $id_sub_warehouse; }
+    public function getIdSubWarehouse()
+    {
+        return $this->id_sub_warehouse;
+    }
+    public function setIdSubWarehouse($id_sub_warehouse)
+    {
+        $this->id_sub_warehouse = $id_sub_warehouse;
+    }
 
-    public function getLocation(){ return $this->location; }
-    public function setLocation($location){ $this->location = $location; }
+    public function getLocation()
+    {
+        return $this->location;
+    }
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
 
-    public function getCapacity(){ return $this->capacity; }
-    public function setCapacity($capacity){ $this->capacity = $capacity; }
+    public function getCapacity()
+    {
+        return $this->capacity;
+    }
+    public function setCapacity($capacity)
+    {
+        $this->capacity = $capacity;
+    }
 
-    public function getIdWarehouse(){ return $this->id_warehouse; }
-    public function setIdWarehouse($id_warehouse){ $this->id_warehouse = $id_warehouse; }
+    public function getIdWarehouse()
+    {
+        return $this->id_warehouse;
+    }
+    public function setIdWarehouse($id_warehouse)
+    {
+        $this->id_warehouse = $id_warehouse;
+    }
 
-    public function getIdCategory(){ return $this->id_category; }
-    public function setIdCategory($id_category){ $this->id_category = $id_category; }
+    public function getIdCategory()
+    {
+        return $this->id_category;
+    }
+    public function setIdCategory($id_category)
+    {
+        $this->id_category = $id_category;
+    }
 
-    public function getCreatedAt(){ return $this->created_at; }
-    public function setCreatedAt($created_at){ $this->created_at = $created_at; }
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
 
-    public function getUpdatedAt(){ return $this->updated_at; }
-    public function setUpdatedAt($updated_at){ $this->updated_at = $updated_at; }
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+    }
 
 
-    public static function getSubWarehouses(){
+    public static function getSubWarehouses()
+    {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
@@ -78,13 +123,14 @@ class SubWarehouse {
         return $subWarehouses;
     }
 
-    public static function getSubWarehouseById($id_sub_warehouse){
+    public static function getSubWarehouseById($id_sub_warehouse)
+    {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
         }
 
-        $query="SELECT id_sub_warehouse, location, capacity, id_warehouse, id_category, created_at, updated_at 
+        $query = "SELECT id_sub_warehouse, location, capacity, id_warehouse, id_category, created_at, updated_at 
                 FROM SUB_WAREHOUSE WHERE id_sub_warehouse = ?";
         $command = $connection->prepare($query);
         $command->bind_param('i', $id_sub_warehouse);
@@ -114,7 +160,8 @@ class SubWarehouse {
         }
     }
 
-    public static function getSubWarehousesByWarehouseId($id_warehouse){
+    public static function getSubWarehousesByWarehouseId($id_warehouse)
+    {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
@@ -134,7 +181,7 @@ class SubWarehouse {
             $id_sub_warehouse,
             $location,
             $warehouse
-  
+
         );
 
         $subWarehouses = [];
@@ -144,61 +191,62 @@ class SubWarehouse {
                 "Location" => $location,
                 "WareHouse" => $warehouse
             ];
-            }
-        $command -> close();
-        $connection -> close();
+        }
+        $command->close();
+        $connection->close();
         return $subWarehouses;
-
     }
 
-    
-public static function updateSubWarehouse($id_sub_warehouse, $location, $capacity, $id_category) {
-    $connection = Conexion::get_connection();
-    if ($connection->connect_error) {
-        return "Error de conexión a la base de datos: " . $connection->connect_error;
-    }
 
-    $query = "UPDATE sub_warehouse SET location = ?, capacity = ?, id_category = ? WHERE id_sub_warehouse = ?";
-    $statement = $connection->prepare($query);
-
-    if (!$statement) {
-        return "Error preparando la consulta: " . $connection->error;
-    }
-
-    $statement->bind_param("siii", $location, $capacity, $id_category, $id_sub_warehouse);
-    $result = $statement->execute();
-
-    if ($result) {
-        $statement->close();
-        $connection->close();
-        return true; // Actualización exitosa
-    } else {
-        $error = $statement->error;
-        $statement->close();
-        $connection->close();
-        return $error; // Devuelve el error si ocurre
-    }
-}
-  
-    
-    
-    
-    public static function createSubWarehouse($location, $capacity, $warehouse_id, $id_category) {
+    public static function updateSubWarehouse($id_sub_warehouse, $location, $capacity, $id_category)
+    {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             return "Error de conexión a la base de datos: " . $connection->connect_error;
         }
-    
-        $query = "INSERT INTO sub_warehouse (location, capacity, id_warehouse, id_category) VALUES (?, ?, ?, ?)";
+
+        $query = "UPDATE sub_warehouse SET location = ?, capacity = ?, id_category = ? WHERE id_sub_warehouse = ?";
         $statement = $connection->prepare($query);
-    
+
         if (!$statement) {
             return "Error preparando la consulta: " . $connection->error;
         }
-    
+
+        $statement->bind_param("siii", $location, $capacity, $id_category, $id_sub_warehouse);
+        $result = $statement->execute();
+
+        if ($result) {
+            $statement->close();
+            $connection->close();
+            return true; // Actualización exitosa
+        } else {
+            $error = $statement->error;
+            $statement->close();
+            $connection->close();
+            return $error; // Devuelve el error si ocurre
+        }
+    }
+
+
+
+
+    public static function createSubWarehouse($location, $capacity, $warehouse_id, $id_category)
+    {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error de conexión a la base de datos: " . $connection->connect_error;
+        }
+
+        $query = "INSERT INTO sub_warehouse (location, capacity, id_warehouse, id_category) VALUES (?, ?, ?, ?)";
+        $statement = $connection->prepare($query);
+
+        if (!$statement) {
+            return "Error preparando la consulta: " . $connection->error;
+        }
+
         $statement->bind_param("siii", $location, $capacity, $warehouse_id, $id_category);
         $result = $statement->execute();
-    
+
         if ($result) {
             $statement->close();
             $connection->close();
@@ -212,13 +260,14 @@ public static function updateSubWarehouse($id_sub_warehouse, $location, $capacit
     }
 
 
-    public static function getMaterialsBySubWarehouseId($id_sub_warehouse) {
+    public static function getMaterialsBySubWarehouseId($id_sub_warehouse)
+    {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
             error_log("Error en la conexión: " . $connection->connect_error);
             return [];
         }
-    
+
         $query = "
         SELECT 
             sw.location AS 'Ubicación del Subalmacén',
@@ -232,7 +281,7 @@ public static function updateSubWarehouse($id_sub_warehouse, $location, $capacit
         JOIN CATEGORY c ON sw.id_category = c.id_category
         WHERE sw.id_sub_warehouse = ?;
         ";
-    
+
         $command = $connection->prepare($query);
         $command->bind_param('i', $id_sub_warehouse);
         $command->execute();
@@ -243,7 +292,7 @@ public static function updateSubWarehouse($id_sub_warehouse, $location, $capacit
             $description,
             $quantity
         );
-    
+
         $materials = [];
         while ($command->fetch()) {
             $materials[] = [
@@ -254,12 +303,70 @@ public static function updateSubWarehouse($id_sub_warehouse, $location, $capacit
                 "Cantidad Disponible" => $quantity
             ];
         }
-    
+
         error_log("Materiales encontrados: " . json_encode($materials));
-    
+
         $command->close();
         $connection->close();
-    
+
         return $materials;
+    }
+
+
+    public static function exists($id_sub_warehouse)
+    {
+        $connection = Conexion::get_connection();
+        $query = "SELECT COUNT(*) FROM SUB_WAREHOUSE WHERE id_sub_warehouse = ?";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param('i', $id_sub_warehouse);
+        $stmt->execute();
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        $stmt->close();
+        return $count > 0;
+    }
+
+
+    public static function getMaterialDistribution()
+    {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            error_log("Error en la conexión: " . $connection->connect_error);
+            return false;
+        }
+
+        $query = "
+        SELECT 
+            sw.location AS sub_warehouse,
+            SUM(swm.quantity) AS total_quantity
+        FROM 
+            SUB_WAREHOUSE_MATERIAL swm
+        INNER JOIN 
+            SUB_WAREHOUSE sw ON swm.id_sub_warehouse = sw.id_sub_warehouse
+        GROUP BY 
+            sw.location;
+        ";
+
+        $command = $connection->prepare($query);
+        if (!$command) {
+            error_log("Error preparando la consulta: " . $connection->error);
+            return false;
+        }
+
+        $command->execute();
+        $command->bind_result($sub_warehouse, $total_quantity);
+
+        $distribution = [];
+        while ($command->fetch()) {
+            $distribution[] = [
+                "sub_warehouse" => $sub_warehouse,
+                "total_quantity" => $total_quantity
+            ];
+        }
+
+        $command->close();
+        $connection->close();
+
+        return $distribution;
     }
 }

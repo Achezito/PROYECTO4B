@@ -1,3 +1,4 @@
+-- Active: 1742707096914@@127.0.0.1@3306@inventario
 use inventario;
 
 -- Crear roles
@@ -77,10 +78,7 @@ INSERT INTO SUPPLIER (id_supplier, name, contact_info, address) VALUES
 ----------------------- STATUS -----------------------
 INSERT INTO STATUS (id_status, description) VALUES
 (1, 'Pendiente'),
-(2, 'Entregado'),
-(3, 'Sin Confirmar'),
-(4, 'Por Confirmar');
-
+(2, 'Entregado');
 
 
 ----------------------- Supply -----------------------
