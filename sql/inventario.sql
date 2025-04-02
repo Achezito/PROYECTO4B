@@ -26,15 +26,6 @@ CREATE TABLE STATUS (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-SELECT * FROM RECEIVED_MATERIAL
-WHERE id_material NOT IN (SELECT id_material FROM SUB_WAREHOUSE_MATERIAL);
-
-SELECT rm.description, sw.location AS sub_warehouse, swm.quantity
-FROM SUB_WAREHOUSE_MATERIAL swm
-JOIN RECEIVED_MATERIAL rm ON swm.id_material = rm.id_material
-JOIN SUB_WAREHOUSE sw ON swm.id_sub_warehouse = sw.id_sub_warehouse
-WHERE sw.id_sub_warehouse = 1;
-
 
 
 

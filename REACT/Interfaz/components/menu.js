@@ -1,10 +1,19 @@
 import { default as React, useEffect, useRef, useState } from "react";
-import { Animated, Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Animated,
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(Dimensions.get("window").width); // Obtener el ancho de la pantalla
+  const [screenWidth, setScreenWidth] = useState(
+    Dimensions.get("window").width,
+  ); // Obtener el ancho de la pantalla
   const translateX = useRef(new Animated.Value(-screenWidth)).current; // Usar el ancho de la pantalla en la posición inicial
 
   // Actualizar el ancho de la pantalla si cambia (en caso de rotación, etc.)
@@ -55,7 +64,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     justifyContent: "center",
     alignItems: "flex-start",
-    position
+    position,
   },
   menuButton: {
     top: 50,
@@ -74,7 +83,7 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingLeft: 20,
     zIndex: 1,
-    },
+  },
   menuItem: {
     color: "white",
     fontSize: 18,

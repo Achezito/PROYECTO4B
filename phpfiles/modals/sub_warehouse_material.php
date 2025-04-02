@@ -116,19 +116,32 @@ WHERE
     }
 
     // Agregar nuevo registro
+  
     public function insert()
     {
         $connection = Conexion::get_connection();
-
+    
         if ($connection->connect_error) {
             return "Error en la conexión: " . $connection->connect_error;
         }
-
+    
         $query = "INSERT INTO SUB_WAREHOUSE_MATERIAL (id_sub_warehouse, id_material, quantity) VALUES (?, ?, ?)";
         $command = $connection->prepare($query);
+    
+        if (!$command) {
+            return "Error al preparar la consulta: " . $connection->error;
+        }
+    
         $command->bind_param('iii', $this->id_sub_warehouse, $this->id_material, $this->quantity);
-
-        return $command->execute() ? true : $command->error;
+    
+        if (!$command->execute()) {
+            return "Error al ejecutar la consulta: " . $command->error;
+        }
+    
+        $command->close();
+        $connection->close();
+    
+        return true;
     }
 
     // Actualizar cantidad
@@ -161,5 +174,37 @@ WHERE
         $command->bind_param('ii', $this->id_sub_warehouse, $this->id_material);
 
         return $command->execute() ? true : $command->error;
+    }
+
+
+
+    // Verificar si el subalmacén existe
+    function validateSubWarehouse($id_sub_warehouse)
+    {
+        $connection = Conexion::get_connection();
+        $query = "SELECT id_sub_warehouse FROM SUB_WAREHOUSE WHERE id_sub_warehouse = ?";
+        $command = $connection->prepare($query);
+        $command->bind_param('i', $id_sub_warehouse);
+        $command->execute();
+        $result = $command->get_result();
+        $exists = $result->num_rows > 0;
+        $command->close();
+        $connection->close();
+        return $exists;
+    }
+
+    // Verificar si el material existe
+    function validateMaterial($id_material)
+    {
+        $connection = Conexion::get_connection();
+        $query = "SELECT id_material FROM RECEIVED_MATERIAL WHERE id_material = ?";
+        $command = $connection->prepare($query);
+        $command->bind_param('i', $id_material);
+        $command->execute();
+        $result = $command->get_result();
+        $exists = $result->num_rows > 0;
+        $command->close();
+        $connection->close();
+        return $exists;
     }
 }

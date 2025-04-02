@@ -143,3 +143,130 @@ END //
 DELIMITER;
 
 
+
+
+
+DROP TRIGGER IF EXISTS after_received_material_insert;
+DELIMITER $$
+
+CREATE TRIGGER after_received_material_insert
+AFTER INSERT ON received_material
+FOR EACH ROW
+BEGIN
+    -- Declarar variables para el subalmacén y la cantidad del suministro
+    DECLARE sub_almacen_id INT;
+    DECLARE supply_quantity INT;
+
+    -- Obtener el ID del subalmacén basado en la categoría del material recibido
+    SELECT id_sub_warehouse
+    INTO sub_almacen_id
+    FROM sub_warehouse
+    WHERE id_category = NEW.id_category
+    LIMIT 1;
+
+    -- Obtener la cantidad del suministro desde la tabla SUPPLY
+    SELECT quantity
+    INTO supply_quantity
+    FROM SUPPLY
+    WHERE id_supply = NEW.id_supply;
+
+    -- Si se encuentra un subalmacén, insertar el material en la tabla sub_warehouse_material
+    IF sub_almacen_id IS NOT NULL THEN
+        INSERT INTO sub_warehouse_material (id_sub_warehouse, id_material, quantity)
+        VALUES (sub_almacen_id, NEW.id_material, supply_quantity);
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE TRIGGER after_transaction_outbound
+AFTER INSERT ON transactions
+FOR EACH ROW
+BEGIN
+    -- Verificar si la transacción es de tipo "salida"
+    IF NEW.type = 'outbound' THEN
+        -- Restar la cantidad de materiales del subalmacén
+        UPDATE sub_warehouse_material
+        SET quantity = quantity - NEW.quantity
+        WHERE id_sub_warehouse = NEW.id_sub_warehouse
+          AND id_material = NEW.id_material;
+
+        -- Verificar que la cantidad no sea negativa
+        IF (SELECT quantity FROM sub_warehouse_material
+            WHERE id_sub_warehouse = NEW.id_sub_warehouse
+              AND id_material = NEW.id_material) < 0 THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'La cantidad de materiales no puede ser negativa';
+        END IF;
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER after_transaction_inbound
+AFTER INSERT ON transactions
+FOR EACH ROW
+BEGIN
+    -- Verificar si la transacción es de tipo "entrada"
+    IF NEW.type = 'inbound' THEN
+        -- Verificar si ya existe el material en el subalmacén
+        IF EXISTS (
+            SELECT 1
+            FROM sub_warehouse_material
+            WHERE id_sub_warehouse = NEW.id_sub_warehouse
+              AND id_material = NEW.id_material
+        ) THEN
+            -- Si existe, sumar la cantidad
+            UPDATE sub_warehouse_material
+            SET quantity = quantity + NEW.quantity
+            WHERE id_sub_warehouse = NEW.id_sub_warehouse
+              AND id_material = NEW.id_material;
+        ELSE
+            -- Si no existe, insertar un nuevo registro
+            INSERT INTO sub_warehouse_material (id_sub_warehouse, id_material, quantity)
+            VALUES (NEW.id_sub_warehouse, NEW.id_material, NEW.quantity);
+        END IF;
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER after_supply_insert
+AFTER INSERT ON SUPPLY
+FOR EACH ROW
+BEGIN
+    -- Ejemplo: Relacionar automáticamente con un material de hardware
+    INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical)
+    VALUES (NEW.id_supply, 1, NULL, NULL);
+END$$
+
+DELIMITER ;
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS after_supply_quantity_update;
+
+CREATE TRIGGER after_supply_quantity_update
+AFTER UPDATE ON SUPPLY
+FOR EACH ROW
+BEGIN
+    -- Verificar si la cantidad del suministro es 0
+    IF NEW.quantity = 0 THEN
+        -- Actualizar el estado del suministro a "agotado" (por ejemplo, id_status = 3)
+        UPDATE SUPPLY
+        SET id_status = 2 -- Cambia 3 por el ID correspondiente al estado "agotado"
+        WHERE id_supply = NEW.id_supply;
+    END IF;
+END$$
+
+DELIMITER ;

@@ -1,17 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React, { useEffect, useState } from "react";
+import {
+  Dimensions,
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function InterfazWarehouse({ navigation }) {
   const [warehouses, setWarehouses] = useState([]);
   const [groupedWarehouses, setGroupedWarehouses] = useState([]);
   const [menuVisible, setMenuVisible] = useState(false);
 
-  useEffect(() => { getWarehouses(); }, []);
+  useEffect(() => {
+    getWarehouses();
+  }, []);
 
   const getWarehouses = async () => {
     try {
-      const response = await fetch("http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php");
+      const response = await fetch(
+        "http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php",
+      );
       const data = await response.json();
       console.log("Almacenes ", data);
       setWarehouses(data);
@@ -22,7 +33,7 @@ export default function InterfazWarehouse({ navigation }) {
       }
       setGroupedWarehouses(groupedData);
     } catch (error) {
-      console.error('Error obteniendo almacenes:', error);
+      console.error("Error obteniendo almacenes:", error);
     }
   };
 
@@ -32,20 +43,22 @@ export default function InterfazWarehouse({ navigation }) {
         <Text style={styles.title}>Gestión de Almacenes</Text>
         <View style={styles.headerDivider} />
       </View>
-      
+
       <FlatList
         data={groupedWarehouses}
         contentContainerStyle={styles.listContent}
         renderItem={({ item }) => (
           <View style={styles.row}>
             {item.map((warehouse) => (
-              <TouchableOpacity 
-                key={warehouse.id_warehouse} 
+              <TouchableOpacity
+                key={warehouse.id_warehouse}
                 style={styles.card}
-                onPress={() => navigation.navigate('WarehouseDetails', {
-                  id: warehouse.id_warehouse,
-                  name: warehouse.name,
-                })}
+                onPress={() =>
+                  navigation.navigate("WarehouseDetails", {
+                    id: warehouse.id_warehouse,
+                    name: warehouse.name,
+                  })
+                }
               >
                 <View style={styles.cardHeader}>
                   <Icon name="warehouse" size={28} color="#FFF" />
@@ -54,11 +67,15 @@ export default function InterfazWarehouse({ navigation }) {
                 <View style={styles.cardBody}>
                   <View style={styles.infoRow}>
                     <Icon name="cube-outline" size={20} color="#FF6F00" />
-                    <Text style={styles.cardSubtitle}>Capacidad: {warehouse.capacity}</Text>
+                    <Text style={styles.cardSubtitle}>
+                      Capacidad: {warehouse.capacity}
+                    </Text>
                   </View>
                   <View style={styles.infoRow}>
                     <Icon name="map-marker" size={20} color="#FF6F00" />
-                    <Text style={styles.cardSubtitle}>Ubicación: {warehouse.location}</Text>
+                    <Text style={styles.cardSubtitle}>
+                      Ubicación: {warehouse.location}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -73,7 +90,7 @@ export default function InterfazWarehouse({ navigation }) {
           </View>
         }
       />
-      
+
       <TouchableOpacity
         style={styles.menuButton}
         onPress={() => setMenuVisible(!menuVisible)}
@@ -81,14 +98,14 @@ export default function InterfazWarehouse({ navigation }) {
       >
         <Icon name={menuVisible ? "close" : "plus"} size={30} color="white" />
       </TouchableOpacity>
-      
+
       {menuVisible && (
         <View style={styles.menu}>
           <TouchableOpacity
             style={styles.menuItem}
             onPress={() => {
               setMenuVisible(false);
-              navigation.navigate('CreateWarehouse');
+              navigation.navigate("CreateWarehouse");
             }}
             activeOpacity={0.7}
           >
@@ -100,7 +117,7 @@ export default function InterfazWarehouse({ navigation }) {
             style={styles.menuItem}
             onPress={() => {
               setMenuVisible(false);
-              navigation.navigate('UpdateWarehouse');
+              navigation.navigate("UpdateWarehouse");
             }}
             activeOpacity={0.7}
           >
@@ -116,53 +133,53 @@ export default function InterfazWarehouse({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF8F0',
+    backgroundColor: "#FFF8F0",
     paddingHorizontal: 15,
     paddingTop: 20,
   },
   header: {
     marginBottom: 25,
-    alignItems: 'center',
+    alignItems: "center",
   },
   headerDivider: {
     height: 3,
-    width: '30%',
-    backgroundColor: '#FFA040',
+    width: "30%",
+    backgroundColor: "#FFA040",
     marginTop: 10,
     borderRadius: 3,
   },
   title: {
     fontSize: 26,
-    fontWeight: '700',
-    color: '#E65100',
-    textAlign: 'center',
+    fontWeight: "700",
+    color: "#E65100",
+    textAlign: "center",
   },
   listContent: {
     paddingBottom: 20,
   },
   row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 15,
   },
   card: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 12,
     padding: 15,
     marginHorizontal: 5,
-    shadowColor: '#FFA040',
+    shadowColor: "#FFA040",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 6,
     borderWidth: 1,
-    borderColor: '#FFE0B2',
+    borderColor: "#FFE0B2",
   },
   cardHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FF6F00',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FF6F00",
     padding: 10,
     borderRadius: 8,
     marginBottom: 12,
@@ -171,47 +188,47 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: 'white',
+    fontWeight: "bold",
+    color: "white",
     marginLeft: 10,
   },
   cardBody: {
     paddingHorizontal: 5,
   },
   infoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 8,
   },
   cardSubtitle: {
     fontSize: 15,
-    color: '#5D4037',
+    color: "#5D4037",
     marginLeft: 8,
   },
   menuButton: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 30,
     right: 25,
-    backgroundColor: '#FF6F00',
+    backgroundColor: "#FF6F00",
     width: 60,
     height: 60,
     borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#000',
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 8,
   },
   menu: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 100,
     right: 25,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 12,
     paddingVertical: 10,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
@@ -219,32 +236,32 @@ const styles = StyleSheet.create({
     minWidth: 200,
   },
   menuItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 12,
     paddingHorizontal: 20,
   },
   menuText: {
     fontSize: 16,
-    color: '#FF6F00',
-    fontWeight: '600',
+    color: "#FF6F00",
+    fontWeight: "600",
     marginLeft: 15,
   },
   menuDivider: {
     height: 1,
-    backgroundColor: '#FFE0B2',
+    backgroundColor: "#FFE0B2",
     marginVertical: 5,
   },
   emptyContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 100,
   },
   emptyText: {
     fontSize: 18,
-    color: '#FFA040',
+    color: "#FFA040",
     marginTop: 15,
-    fontWeight: '500',
+    fontWeight: "500",
   },
 });

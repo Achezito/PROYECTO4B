@@ -19,12 +19,19 @@ switch ($method) {
     case 'GET': // Obtener suministros
         $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
         $id_order = isset($_GET['id_order']) ? intval($_GET['id_order']) : null;
+        $status = isset($_GET['status']) ? $_GET['status'] : null;
 
-        if ($id_sub_warehouse) {
+        if ($status === 'Pendiente') {
+            // Obtener suministros pendientes
+            $supplies = Supply::getPendingSupplies();
+        } else if ($id_sub_warehouse) {
+            // Obtener suministros por subalmacén
             $supplies = Supply::getSuppliesBySubWarehouse($id_sub_warehouse);
         } else if ($id_order) {
+            // Obtener suministros por pedido
             $supplies = Supply::getSuppliesByOrder($id_order);
         } else {
+            // Obtener todos los suministros
             $supplies = Supply::getSupplies();
         }
 

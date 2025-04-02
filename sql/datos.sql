@@ -5,6 +5,40 @@ use inventario;
 
 
 
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS material_component;
+DROP TABLE IF EXISTS material_hardware;
+DROP TABLE IF EXISTS material_link;
+DROP TABLE IF EXISTS material_physical;
+DROP TABLE IF EXISTS material_type;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS received_material;
+DROP TABLE IF EXISTS role;
+DROP TABLE IF EXISTS rotation;
+DROP TABLE IF EXISTS status;
+DROP TABLE IF EXISTS sub_warehouse;
+DROP TABLE IF EXISTS sub_warehouse_material;
+DROP TABLE IF EXISTS supplier;
+DROP TABLE IF EXISTS supply;
+DROP TABLE IF EXISTS transactions;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS warehouse;
+SELECT 
+    COALESCE(mh.model, mc.model, mp.model) AS material_model,
+    COALESCE(mh.brand, mc.brand, mp.brand) AS material_brand,
+    mt.name AS material_type
+FROM material_link ml
+LEFT JOIN material_hardware mh ON ml.id_material_hardware = mh.id_material
+LEFT JOIN material_component mc ON ml.id_material_component = mc.id_material
+LEFT JOIN material_physical mp ON ml.id_material_physical = mp.id_material
+LEFT JOIN material_type mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type)
+WHERE ml.id_supply = 1;
+
+INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical)
+VALUES (3, NULL, NULL, 1);
+INSERT INTO received_material (description, serial_number, id_supply, id_category, volume, created_at)
+VALUES ('Material recibido', 'SN-1234567890', 1, 1, 10, NOW());
 INSERT INTO ROLE (`name`) VALUES ('Admin'), ('Usuario');
 
 -- Crear usuario de prueba (Contraseña: 123456)
@@ -408,6 +442,8 @@ INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, size, design, model, bra
 (60, NULL, '5.0"x3.0"', 'Click Anywhere', 'TouchClick', 'Lenovo', 7, 9),
 (61, NULL, '5.1"x3.3"', 'Haptic Feedback', 'PadFeel', 'Microsoft', 7, 10);
 
+
+
 INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, design, model, brand, id_type, id_supplier) VALUES -- Cámaras para laptops
 (62, '720p', 'Integrated Webcam', 'HD Webcam 720p', 'Logitech', 8, 1),
 (63, '1080p', 'Webcam', 'C920 HD Pro', 'Logitech', 8, 2),
@@ -460,10 +496,31 @@ VALUES ('procesador', 'DP-202403001', 1, 1, 1, 3.5);
 
 
 
+
 ----------------------- MATERIAL_LINK -----------------------
-INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical) VALUES
-(1, 1, null, null),
-(2, null, null, 1);
+-- Rellenar la tabla MATERIAL_LINK con datos basados en los materiales existentes
+
+-- Asociar materiales de hardware
+INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical)
+VALUES
+(1, 1, NULL, NULL), -- Asociar el suministro 1 con el material de hardware 1
+(2, 2, NULL, NULL), -- Asociar el suministro 2 con el material de hardware 2
+(3, 3, NULL, NULL), -- Asociar el suministro 3 con el material de hardware 3
+(1, 4, NULL, NULL); -- Asociar el suministro 1 con el material de hardware 4
+
+-- Asociar materiales de componentes
+INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical)
+VALUES
+(2, NULL, 1, NULL), -- Asociar el suministro 2 con el material de componente 1
+(3, NULL, 2, NULL), -- Asociar el suministro 3 con el material de componente 2
+(1, NULL, 3, NULL); -- Asociar el suministro 1 con el material de componente 3
+
+-- Asociar materiales físicos
+INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical)
+VALUES
+(1, NULL, NULL, 1), -- Asociar el suministro 1 con el material físico 1
+(2, NULL, NULL, 2), -- Asociar el suministro 2 con el material físico 2
+(3, NULL, NULL, 3); -- Asociar el suministro 3 con el material físico 3
 
 
 ----------------------- WAREHOUSE -----------------------
@@ -495,19 +552,89 @@ INSERT INTO TRANSACTIONS (id_material, id_sub_warehouse, type, quantity) VALUES
 
 
 
+-----------------------------------------------------------
+
+INSERT INTO ROLE (id_role, `name`) VALUES
+(1, 'Admin'),
+(2, 'Usuario');
+
+-- Usuario de prueba (Contraseña: 123456)
+INSERT INTO USER (id_user, `name`, password_hash, email, id_role) VALUES
+(1, 'Admin', SHA1('123456'), 'admin@example.com', 1),
+(2, 'Usuario', SHA1('123456'), 'user@example.com', 2);
+
+
+INSERT INTO WAREHOUSE (id_warehouse, `name`, `location`, `capacity`) VALUES
+(1, 'Almacén Principal', 'Ciudad Industrial, Sector B', 5000);
+
+INSERT INTO SUB_WAREHOUSE (id_sub_warehouse, `location`, `capacity`, `id_warehouse`, `id_category`) VALUES
+(1, 'Sector B1', 1500, 1, 1),
+(2, 'Sector B2', 2000, 1, 2),
+(3, 'Sector B3', 1500, 1, 3);
+INSERT INTO SUPPLIER (id_supplier, name, contact_info, address) VALUES
+(1, 'TechSource Inc.', 'techsource@email.com', '500 Tech St, San Francisco'),
+(2, 'ComponentPro', 'componentpro@email.com', '350 Silicon Ave, Austin'),
+(3, 'EnergyMax Ltd.', 'energymax@email.com', '700 Energy Blvd, Houston');
+
+
+INSERT INTO STATUS (id_status, description) VALUES
+(1, 'Pendiente'),
+(2, 'Entregado');
+
+
+INSERT INTO CATEGORY (id_category, `name`, `description`) VALUES
+(1, 'Hardware', 'Componentes físicos de computadoras y dispositivos electrónicos.'),
+(2, 'Materiales Físicos', 'Dispositivos y componentes para el almacenamiento de datos.'),
+(3, 'Componentes', 'Unidades de procesamiento como CPUs y GPUs.');
+
+INSERT INTO SUPPLY (id_supply, quantity, id_supplier, id_status) VALUES
+(1, 10, 1, 1), -- Suministro pendiente del proveedor 1
+(2, 5, 2, 1);  -- Suministro pendiente del proveedor 2
+
+INSERT INTO MATERIAL_TYPE (id_type, `name`) VALUES
+(1, 'Procesador'),
+(2, 'Memoria RAM'),
+(3, 'Disco Duro'),
+(4, 'Unidad De Procesamiento Gráfico (GPU)');
 
 
 
+INSERT INTO MATERIAL_TYPE (id_type, `name`) VALUES
+(1, 'Procesador'),
+(2, 'Memoria RAM');
+
+INSERT INTO MATERIAL_HARDWARE (id_material, model, brand, speed, cores, threads, cache_memory, power_consumption, id_type, id_supplier) VALUES
+(1, 'Ryzen 5 3600', 'AMD', 3.6, 6, 12, '32MB', 65.00, 1, 1),
+(2, 'Core i5-10400', 'Intel', 2.9, 6, 12, '12MB', 65.00, 1, 2);
+INSERT INTO MATERIAL_COMPONENT (id_material, model, brand, chipset, form_factor, socket_type, RAM_slots, max_RAM, expansion_slots, capacity, voltage, id_type, id_supplier) VALUES
+(3, 'Z490 AORUS MASTER', 'Gigabyte', 'Intel Z490', 'ATX', 'LGA 1200', 4, 64.00, 2, 450.00, 1.20, 1, 1),
+(4, 'ROG Strix B550-F', 'Asus', 'AMD B550', 'ATX', 'AM4', 4, 64.00, 2, 380.00, 1.10, 2, 2);
+
+INSERT INTO MATERIAL_PHYSICAL (id_material, resolution, size, design, material_type, sensitivity, connectivity) VALUES
+(5, '1920x1080', '15.6 inches', 'Slim Bezel', 'IPS', 'High', 'HDMI, DisplayPort'),
+(6, '2560x1440', '17.3 inches', 'Wide Bezel', 'OLED', 'Medium', 'HDMI, USB-C');
 
 
+INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical) VALUES
+(1, 1, NULL, NULL), -- Asociar el suministro 1 con el material de hardware 1
+(2, NULL, 3, NULL), -- Asociar el suministro 2 con el material de componente 3
+(3, NULL, NULL, 5); -- Asociar el suministro 3 con el material físico 5
 
+-- Órdenes relacionadas con los suministros
+INSERT INTO ORDERS (id_order, supply_quantity, id_supply) VALUES
+(1, 10, 1), -- Orden para el suministro 1
+(2, 5, 2),  -- Orden para el suministro 2
+(3, 15, 3); -- Orden para el suministro 3
 
+-- Actualización de la tabla SUPPLY para incluir id_order
+UPDATE SUPPLY SET id_order = 1 WHERE id_supply = 1;
+UPDATE SUPPLY SET id_order = 2 WHERE id_supply = 2;
+UPDATE SUPPLY SET id_order = 3 WHERE id_supply = 3;
 
-
-
-
-
-
+INSERT INTO TRANSACTIONS (id_material, id_sub_warehouse, type, quantity) VALUES
+(1, 1, 'inbound', 10),
+(3, 2, 'inbound', 5),
+(5, 3, 'inbound', 8);
 
 
 
