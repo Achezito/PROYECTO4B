@@ -2,15 +2,14 @@
 require_once __DIR__ . '/../config/conection.php';
 require_once '../modals/orders.php';
 
-header("Access-Control-Allow-Origin: *"); // Permite peticiones desde cualquier origen
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS"); // Agregar OPTIONS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
 header("Content-Type: application/json");
 
 $method = $_SERVER['REQUEST_METHOD']; // Se lee el método para manejar diferentes acciones
@@ -54,9 +53,15 @@ try {
             break;
 
         case 'POST': // Agregar nueva orden
+            $id_order_confirmation = isset($_POST['Id_order_confirmation']) ? $_POST['Id_order_confirmation'] : null;
+            $confirmation = isset($_POST['confirmation']) ? $_POST['confirmation'] : null;
+            $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : null;
 
-            if ( isset($_POST['quantity'])) {
+            if ($quantity) {
                 $response = Order::insert(0);
+            } if ($id_order_confirmation && $confirmation) {
+                $response = Order::updateOrderConfirmation($id_order_confirmation, $confirmation);
+            }
 
                 if ($response === true) {
                     echo json_encode(["message" => "Orden creada exitosamente."]);
@@ -65,8 +70,7 @@ try {
                     echo json_encode(["error" => $response]);
                     http_response_code(500); // Internal Server Error
                 }
-            }
-            
+
         default:
             echo json_encode(["error" => "Método no permitido."]);
             http_response_code(405); // Method Not Allowed

@@ -63,24 +63,20 @@ class Supply
 
         $query = "
         SELECT 
-    sp.id_supply AS id_supply,
-    sp.id_order AS order_id,
-    st.description AS supply_status,
-    sp.quantity AS quantity,
-    s.name AS supplier_name,
-    s.contact_info AS supplier_contact,
-    s.address AS supplier_address,
-    COALESCE(mh.model, mc.model, mp.model) AS material_model,
-    mt.name AS material_type
-FROM SUPPLY sp
-JOIN SUPPLIER s ON sp.id_supplier = s.id_supplier
-LEFT JOIN ORDERS o ON sp.id_order = o.id_order
-LEFT JOIN STATUS st ON sp.id_status = st.id_status
-LEFT JOIN MATERIAL_LINK ml ON sp.id_supply = ml.id_supply
-LEFT JOIN MATERIAL_HARDWARE mh ON ml.id_material_hardware = mh.id_material
-LEFT JOIN MATERIAL_COMPONENT mc ON ml.id_material_component = mc.id_material
-LEFT JOIN MATERIAL_PHYSICAL mp ON ml.id_material_physical = mp.id_material
-LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type);
+            sp.id_supply AS id_supply,
+            sp.id_order AS order_id,
+            st.description AS supply_status,
+            sp.quantity AS quantity,
+            COALESCE(mh.model, mc.model, mp.model) AS model,
+            mt.name AS material_type
+        FROM SUPPLY sp
+        JOIN SUPPLIER s ON sp.id_supplier = s.id_supplier
+        LEFT JOIN ORDERS o ON sp.id_order = o.id_order
+        LEFT JOIN STATUS st ON sp.id_status = st.id_status
+        LEFT JOIN MATERIAL_HARDWARE mh ON sp.id_material_hardware = mh.id_material
+        LEFT JOIN MATERIAL_COMPONENT mc ON sp.id_material_component = mc.id_material
+        LEFT JOIN MATERIAL_PHYSICAL mp ON sp.id_material_physical = mp.id_material
+        LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type)
         ";
 
         $command = $connection->prepare($query);
@@ -118,10 +114,9 @@ LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.i
         JOIN SUPPLIER s ON sp.id_supplier = s.id_supplier
         LEFT JOIN ORDERS o ON sp.id_order = o.id_order
         LEFT JOIN STATUS st ON sp.id_status = st.id_status
-        LEFT JOIN MATERIAL_LINK ml ON sp.id_supply = ml.id_supply
-        LEFT JOIN MATERIAL_HARDWARE mh ON ml.id_material_hardware = mh.id_material
-        LEFT JOIN MATERIAL_COMPONENT mc ON ml.id_material_component = mc.id_material
-        LEFT JOIN MATERIAL_PHYSICAL mp ON ml.id_material_physical = mp.id_material
+        LEFT JOIN MATERIAL_HARDWARE mh ON sp.id_material_hardware = mh.id_material
+        LEFT JOIN MATERIAL_COMPONENT mc ON sp.id_material_component = mc.id_material
+        LEFT JOIN MATERIAL_PHYSICAL mp ON sp.id_material_physical = mp.id_material
         LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type)
         WHERE sp.id_order = ?;
         ";
@@ -168,6 +163,39 @@ LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.i
             return "Supply not found.";
         }
     }
+
+    public static function insertSupply($quantity, $id_supplier, $id_order, $id_material_hardware, $id_material_component, $id_material_physical) {
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $query = "INSERT INTO SUPPLY (quantity, id_supplier, id_order, id_material_hardware, id_material_component, id_material_physical) VALUES (?, ?, ?, ?, ?, ?)";
+        
+        $command = $connection->prepare($query);
+        if (!$command) {
+            return "Error en la preparación de la consulta: " . $connection->error;
+        }
+        
+        $command->bind_param("iiiiii", $quantity, $id_supplier, $id_order, $id_material_hardware, $id_material_component, $id_material_physical);
+        
+        $result = $command->execute();
+        if (!$result) {
+            return "Error en la ejecución de la consulta: " . $command->error;
+        }
+        
+        $inserted_id = $command->insert_id;
+        
+        $command->close();
+        $connection->close();
+        
+        return [
+            "success" => true,
+            "message" => "Supply insertado correctamente.",
+            "id_supply" => $inserted_id
+        ];
+    }
+    
 
 
     public static function getSuppliesBySubWarehouse($id_sub_warehouse)

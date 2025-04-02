@@ -55,7 +55,8 @@ class Order {
         o.updated_at
         FROM ORDERS o
         JOIN STATUS s ON o.id_status = s.id_status
-        JOIN STATUS s2 ON o.confirmation = s2.id_status";
+        JOIN STATUS s2 ON o.confirmation = s2.id_status
+        ORDER BY id_order ASC";
         $command = $connection->prepare($query);
         $command->execute();
         $command->bind_result(
@@ -264,6 +265,26 @@ public static function getOrdersByConfirmation($confirmation){
             return "Error al agregar orden: " . $connection->error;
         }
     }
+
+
+    public static function updateOrderConfirmation($id_order, $confirmation) {
+        $connection = Conexion::get_connection();
+    
+        if ($connection->connect_error) {
+            return "Error en la conexión: " . $connection->connect_error;
+        }
+    
+        $query = "UPDATE ORDERS SET confirmation = ? WHERE id_order = ?";
+        $command = $connection->prepare($query);
+        $command->bind_param('ii', $confirmation, $id_order);
+    
+        if ($command->execute()) {
+            return true;
+        } else {
+            return "Error al actualizar la confirmación: " . $connection->error;
+        }
+    }
+
 
     public static function delete($id_order) {
         $connection = Conexion::get_connection();

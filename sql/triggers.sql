@@ -49,6 +49,7 @@ DELIMITER ;
 
 
 DELIMITER //
+
 CREATE TRIGGER aumentar_Supply_Quantity
 AFTER INSERT ON SUPPLY
 FOR EACH ROW
@@ -56,8 +57,19 @@ BEGIN
     UPDATE ORDERS
     SET supply_quantity = supply_quantity + 1
     WHERE id_order = NEW.id_order;
-END //
-DELIMITER ;
+END 
+
+//DELIMITER ;
+
+
+CREATE TRIGGER disminuir_Supply_Quantity
+AFTER DELETE ON SUPPLY
+FOR EACH ROW
+BEGIN
+    UPDATE ORDERS
+    SET supply_quantity = supply_quantity - 1
+    WHERE id_order = OLD.id_order;
+END 
 
 DELIMITER //
 

@@ -31,20 +31,11 @@ class User
     ";
 
     // Getters
-    public function getIdUser()
-    {
-        return $this->id_user;
-    }
+    public function getIdUser(){ return $this->id_user; }
 
-    public function getName()
-    {
-        return $this->name;
-    }
+    public function getName(){ return $this->name; }
 
-    public function getEmail()
-    {
-        return $this->email;
-    }
+    public function getEmail(){ return $this->email; }
 
     public function getIdRole()
     {
@@ -113,4 +104,38 @@ class User
             return "El usuario no existe";
         }
     }
+
+    public static function LoginWeb($username, $password){
+        $connection = Conexion::get_connection();
+        if ($connection->connect_error) {
+            return "Error en la conexion" . $connection->connect_error;
+        }
+
+        $command = $connection->prepare(self::$loginQuery);
+        $command->bind_param('s', $username);
+        $command->execute();
+        $command->bind_result(
+            $id_user,
+            $name,
+            $password_hash,
+            $email,
+            $rol_name
+        );
+
+        if ($command->fetch()) {
+            if (sha1($password) == $password_hash) {
+                if ($rol_name == 'Admin') {
+                    return "admin";
+                } else  {
+                    return "user";
+                }
+            } else {
+                return "Usuario o contraseña incorrectas";
+            }
+        } else {
+            return "El usuario no existe";
+        }
+    }
 }
+
+?>
