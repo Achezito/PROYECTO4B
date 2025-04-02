@@ -1,0 +1,1442 @@
+Raw data: {"distancia":58.09,"cajas":0}
+Parsed data: {"distancia":58.09,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":57.81,"cajas":0}
+Parsed data: {"distancia":57.81,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.50,"cajas":0}
+Parsed data: {"distancia":190.5,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":7.91,"cajas":2}
+Parsed data: {"distancia":7.91,"cajas":2}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":56.82,"cajas":0}
+Parsed data: {"distancia":56.82,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":58.10,"cajas":0}
+Parsed data: {"distancia":58.1,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":57.38,"cajas":0}
+Parsed data: {"distancia":57.38,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":57.26,"cajas":0}
+Parsed data: {"distancia":57.26,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":156.61,"cajas":0}
+Parsed data: {"distancia":156.61,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":57.69,"cajas":0}
+Parsed data: {"distancia":57.69,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":57.68,"cajas":0}
+Parsed data: {"distancia":57.68,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.52,"cajas":0}
+Parsed data: {"distancia":190.52,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":157.51,"cajas":0}
+Parsed data: null
+ancia":157.51,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.50,"cajas":0}
+Parsed data: {"distancia":190.5,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.50,"cajas":0}
+Parsed data: {"distancia":190.5,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.52,"cajas":0}
+Parsed data: {"distancia":190.52,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":58.53,"cajas":0}
+Parsed data: {"distancia":58.53,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":155.79,"cajas":0}
+Parsed data: {"distancia":155.79,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":56.87,"cajas":0}
+Parsed data: {"distancia":56.87,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":156.20,"cajas":0}
+Parsed data: {"distancia":156.2,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":156.15,"cajas":0}
+Parsed data: {"distancia":156.15,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":156.60,"cajas":0}
+Parsed data: {"distancia":156.6,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.67,"cajas":0}
+Parsed data: {"distancia":190.67,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":62.24,"cajas":0}
+Parsed data: {"distancia":62.24,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":61.81,"cajas":0}
+Parsed data: {"distancia":61.81,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.19,"cajas":0}
+Parsed data: {"distancia":190.19,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.26,"cajas":0}
+Parsed data: {"distancia":190.26,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Raw data: 
+Parsed data: null
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Raw data: {"distancia":58.31,"cajas":0}
+Parsed data: {"distancia":58.31,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"29"}
+Raw data: {"distancia":62.51,"cajas":0}
+Parsed data: {"distancia":62.51,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"29"}
+Raw data: {"distancia":58.24,"cajas":0}
+Parsed data: {"distancia":58.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"29"}
+Raw data: {"distancia":58.40,"cajas":0}
+Parsed data: {"distancia":58.4,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.19,"cajas":0}
+Parsed data: {"distancia":190.19,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:28:50 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"29"}
+Raw data: {"distancia":14.44,"cajas":0}
+Parsed data: {"distancia":14.44,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.64,"cajas":0}
+Parsed data: {"distancia":158.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":156.89,"cajas":0}
+Parsed data: {"distancia":156.89,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":157.75,"cajas":0}
+Parsed data: {"distancia":157.75,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":157.32,"cajas":0}
+Parsed data: {"distancia":157.32,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.60,"cajas":0}
+Parsed data: {"distancia":158.6,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.94,"cajas":0}
+Parsed data: {"distancia":159.94,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.49,"cajas":0}
+Parsed data: {"distancia":159.49,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.92,"cajas":0}
+Parsed data: {"distancia":159.92,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":157.83,"cajas":0}
+Parsed data: {"distancia":157.83,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.65,"cajas":0}
+Parsed data: {"distancia":158.65,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.07,"cajas":0}
+Parsed data: {"distancia":159.07,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.51,"cajas":0}
+Parsed data: {"distancia":159.51,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:30:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.51,"cajas":0}
+Parsed data: {"distancia":159.51,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.64,"cajas":0}
+Parsed data: {"distancia":158.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.51,"cajas":0}
+Parsed data: {"distancia":159.51,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.67,"cajas":0}
+Parsed data: {"distancia":158.67,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:32:26 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.08,"cajas":0}
+Parsed data: {"distancia":159.08,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:32:47 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.23,"cajas":0}
+Parsed data: {"distancia":158.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:32:52 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.59,"cajas":0}
+Parsed data: {"distancia":158.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:32:57 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.48,"cajas":0}
+Parsed data: {"distancia":159.48,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:02 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.64,"cajas":0}
+Parsed data: {"distancia":158.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.49,"cajas":0}
+Parsed data: {"distancia":159.49,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:12 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.12,"cajas":0}
+Parsed data: {"distancia":158.12,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:17 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":157.78,"cajas":0}
+Parsed data: {"distancia":157.78,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:22 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.05,"cajas":0}
+Parsed data: {"distancia":159.05,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.14,"cajas":0}
+Parsed data: {"distancia":190.14,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:32 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:37 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:42 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:47 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:52 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:33:57 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:02 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:12 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:17 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:22 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:33 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Content-Type":"application\/json","User-Agent":"Mozilla\/5.0 (Windows NT; Windows NT 10.0; es-US) WindowsPowerShell\/5.1.26100.3624","Host":"10.194.1.109","Content-Length":"28","Expect":"100-continue","Connection":"Keep-Alive"}
+Raw data: {"distancia":7.89,"cajas":2}
+Parsed data: {"distancia":7.89,"cajas":2}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:38 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:48 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:34:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:08 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:13 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:18 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:23 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:28 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:33 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:38 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:48 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:35:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:08 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:13 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:18 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:23 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:28 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:39 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:45 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:50 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:36:55 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:00 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:05 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:10 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:15 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:20 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:25 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:30 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:35 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:40 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:45 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:50 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:37:55 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:00 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:05 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:10 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:15 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.12,"cajas":0}
+Parsed data: {"distancia":190.12,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:20 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:25 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:30 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.19,"cajas":0}
+Parsed data: {"distancia":190.19,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:35 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:41 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:52 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.14,"cajas":0}
+Parsed data: {"distancia":190.14,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:38:57 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:02 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.14,"cajas":0}
+Parsed data: {"distancia":190.14,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.14,"cajas":0}
+Parsed data: {"distancia":190.14,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:12 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:17 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:22 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:32 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:37 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:42 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:47 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:52 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:39:57 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:02 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:12 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.66,"cajas":0}
+Parsed data: {"distancia":190.66,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:17 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:22 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:33 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:38 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:48 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:40:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.12,"cajas":0}
+Parsed data: {"distancia":190.12,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:08 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:13 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:18 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:23 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:28 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.52,"cajas":0}
+Parsed data: {"distancia":190.52,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:33 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:38 GMT"}
+Raw data: 
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:48 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:41:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:08 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.66,"cajas":0}
+Parsed data: {"distancia":190.66,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:13 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:18 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:23 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:33 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:38 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:48 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.19,"cajas":0}
+Parsed data: {"distancia":190.19,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:42:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:08 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.57,"cajas":0}
+Parsed data: {"distancia":190.57,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:13 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:18 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:32 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:37 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:42 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:47 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:43:52 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:01 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:06 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:11 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:16 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:21 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:26 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:31 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:38 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:48 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:44:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"28"}
+Raw data: {"distancia":4.96,"cajas":3}
+Parsed data: {"distancia":4.96,"cajas":3}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:08 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:13 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.52,"cajas":0}
+Parsed data: {"distancia":190.52,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:18 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:23 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"28"}
+Raw data: {"distancia":2.66,"cajas":3}
+Parsed data: {"distancia":2.66,"cajas":3}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:28 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:33 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"28"}
+Raw data: {"distancia":3.31,"cajas":3}
+Parsed data: {"distancia":3.31,"cajas":3}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:38 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"29"}
+Raw data: {"distancia":16.14,"cajas":0}
+Parsed data: {"distancia":16.14,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:43 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.52,"cajas":0}
+Parsed data: {"distancia":190.52,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:49 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":161.02,"cajas":0}
+Parsed data: {"distancia":161.02,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:53 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":159.31,"cajas":0}
+Parsed data: {"distancia":159.31,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:45:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:03 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:09 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"28"}
+Raw data: {"distancia":3.31,"cajas":3}
+Parsed data: {"distancia":3.31,"cajas":3}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:14 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"28"}
+Raw data: {"distancia":2.98,"cajas":3}
+Parsed data: {"distancia":2.98,"cajas":3}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:19 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:29 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:34 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:39 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":161.50,"cajas":0}
+Parsed data: {"distancia":161.5,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:44 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:49 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:54 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:46:59 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:04 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.19,"cajas":0}
+Parsed data: {"distancia":190.19,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:09 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:14 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:19 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:24 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:29 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:34 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:39 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.59,"cajas":0}
+Parsed data: {"distancia":190.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:44 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":158.43,"cajas":0}
+Parsed data: {"distancia":158.43,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:49 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:47:55 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:00 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:05 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:10 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:15 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.16,"cajas":0}
+Parsed data: {"distancia":190.16,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:20 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:25 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.26,"cajas":0}
+Parsed data: {"distancia":190.26,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:30 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":157.54,"cajas":0}
+Parsed data: {"distancia":157.54,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:35 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:40 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:45 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.26,"cajas":0}
+Parsed data: {"distancia":190.26,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:50 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:48:58 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.19,"cajas":0}
+Parsed data: {"distancia":190.19,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:12 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":160.59,"cajas":0}
+Parsed data: {"distancia":160.59,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:17 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:22 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:32 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.62,"cajas":0}
+Parsed data: {"distancia":190.62,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:37 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.26,"cajas":0}
+Parsed data: {"distancia":190.26,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:42 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:47 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:52 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.64,"cajas":0}
+Parsed data: {"distancia":190.64,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:49:57 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":161.48,"cajas":0}
+Parsed data: {"distancia":161.48,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:50:02 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.21,"cajas":0}
+Parsed data: {"distancia":190.21,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:50:07 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.23,"cajas":0}
+Parsed data: {"distancia":190.23,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:50:12 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:50:17 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.18,"cajas":0}
+Parsed data: {"distancia":190.18,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:50:22 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.24,"cajas":0}
+Parsed data: {"distancia":190.24,"cajas":0}
+Headers: {"Host":"10.194.1.109","Connection":"Keep-Alive","Accept-Encoding":"gzip","Cookie":"PHPSESSID=ji2i0n7kea7gehp43mbm77dfd1","User-Agent":"okhttp\/4.12.0","If-Modified-Since":"Wed, 02 Apr 2025 22:50:27 GMT"}
+Raw data: 
+Parsed data: null
+Headers: {"Host":"10.194.1.109","User-Agent":"ESP32HTTPClient","Connection":"keep-alive","Accept-Encoding":"identity;q=1,chunked;q=0.1,*;q=0","Content-Type":"application\/json","Content-Length":"30"}
+Raw data: {"distancia":190.61,"cajas":0}
+Parsed data: {"distancia":190.61,"cajas":0}

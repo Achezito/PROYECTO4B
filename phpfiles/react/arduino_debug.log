@@ -1,0 +1,560 @@
+[2025-04-03 00:50:37] Raw: 
+Response: {"status":"error","message":"No se recibieron datos","debug":null}
+[2025-04-03 00:50:40] Raw: {"distancia":190.24,"cajas":0}
+Response: {"status":"success","distancia":190.24,"cajas":0,"timestamp":"2025-04-03 00:50:40"}
+[2025-04-03 00:50:42] Raw: 
+Response: {"status":"error","message":"No se recibieron datos","debug":null}
+[2025-04-03 00:50:45] Raw: {"distancia":190.23,"cajas":0}
+Response: {"status":"success","distancia":190.23,"cajas":0,"timestamp":"2025-04-03 00:50:45"}
+[2025-04-03 00:50:47] Raw: 
+Response: {"status":"error","message":"No se recibieron datos","debug":null}
+[2025-04-03 00:50:50] Raw: {"distancia":190.61,"cajas":0}
+Response: {"status":"success","distancia":190.61,"cajas":0,"timestamp":"2025-04-03 00:50:50"}
+[2025-04-03 00:50:52] Raw: 
+Response: {"status":"error","message":"No se recibieron datos","debug":null}
+[2025-04-03 00:50:55] Raw: {"distancia":190.62,"cajas":0}
+Response: {"status":"success","distancia":190.62,"cajas":0,"timestamp":"2025-04-03 00:50:55"}
+[2025-04-03 00:50:57] Raw: 
+Response: {"status":"error","message":"No se recibieron datos","debug":null}
+[2025-04-03 00:51:01] Raw: {"distancia":190.26,"cajas":0}
+Response: {"status":"success","distancia":190.26,"cajas":0,"timestamp":"2025-04-03 00:51:01"}
+[2025-04-03 00:51:02] Raw: 
+Response: {"status":"error","message":"No se recibieron datos","debug":null}
+[2025-04-03 00:51:03] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:03"}
+[2025-04-03 00:51:06] Raw: {"distancia":190.26,"cajas":0}
+Response: {"status":"success","distancia":190.26,"cajas":0,"timestamp":"2025-04-03 00:51:06"}
+[2025-04-03 00:51:06] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:06"}
+[2025-04-03 00:51:09] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:09"}
+[2025-04-03 00:51:11] Raw: {"distancia":190.62,"cajas":0}
+Response: {"status":"success","distancia":190.62,"cajas":0,"timestamp":"2025-04-03 00:51:11"}
+[2025-04-03 00:51:12] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:12"}
+[2025-04-03 00:51:15] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:15"}
+[2025-04-03 00:51:16] Raw: {"distancia":190.61,"cajas":0}
+Response: {"status":"success","distancia":190.61,"cajas":0,"timestamp":"2025-04-03 00:51:16"}
+[2025-04-03 00:51:18] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:18"}
+[2025-04-03 00:51:21] Raw: {"distancia":190.24,"cajas":0}
+Response: {"status":"success","distancia":190.24,"cajas":0,"timestamp":"2025-04-03 00:51:21"}
+[2025-04-03 00:51:21] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:21"}
+[2025-04-03 00:51:24] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:24"}
+[2025-04-03 00:51:26] Raw: {"distancia":190.64,"cajas":0}
+Response: {"status":"success","distancia":190.64,"cajas":0,"timestamp":"2025-04-03 00:51:26"}
+[2025-04-03 00:51:27] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:27"}
+[2025-04-03 00:51:30] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:30"}
+[2025-04-03 00:51:31] Raw: {"distancia":190.23,"cajas":0}
+Response: {"status":"success","distancia":190.23,"cajas":0,"timestamp":"2025-04-03 00:51:31"}
+[2025-04-03 00:51:33] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:33"}
+[2025-04-03 00:51:36] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:36"}
+[2025-04-03 00:51:39] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:39"}
+[2025-04-03 00:51:42] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:42"}
+[2025-04-03 00:51:45] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:45"}
+[2025-04-03 00:51:49] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:49"}
+[2025-04-03 00:51:52] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:52"}
+[2025-04-03 00:51:55] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:55"}
+[2025-04-03 00:51:58] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:51:58"}
+[2025-04-03 00:52:01] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:01"}
+[2025-04-03 00:52:04] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:04"}
+[2025-04-03 00:52:07] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:07"}
+[2025-04-03 00:52:10] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:10"}
+[2025-04-03 00:52:13] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:13"}
+[2025-04-03 00:52:16] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:16"}
+[2025-04-03 00:52:19] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:19"}
+[2025-04-03 00:52:22] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:22"}
+[2025-04-03 00:52:25] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:25"}
+[2025-04-03 00:52:28] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:28"}
+[2025-04-03 00:52:31] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:31"}
+[2025-04-03 00:52:34] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:34"}
+[2025-04-03 00:52:37] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:37"}
+[2025-04-03 00:52:40] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:40"}
+[2025-04-03 00:52:43] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:43"}
+[2025-04-03 00:52:46] Raw: {"distancia":0,"cajas":0}
+Response: {"status":"success","distancia":0,"cajas":0,"timestamp":"2025-04-03 00:52:46"}
+[2025-04-03 00:52:49] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:52:52] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:52:55] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:52:58] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:01] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:04] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:07] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:10] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:13] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:16] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:19] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:22] User-Agent: okhttp/4.12.0
+Raw: {"distancia":0,"cajas":0}
+
+[2025-04-03 00:53:26] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:29] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:32] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:35] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:38] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:41] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:44] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:47] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:50] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:53] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:56] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:53:59] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:02] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:05] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:07] User-Agent: ESP32HTTPClient
+Raw: {"distancia":4.96,"cajas":3}
+
+[2025-04-03 00:54:08] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:11] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:12] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.01,"cajas":3}
+
+[2025-04-03 00:54:14] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:17] User-Agent: ESP32HTTPClient
+Raw: {"distancia":4.96,"cajas":3}
+
+[2025-04-03 00:54:18] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:21] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:22] User-Agent: ESP32HTTPClient
+Raw: {"distancia":4.96,"cajas":3}
+
+[2025-04-03 00:54:24] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:27] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:27] User-Agent: ESP32HTTPClient
+Raw: {"distancia":4.96,"cajas":3}
+
+[2025-04-03 00:54:30] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:32] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.65,"cajas":3}
+
+[2025-04-03 00:54:33] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:36] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:37] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.65,"cajas":3}
+
+[2025-04-03 00:54:39] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:42] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:42] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.65,"cajas":3}
+
+[2025-04-03 00:54:45] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:47] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.64,"cajas":3}
+
+[2025-04-03 00:54:48] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:51] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:53] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.65,"cajas":3}
+
+[2025-04-03 00:54:54] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:57] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:54:58] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.65,"cajas":3}
+
+[2025-04-03 00:55:00] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:03] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.65,"cajas":3}
+
+[2025-04-03 00:55:03] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:06] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:08] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.64,"cajas":3}
+
+[2025-04-03 00:55:12] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:13] User-Agent: ESP32HTTPClient
+Raw: {"distancia":3.64,"cajas":3}
+
+[2025-04-03 00:55:18] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:22] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:23] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:25] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:28] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:28] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:31] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:33] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:34] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:37] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:39] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:40] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:43] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:44] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:46] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:49] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:49] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:52] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:54] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:55:55] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:58] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:55:59] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:56:01] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:04] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:04] User-Agent: ESP32HTTPClient
+Raw: {"distancia":2.33,"cajas":3}
+
+[2025-04-03 00:56:07] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:10] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:13] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:16] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:19] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:22] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:25] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:28] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:31] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:34] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:37] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:40] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:43] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:46] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:49] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:52] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:55] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:56:58] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:01] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:04] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:07] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:10] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:13] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:16] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:19] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:23] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:26] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:29] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:32] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:35] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:36] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.47,"cajas":0}
+
+[2025-04-03 00:57:38] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:41] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:41] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.52,"cajas":0}
+
+[2025-04-03 00:57:44] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:46] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.44,"cajas":0}
+
+[2025-04-03 00:57:47] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:50] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:52] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.54,"cajas":0}
+
+[2025-04-03 00:57:53] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:56] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:57:57] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.47,"cajas":0}
+
+[2025-04-03 00:57:59] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:02] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.38,"cajas":0}
+
+[2025-04-03 00:58:04] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:07] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.50,"cajas":0}
+
+[2025-04-03 00:58:07] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:11] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:12] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.49,"cajas":0}
+
+[2025-04-03 00:58:14] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:17] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:17] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.50,"cajas":0}
+
+[2025-04-03 00:58:20] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:23] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.38,"cajas":0}
+
+[2025-04-03 00:58:23] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:26] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:28] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.40,"cajas":0}
+
+[2025-04-03 00:58:29] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:32] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:33] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.49,"cajas":0}
+
+[2025-04-03 00:58:35] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:38] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:38] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.38,"cajas":0}
+
+[2025-04-03 00:58:41] User-Agent: okhttp/4.12.0
+Raw: 
+
+[2025-04-03 00:58:43] User-Agent: ESP32HTTPClient
+Raw: {"distancia":811.40,"cajas":0}
+
+[2025-04-03 00:58:44] User-Agent: okhttp/4.12.0
+Raw: 
+
