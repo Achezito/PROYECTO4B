@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 
 export default function ProveedoresScreen({ route, navigation }) {
   const { id } = route.params; // ID del subalmacén
@@ -9,7 +15,7 @@ export default function ProveedoresScreen({ route, navigation }) {
     fetch(`http://localhost/PROYECTO4B-1/phpfiles/react/supplier_api.php?`)
       .then((response) => response.json())
       .then((data) => setProveedores(data))
-      .catch((error) => console.error('Error al cargar proveedores:', error));
+      .catch((error) => console.error("Error al cargar proveedores:", error));
   }, []);
 
   return (
@@ -19,7 +25,9 @@ export default function ProveedoresScreen({ route, navigation }) {
       {/* Botón para añadir un proveedor */}
       <TouchableOpacity
         style={styles.addButton}
-        onPress={() => navigation.navigate('AddProveedorScreen', { id_sub_warehouse: id })}
+        onPress={() =>
+          navigation.navigate("AddProveedorScreen", { id_sub_warehouse: id })
+        }
       >
         <Text style={styles.addButtonText}>Añadir Proveedor</Text>
       </TouchableOpacity>
@@ -30,7 +38,9 @@ export default function ProveedoresScreen({ route, navigation }) {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
-            onPress={() => navigation.navigate('EditProveedorScreen', { proveedor: item })}
+            onPress={() =>
+              navigation.navigate("EditProveedorScreen", { proveedor: item })
+            }
           >
             <Text style={styles.cardTitle}>{item.name}</Text>
             <Text style={styles.cardText}>Contacto: {item.contact_info}</Text>
@@ -43,24 +53,29 @@ export default function ProveedoresScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#FFF3E0' }, // Fondo naranja claro
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, color: '#E65100' }, // Texto naranja oscuro
+  container: { flex: 1, padding: 20, backgroundColor: "#FFF3E0" }, // Fondo naranja claro
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "#E65100",
+  }, // Texto naranja oscuro
   addButton: {
-    backgroundColor: '#FF9800', // Botón naranja
+    backgroundColor: "#FF9800", // Botón naranja
     padding: 15,
     borderRadius: 10,
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 20,
   },
-  addButtonText: { color: 'white', fontSize: 18, fontWeight: 'bold' },
+  addButtonText: { color: "white", fontSize: 18, fontWeight: "bold" },
   card: {
     padding: 15,
     marginBottom: 10,
-    backgroundColor: '#FFE0B2', // Fondo de las tarjetas naranja claro
+    backgroundColor: "#FFE0B2", // Fondo de las tarjetas naranja claro
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#FFB74D', // Borde naranja
+    borderColor: "#FFB74D", // Borde naranja
   },
-  cardTitle: { fontSize: 18, fontWeight: 'bold', color: '#E65100' }, // Texto naranja oscuro
-  cardText: { fontSize: 16, color: '#BF360C' }, // Texto naranja más oscuro
+  cardTitle: { fontSize: 18, fontWeight: "bold", color: "#E65100" }, // Texto naranja oscuro
+  cardText: { fontSize: 16, color: "#BF360C" }, // Texto naranja más oscuro
 });

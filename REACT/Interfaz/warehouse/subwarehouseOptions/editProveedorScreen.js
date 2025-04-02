@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  StyleSheet,
+} from "react-native";
 
 export default function EditProveedorScreen({ route, navigation }) {
   const { proveedor } = route.params; // Datos del proveedor
@@ -10,13 +17,13 @@ export default function EditProveedorScreen({ route, navigation }) {
   const handleEditProveedor = () => {
     // Validación de campos vacíos
     if (!name.trim() || !contactInfo.trim() || !address.trim()) {
-      Alert.alert('Error', 'Todos los campos son obligatorios.');
+      Alert.alert("Error", "Todos los campos son obligatorios.");
       return;
     }
 
-    fetch('http://localhost/PROYECTO4B-1/phpfiles/react/supplier_api.php', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("http://localhost/PROYECTO4B-1/phpfiles/react/supplier_api.php", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id_supplier: proveedor.id_supplier,
         name,
@@ -27,15 +34,18 @@ export default function EditProveedorScreen({ route, navigation }) {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          Alert.alert('Éxito', 'Proveedor actualizado exitosamente.');
+          Alert.alert("Éxito", "Proveedor actualizado exitosamente.");
           navigation.goBack();
         } else {
-          Alert.alert('Error', data.error || 'No se pudo actualizar el proveedor.');
+          Alert.alert(
+            "Error",
+            data.error || "No se pudo actualizar el proveedor.",
+          );
         }
       })
       .catch((error) => {
-        console.error('Error al actualizar proveedor:', error);
-        Alert.alert('Error', 'Ocurrió un error al actualizar el proveedor.');
+        console.error("Error al actualizar proveedor:", error);
+        Alert.alert("Error", "Ocurrió un error al actualizar el proveedor.");
       });
   };
 
@@ -68,21 +78,21 @@ export default function EditProveedorScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: 'white' },
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
+  container: { flex: 1, padding: 20, backgroundColor: "white" },
+  title: { fontSize: 24, fontWeight: "bold", marginBottom: 20 },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderRadius: 10,
     padding: 10,
     marginBottom: 20,
     fontSize: 16,
   },
   button: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: "#4CAF50",
     padding: 15,
     borderRadius: 10,
-    alignItems: 'center',
+    alignItems: "center",
   },
-  buttonText: { color: 'white', fontSize: 18, fontWeight: 'bold' },
+  buttonText: { color: "white", fontSize: 18, fontWeight: "bold" },
 });

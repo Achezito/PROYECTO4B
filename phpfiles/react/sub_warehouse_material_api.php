@@ -2,8 +2,8 @@
 require_once __DIR__ . '/../config/conection.php';
 require_once '../modals/sub_warehouse_material.php';
 
-header("Access-Control-Allow-Origin: *"); // Permite peticiones desde cualquier origen
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS"); // Agregar OPTIONS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -13,82 +13,95 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 header("Content-Type: application/json");
 
-$method = $_SERVER['REQUEST_METHOD']; // Se lee el método para manejar diferentes acciones
+$method = $_SERVER['REQUEST_METHOD'];
 
-switch ($method) {
-    case 'GET': // Obtener materiales por subalmacén
-        $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
+try {
+    switch ($method) {
+        case 'GET': // Obtener materiales por subalmacén
+            // Obtener el parámetro id_sub_warehouse de la solicitud GET
+            $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
 
-        if ($id_sub_warehouse) {
-            // Llama al método para obtener los materiales por subalmacén
-            $materials = SubWarehouseMaterial::getMaterialsBySubWarehouseId($id_sub_warehouse);
+            if ($id_sub_warehouse) {
+                $materials = SubWarehouseMaterial::getMaterialsBySubWarehouseId($id_sub_warehouse);
 
-            if (is_array($materials) && !empty($materials)) {
-                echo json_encode($materials, JSON_PRETTY_PRINT);
-            } elseif (is_array($materials) && empty($materials)) {
-                echo json_encode(["message" => "No se encontraron materiales para el subalmacén especificado."]);
-                http_response_code(404); // Not Found
+                if (is_array($materials) && !empty($materials)) {
+                    echo json_encode(["success" => true, "data" => $materials]);
+                } else {
+                    echo json_encode(["success" => false, "message" => "No se encontraron materiales para el subalmacén especificado."]);
+                    http_response_code(404);
+                }
             } else {
-                echo json_encode(["error" => $materials]);
-                http_response_code(500); // Internal Server Error
+                throw new Exception("Falta el parámetro id_sub_warehouse");
             }
-        } else {
-            echo json_encode(["error" => "Falta el parámetro id_sub_warehouse"]);
-            http_response_code(400); // Bad Request
-        }
-        break;
+            break;
 
-    case 'POST': // Agregar nuevo SubWarehouseMaterial
-        $data = json_decode(file_get_contents('php://input'), true);
+        case 'POST': // Agregar nuevo SubWarehouseMaterial
+            $data = json_decode(file_get_contents('php://input'), true);
 
-        if (isset($data['id_sub_warehouse'], $data['id_material'], $data['quantity'])) {
-            $subWarehouseMaterial = new SubWarehouseMaterial(
-                $data['id_sub_warehouse'],
-                $data['id_material'],
-                $data['quantity']
-            );
+            if (isset($data['id_sub_warehouse'], $data['id_material'], $data['quantity'])) {
+                $id_sub_warehouse = intval($data['id_sub_warehouse']);
+                $id_material = intval($data['id_material']);
+                $quantity = intval($data['quantity']);
 
-            $result = $subWarehouseMaterial->insert();
-            echo json_encode(["message" => $result === true ? "SubWarehouseMaterial added successfully" : $result]);
-        } else {
-            echo json_encode(["error" => "Missing data"]);
-            http_response_code(400); // Bad Request
-        }
-        break;
+                $subWarehouseMaterial = new SubWarehouseMaterial($id_sub_warehouse, $id_material, $quantity);
+                $result = $subWarehouseMaterial->insert();
 
-    case 'PUT': // Actualizar SubWarehouseMaterial
-        $data = json_decode(file_get_contents('php://input'), true);
+                if ($result === true) {
+                    echo json_encode(["success" => true, "message" => "Material agregado al subalmacén con éxito"]);
+                } else {
+                    throw new Exception($result);
+                }
+            } else {
+                throw new Exception("Faltan datos requeridos: id_sub_warehouse, id_material, quantity");
+            }
+            break;
 
-        if (isset($data['id_sub_warehouse'], $data['id_material'], $data['quantity'])) {
-            $subWarehouseMaterial = new SubWarehouseMaterial(
-                $data['id_sub_warehouse'],
-                $data['id_material'],
-                $data['quantity']
-            );
+        case 'PUT': // Actualizar SubWarehouseMaterial
+            $data = json_decode(file_get_contents('php://input'), true);
 
-            $result = $subWarehouseMaterial->update();
-            echo json_encode(["message" => $result === true ? "SubWarehouseMaterial updated successfully" : $result]);
-        } else {
-            echo json_encode(["error" => "Missing data"]);
-            http_response_code(400); // Bad Request
-        }
-        break;
+            if (isset($data['id_sub_warehouse'], $data['id_material'], $data['quantity'])) {
+                $id_sub_warehouse = intval($data['id_sub_warehouse']);
+                $id_material = intval($data['id_material']);
+                $quantity = intval($data['quantity']);
 
-    case 'DELETE': // Eliminar SubWarehouseMaterial
-        $data = json_decode(file_get_contents('php://input'), true);
+                $subWarehouseMaterial = new SubWarehouseMaterial($id_sub_warehouse, $id_material, $quantity);
+                $result = $subWarehouseMaterial->update();
 
-        if (isset($data['id_sub_warehouse'], $data['id_material'])) {
-            $subWarehouseMaterial = new SubWarehouseMaterial($data['id_sub_warehouse'], $data['id_material']);
-            $result = $subWarehouseMaterial->delete();
-            echo json_encode(["message" => $result === true ? "SubWarehouseMaterial deleted successfully" : $result]);
-        } else {
-            echo json_encode(["error" => "Missing id_sub_warehouse or id_material"]);
-            http_response_code(400); // Bad Request
-        }
-        break;
+                if ($result === true) {
+                    echo json_encode(["success" => true, "message" => "Cantidad actualizada con éxito"]);
+                } else {
+                    throw new Exception($result);
+                }
+            } else {
+                throw new Exception("Faltan datos requeridos: id_sub_warehouse, id_material, quantity");
+            }
+            break;
 
-    default:
-        echo json_encode(["error" => "Invalid request method"]);
-        http_response_code(405); // Method Not Allowed
+        case 'DELETE': // Eliminar SubWarehouseMaterial
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            if (isset($data['id_sub_warehouse'], $data['id_material'])) {
+                $subWarehouseMaterial = new SubWarehouseMaterial(
+                    intval($data['id_sub_warehouse']),
+                    intval($data['id_material'])
+                );
+
+                $result = $subWarehouseMaterial->delete();
+                if ($result === true) {
+                    echo json_encode(["success" => true, "message" => "SubWarehouseMaterial eliminado con éxito"]);
+                } else {
+                    throw new Exception($result);
+                }
+            } else {
+                throw new Exception("Faltan datos requeridos: id_sub_warehouse, id_material");
+            }
+            break;
+
+        default:
+            throw new Exception("Método de solicitud no válido");
+    }
+} catch (Exception $e) {
+    echo json_encode(["success" => false, "error" => $e->getMessage()]);
+    http_response_code(500);
 }
 ?>

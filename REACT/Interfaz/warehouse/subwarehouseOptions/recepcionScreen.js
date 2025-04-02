@@ -1,215 +1,296 @@
 import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+} from "react-native";
 
-const API_URL = "http://localhost/PROYECTO4B-1/phpfiles/react";
+export default function RecepcionForm({ navigation }) {
+  const [supplies, setSupplies] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedSupply, setSelectedSupply] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [materials, setMaterials] = useState([]); // Estado para los materiales del suministro seleccionado
 
-const RecepcionScreen = () => {
-    const [materials, setMaterials] = useState([]);
-  const [subWarehouses, setSubWarehouses] = useState([]);
-  const [assignedMaterials, setAssignedMaterials] = useState([]);
-  const [notification, setNotification] = useState(null);
-
-  // Obtener materiales desde la API
-  const fetchMaterials = async () => {
-    try {
-      const response = await fetch(`${API_URL}/received_material_api.php`);
-      const result = await response.json(); // Cambié 'data' a 'result' para mayor claridad
-  
-      console.log("API Response:", result); // Depuración: verifica la respuesta de la API
-  
-      if (response.ok && result.success) {
-        setMaterials(result.data); // Asigna el array de materiales al estado
-      } else {
-        setNotification({ message: result.error || "Error al obtener materiales", type: "error" });
-      }
-    } catch (error) {
-      console.error("Error al conectar con la API:", error);
-      setNotification({ message: "Error al conectar con la API", type: "error" });
-    }
-  };
-
-  // Obtener subalmacenes desde la API
-  const fetchSubWarehouses = async () => {
-    try {
-      const response = await fetch(`${API_URL}/sub_warehouse_api.php`);
-      const result = await response.json();
-  
-      console.log("SubWarehouses API Response:", result); // Depuración: verifica la respuesta de la API
-  
-      if (response.ok && result.success) {
-        setSubWarehouses(result.data); // Asegúrate de que `result.data` sea un array
-      } else {
-        setNotification({ message: result.error || "Error al obtener subalmacenes", type: "error" });
-      }
-    } catch (error) {
-      console.error("Error al conectar con la API:", error);
-      setNotification({ message: "Error al conectar con la API", type: "error" });
-    }
-  };
-
-  const handleAssign = async (material) => {
-    console.log("Material ID:", material.id_material);
-    console.log("Material Category (id_category):", material.id_category);
-    console.log("SubWarehouses:", subWarehouses);
-  
-    const subWarehouse = subWarehouses.find((sw) => sw.id_category === material.id_category);
-  
-    if (!subWarehouse) {
-      setNotification({ message: `No hay subalmacén para la categoría ${material.id_category}`, type: "error" });
-      return;
-    }
-  
-    console.log("SubWarehouse ID:", subWarehouse.id_sub_warehouse);
-  
-    try {
-      const response = await fetch(`${API_URL}/received_material_api.php`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id_material: material.id_material,
-          sub_almacen: subWarehouse.id_sub_warehouse,
-        }),
-      });
-  
-      const data = await response.json();
-      console.log("API Response:", data);
-  
-      if (response.ok) {
-        setAssignedMaterials((prev) => [
-          ...prev,
-          { ...material, subWarehouseName: subWarehouse.location },
-        ]);
-        setNotification({ message: data.message || "Material asignado con éxito", type: "success" });
-      } else {
-        setNotification({ message: data.error || "Error al asignar material", type: "error" });
-      }
-    } catch (error) {
-      console.error("Error al conectar con la API:", error);
-      setNotification({ message: "Error al conectar con la API", type: "error" });
-    }
-  };
-
-  // Cargar datos al montar el componente
   useEffect(() => {
-    fetchMaterials();
-    fetchSubWarehouses();
+    // Cargar suministros pendientes
+    fetch(
+      "http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php?status=Pendiente",
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error al cargar suministros: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!Array.isArray(data)) {
+          throw new Error(
+            "El formato de los datos de suministros no es válido.",
+          );
+        }
+        setSupplies(data);
+      })
+      .catch((error) => {
+        console.error("Error al cargar suministros:", error);
+        Alert.alert(
+          "Error",
+          "No se pudieron cargar los suministros pendientes.",
+        );
+      });
+
+    // Cargar categorías
+    fetch("http://localhost/PROYECTO4B-1/phpfiles/react/category_api.php")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error al cargar categorías: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!Array.isArray(data)) {
+          throw new Error(
+            "El formato de los datos de categorías no es válido.",
+          );
+        }
+        setCategories(data);
+      })
+      .catch((error) => {
+        console.error("Error al cargar categorías:", error);
+        Alert.alert("Error", "No se pudieron cargar las categorías.");
+      });
   }, []);
 
-  return (
-    <div style={styles.container}>
-      {notification && (
-        <div
-          style={{
-            ...styles.notification,
-            ...(notification.type === "error"
-              ? styles.error
-              : notification.type === "success"
-              ? styles.success
-              : styles.info),
-          }}
-        >
-          {notification.message}
-        </div>
-      )}
+  const handleSupplySelect = (supply) => {
+    setSelectedSupply(supply);
 
-      <div style={styles.card}>
-        <h2 style={styles.title}>Materiales Pendientes</h2>
-        <div style={styles.table}>
-  {Array.isArray(materials) && materials.length > 0 ? (
-    materials.map((material) => (
-      <div key={material.id_material} style={styles.row}>
-        <span style={styles.cell}>{material.description}</span>
-        <span style={styles.cell}>{material.id_category}</span>
-        <button
-          style={styles.assignButton}
-          onClick={() => handleAssign(material)}
-        >
-          Asignar
-        </button>
-      </div>
-    ))
-  ) : (
-    <p>No hay materiales disponibles</p>
-  )}
-</div>
-      </div>
+    // Cargar materiales del suministro seleccionado
+    fetch(
+      `http://localhost/PROYECTO4B-1/phpfiles/react/materials_api.php?id_supply=${supply.id_supply}`,
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error al cargar materiales: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!Array.isArray(data)) {
+          throw new Error(
+            "El formato de los datos de materiales no es válido.",
+          );
+        }
+        setMaterials(data);
+      })
+      .catch((error) => {
+        console.error("Error al cargar materiales:", error);
+        Alert.alert(
+          "Error",
+          "No se pudieron cargar los materiales del suministro seleccionado.",
+        );
+      });
+  };
 
-      {assignedMaterials.length > 0 && (
-        <div style={styles.card}>
-          <h2 style={styles.title}>Materiales Asignados</h2>
-          <div style={styles.table}>
-            {assignedMaterials.map((material, index) => (
-              <div key={index} style={styles.row}>
-                <span style={styles.cell}>{material.model}</span>
-                <span style={styles.cell}>{material.subWarehouseName}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
+  const handleSubmit = () => {
+    if (!selectedSupply) {
+      Alert.alert("Error", "Por favor, seleccione un suministro.");
+      return;
+    }
+
+    if (!selectedCategory) {
+      Alert.alert("Error", "Por favor, seleccione una categoría.");
+      return;
+    }
+
+    const payload = {
+      id_supply: selectedSupply.id_supply,
+      id_category: selectedCategory.id_category, // Asegúrate de que esta clave exista
+    };
+    console.log("Payload enviado:", payload);
+
+    fetch(
+      "http://localhost/PROYECTO4B-1/phpfiles/react/received_material_api.php",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      },
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Respuesta del servidor:", data); // Agrega este registro
+        if (data.success) {
+          Alert.alert("Éxito", "Material registrado con éxito");
+          // Recargar los datos de los suministros
+          fetch(
+            "http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php?status=Pendiente",
+          )
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  `Error al recargar suministros: ${response.status}`,
+                );
+              }
+              return response.json();
+            })
+            .then((data) => setSupplies(data))
+            .catch((error) =>
+              console.error("Error al recargar suministros:", error),
+            );
+
+          navigation.goBack();
+        } else {
+          Alert.alert("Error", data.error || "Error al registrar el material");
+        }
+      })
+      .catch((error) => {
+        console.error("Error al registrar material:", error);
+        Alert.alert("Error", "No se pudo registrar el material.");
+      });
+  };
+
+  const renderSupplyItem = ({ item }) => (
+    <TouchableOpacity
+      style={[
+        styles.card,
+        selectedSupply?.id_supply === item.id_supply && styles.cardSelected,
+      ]}
+      onPress={() => handleSupplySelect(item)}
+    >
+      <Text style={styles.cardTitle}>{item.supplier_name}</Text>
+      <Text style={styles.cardText}>Cantidad: {item.supply_quantity}</Text>
+      <Text style={styles.cardText}>Dirección: {item.supplier_address}</Text>
+      <Text style={styles.cardText}>Estatus: {item.supply_status}</Text>
+    </TouchableOpacity>
   );
-};
 
-const styles = {
-  container: {
-    padding: "20px",
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#FFF8F0",
-    minHeight: "100vh",
-  },
-  card: {
-    backgroundColor: "white",
-    borderRadius: "8px",
-    padding: "16px",
-    marginBottom: "16px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  },
+  const renderCategoryItem = ({ item }) => (
+    <TouchableOpacity
+      style={[
+        styles.card,
+        selectedCategory?.id_category === item.id_category &&
+          styles.cardSelected,
+      ]}
+      onPress={() => setSelectedCategory(item)}
+    >
+      <Text style={styles.cardTitle}>{item.description}</Text>
+    </TouchableOpacity>
+  );
+
+  const renderMaterialItem = ({ item }) => (
+    <View style={styles.materialCard}>
+      <Text style={styles.materialText}>Modelo: {item.material_model}</Text>
+      <Text style={styles.materialText}>Marca: {item.material_brand}</Text>
+      <Text style={styles.materialText}>Tipo: {item.material_type}</Text>
+    </View>
+  );
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Recepción de Materiales</Text>
+
+      <Text style={styles.sectionTitle}>Suministros Pendientes</Text>
+      <FlatList
+        data={supplies}
+        renderItem={renderSupplyItem}
+        keyExtractor={(item) => item.id_supply.toString()}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.list}
+      />
+
+      <Text style={styles.sectionTitle}>Categorías</Text>
+      <FlatList
+        data={categories}
+        renderItem={renderCategoryItem}
+        keyExtractor={(item) => item.id_category.toString()}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.list}
+      />
+
+      {selectedSupply && (
+        <>
+          <Text style={styles.sectionTitle}>Materiales del Suministro</Text>
+          <FlatList
+            data={materials}
+            renderItem={renderMaterialItem}
+            keyExtractor={(item, index) => index.toString()}
+            style={styles.list}
+          />
+        </>
+      )}
+
+      <TouchableOpacity
+        style={[
+          styles.button,
+          !(selectedSupply && selectedCategory) && styles.buttonDisabled,
+        ]}
+        onPress={handleSubmit}
+        disabled={!(selectedSupply && selectedCategory)}
+      >
+        <Text style={styles.buttonText}>Registrar Material</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 20, backgroundColor: "#FFF3E0" },
   title: {
-    fontSize: "18px",
+    fontSize: 24,
     fontWeight: "bold",
-    marginBottom: "12px",
-    color: "#F97316",
-  },
-  table: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "8px",
-  },
-  row: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "8px",
-    borderBottom: "1px solid #E5E7EB",
-  },
-  cell: {
-    flex: 1,
-    textAlign: "left",
-  },
-  assignButton: {
-    backgroundColor: "#F97316",
-    color: "white",
-    border: "none",
-    padding: "8px 12px",
-    borderRadius: "4px",
-    cursor: "pointer",
-  },
-  notification: {
-    padding: "12px",
-    borderRadius: "4px",
-    marginBottom: "16px",
-    color: "white",
+    marginBottom: 20,
+    color: "#E65100",
     textAlign: "center",
   },
-  success: {
-    backgroundColor: "#10B981",
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: "#BF360C",
   },
-  error: {
-    backgroundColor: "#EF4444",
+  list: { marginBottom: 20 },
+  card: {
+    backgroundColor: "#FFF",
+    borderRadius: 10,
+    padding: 15,
+    marginRight: 10,
+    borderWidth: 1,
+    borderColor: "#FF9800",
+    width: 200,
   },
-  info: {
-    backgroundColor: "#3B82F6",
+  cardSelected: {
+    borderColor: "#E65100",
+    borderWidth: 2,
   },
-};
-
-export default RecepcionScreen;
+  cardTitle: { fontSize: 16, fontWeight: "bold", color: "#E65100" },
+  cardText: { fontSize: 14, color: "#6D4C41" },
+  materialCard: {
+    backgroundColor: "#FFF",
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: "#FF9800",
+  },
+  materialText: { fontSize: 14, color: "#6D4C41" },
+  button: {
+    backgroundColor: "#FF9800",
+    padding: 15,
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  buttonDisabled: {
+    backgroundColor: "#FFCC80",
+  },
+  buttonText: { color: "white", fontSize: 16, fontWeight: "bold" },
+});
