@@ -1,7 +1,6 @@
 <?php
 
 include("../../menu.php");
-
 if (!isset($_SESSION['usuario'])) {
     echo "<p class='text-center text-danger'>No hay información del usuario. Inicia sesión primero.</p>";
     exit;
@@ -46,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 </style>
 
-<body id="body" class="center">
+<body id="body" class="center"><br>
 
     <div class="shadow p-4 text-center" style="width: 50%; margin-top: 120px;">
         <img src="<?php echo $usuario['picture']; ?>" class="user" alt="Foto de perfil">

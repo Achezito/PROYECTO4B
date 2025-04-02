@@ -7,7 +7,6 @@
             var idToken = params.get('id_token');
             // Este codigo convierte los parametros enviados con # para enviarlos a un archivo php que guarda la informacion
 
-            var newUrl = 'session_start.php?access_token='+accessToken+'&id_token='+idToken;
-            window.location.href = newUrl;
+            window.location.href = 'session_start.php?access_token='+accessToken+'&id_token='+idToken;
         };
 </script>

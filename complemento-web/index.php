@@ -49,6 +49,7 @@ if ($ordenar === 'asc') {
     <title>Lista de Productos</title>
     <link href="css/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 
     <script>
         function toggleOrder() {
@@ -63,37 +64,12 @@ if ($ordenar === 'asc') {
             window.location.search = urlParams.toString();
         }
     </script>
-
-    <style>
-        .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease-in-out;
-        }
-        .card img {
-            object-fit: cover;
-            height: 250px;
-        }
-        .card-body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: scale(1.02);
-        }
-
-    </style>
 </head>
-<body>
+<body style="display: flex; flex-direction:column;">
     <div class="container mt-4 mb-4">
         <br><br><br>
         <form method="GET" class="mb-4">
             <div class="row" style=" justify-content: flex-end;">
-            
                 <div class="col-md-2">
                     <label>Filtrar por categoría:</label>
                     <select name="categoria" id="categoria" class="form-select" onchange="this.form.submit()">
@@ -120,34 +96,40 @@ if ($ordenar === 'asc') {
                 <p class="text-center">No hay productos disponibles.</p>
             <?php else: ?>
                 <?php foreach ($productos as $item): ?>
+
+                <?php
+                    $modelo = $item['Product']['Model'] ?? 'Modelo desconocido';
+                    $thumbnail = isset($item['Product']['Thumbnail']) && $item['Product']['Thumbnail'] != 'Please upgrade your plan to get access to product images' ?
+                    $item['Product']['Thumbnail'] : '/images/laptop.png';
+                    $producto = [
+                    'id' => $item['Product']['id'],
+                    'Category' => $item['Product']['Category'],
+                    'Model' => $modelo,
+                    'Thumbnail' => $thumbnail ];
+
+                    $precio = rand(4999, 24999);
+                ?>
+
                     <div class="col-md-4 mb-4">
+                        <a style="text-decoration: none; color: black;" href="funcionalidades/detalles/details.php?id=<?=$item['Product']['id']?>&thumbnail=<?=$thumbnail?>&precio=<?=$precio?>">
                         <div class="card shadow-sm">
-                            <?php
-                            $modelo = $item['Product']['Model'] ?? 'Modelo desconocido';
-                            $thumbnail = isset($item['Product']['Thumbnail']) && $item['Product']['Thumbnail'] != 'Please upgrade your plan to get access to product images'
-                                ? $item['Product']['Thumbnail'] : '/images/laptop.png';
-                            ?>
-                            <img src="<?= $thumbnail ?>" class="card-img-top" alt="Imagen del producto" onerror="this.onerror=null;this.src='images/laptop.png';">
+                            <img src="<?= $thumbnail ?>"  alt="Imagen del producto" onerror="this.onerror=null;this.src='images/laptop.png';">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $modelo ?></h5>
                                 <p class="card-text"><strong>Marca:</strong> <?= $item['Product']['Brand'] ?? 'N/A' ?></p>
+                                <p class="card-text" style="display: flex; align-items: center; gap: 5px;">
+                                <label style="font-size: 12pt;">MXN</label>
+                                <label style="font-size: 15pt; font-weight: bold;"><?php echo "$".number_format($precio, 2); ?></label>
+                            </p>
 
-                                <?php
-                                $producto = [
-                                    'id' => $item['Product']['id'],
-                                    'Category' => $item['Product']['Category'],
-                                    'Model' => $modelo,
-                                    'Thumbnail' => $thumbnail ];
-                                ?>
-
-                                
-                                
                                 <div class="center" style="justify-content: space-evenly; font-size: 16pt;">
                                     <form action="funcionalidades/carrito/carrito_agregar.php" method="POST">
                                         <input type="hidden" name="producto-carrito[id]" value="<?= $item['Product']['id'] ?>">
                                         <input type="hidden" name="producto-carrito[Category]" value="<?= $item['Product']['Category'] ?>">
                                         <input type="hidden" name="producto-carrito[Model]" value="<?= $modelo ?>">
                                         <input type="hidden" name="producto-carrito[Thumbnail]" value="<?= $thumbnail ?>">
+                                        <input type="hidden" name="producto-carrito[Price]" value="<?= $precio ?>">
+                                        
                                         <button type="submit" style="border-radius: 17px; padding: 14px; color:white; background:rgb(0, 140, 255); border: none;">🛒 Añadir al Carrito</button>
                                     </form>
 
@@ -164,16 +146,18 @@ if ($ordenar === 'asc') {
                                                     echo "<i class='fas fa-bookmark' style='color: red;'></i> ";
                                                 }
                                                 ?>
-                                        
                                         </button>
                                     </form>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
     </div>
+
+<?php include("contactanos.php"); ?>
 </body>
 </html>

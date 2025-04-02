@@ -12,7 +12,7 @@ if ($electronico != '') {
             print_r($_SESSION['deseados']);  ?>
             <script>
                 alert( "<?= "Producto '".$electronico["Model"]."' añadido a la lista de deseado" ?>" );
-                window.location.href = "http://localhost/PROYECTO4B-1/complemento-web/index.php";
+                window.location.href = "lista_deseados.php";
             </script>
     <?php } else { // Si ya está en la lista, lo elimina
             unset($_SESSION['deseados'][$valor]);

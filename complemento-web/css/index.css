@@ -1,0 +1,33 @@
+
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+        .card img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-decoration: none;
+        }
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        a {
+            color: inherit; /* Hereda el color del elemento padre */
+            text-decoration: none; /* Elimina el subrayado */
+        }
