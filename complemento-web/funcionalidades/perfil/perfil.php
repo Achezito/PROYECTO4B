@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body id="body" class="center"><br>
 
-    <div class="shadow p-4 text-center" style="width: 50%; margin-top: 120px;">
+    <div class="shadow p-4 text-center" style="width: 50%; margin-top: 120px; margin-bottom:120px;">
         <img src="<?php echo $usuario['picture']; ?>" class="user" alt="Foto de perfil">
         <h4 class="mt-3">Perfil de Usuario</h4>
         
@@ -74,6 +74,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</div>
 </body>
 </html>

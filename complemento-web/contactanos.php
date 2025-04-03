@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/contact.css" rel="stylesheet">
+    <link href="http://localhost/PROYECTO4B-1/complemento-web/css/contact.css" rel="stylesheet">
 </head>
 <body>
 <hr>
@@ -11,12 +11,13 @@
     <div class="container">
         <div class="contact-info">
             <div class="contact-details">
+
                 <h4>Información de Contacto</h4>
-                <p><strong>Dirección:</strong> Calle Benito 123, Tijuana B.C , Mexico</p>
                 <p><strong>Teléfono:</strong> +52 (555) 123-4567</p>
                 <p><strong>Correo Electrónico:</strong> U-Store@Gmail.com</p>
-                <p><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 AM - 8:00 PM</p>
-                <button class="btn btn-primary" style="width: 100%;" >Ver Sucursales</button>
+                <a href="http://localhost/PROYECTO4B-1/complemento-web/funcionalidades/mapa/sucursales.php">
+                    <button class="btn btn-primary" style="width: 100%;" >Ver Sucursales</button>
+                </a>
             </div>
         </div>
     </div>
