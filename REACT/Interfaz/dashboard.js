@@ -33,9 +33,10 @@ export default function Dashboard({ navigation }) {
     data: [],
   });
   const [arduinoData, setArduinoData] = useState({
-    temperature: 0,
-    humidity: 0,
+    distancia: 0,
+    cajas: 0,
   });
+  const [arduinoError, setArduinoError] = useState("");
   const { width } = Dimensions.get("window");
   const translateX = useRef(new Animated.Value(-width)).current;
 
@@ -53,7 +54,7 @@ export default function Dashboard({ navigation }) {
   // Material por Sub Almacén
   useEffect(() => {
     fetch(
-      "http://192.168.0.108/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=sub_almacen"
+      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=sub_almacen"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -74,7 +75,7 @@ export default function Dashboard({ navigation }) {
   // Materiales por Tipo
   useEffect(() => {
     fetch(
-      "http://192.168.0.108/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=materiales_por_tipo"
+      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=materiales_por_tipo"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -93,12 +94,34 @@ export default function Dashboard({ navigation }) {
         )
       );
   }, []);
+  const fetchArduinoData = async () => {
+    try {
+      const response = await fetch(
+        "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/arduinoApi.php"
+      );
+      if (!response.ok) {
+        throw new Error("Error al obtener datos del Arduino");
+      }
+      const data = await response.json();
+      setArduinoData(data); // Actualiza el estado con los datos del Arduino
+      setArduinoError(""); // Limpia cualquier error previo
+    } catch (error) {
+      console.error("Error al obtener datos del Arduino:", error);
+      setArduinoError("No se pudo obtener datos del Arduino.");
+    }
+  };
+
+  // Llama a fetchArduinoData cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(fetchArduinoData, 5000);
+    return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+  }, []);
 
   // Comparación de Suministros
 
   useEffect(() => {
     fetch(
-      "http://192.168.0.108/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=suministros"
+      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=suministros"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -114,36 +137,11 @@ export default function Dashboard({ navigation }) {
         console.error("Error al obtener los datos de suministros:", error)
       );
   }, []);
-  // Datos del Arduino
-  useEffect(() => {
-    const fetchArduinoData = () => {
-      fetch("http://192.168.0.108/PROYECTO4B-1/phpfiles/react/arduinoApi.php")
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.status === "success") {
-            setArduinoData({
-              temperature: data.distancia.toFixed(1), // Usa la distancia como "temperatura"
-              humidity: data.cajas, // Usa el número de cajas como "humedad"
-            });
-          } else {
-            console.error("Error en los datos del Arduino:", data.message);
-          }
-        })
-        .catch((error) =>
-          console.error("Error al obtener datos del Arduino:", error)
-        );
-    };
-
-    // Llama a la función cada 5 segundos para actualizar los datos
-    const interval = setInterval(fetchArduinoData, 5000);
-
-    return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
-  }, []);
 
   // Progreso de Inventario
   useEffect(() => {
     fetch(
-      "http://192.168.0.108/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=progreso_inventario"
+      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=progreso_inventario"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -347,20 +345,53 @@ export default function Dashboard({ navigation }) {
               <Icon name="device-thermostat" size={24} color="#F44336" />
               <Text style={styles.chartTitle}>Cajas</Text>
             </View>
+
             <View style={styles.arduinoDataContainer}>
               <View style={styles.dataItem}>
-                <Icon name="thermostat" size={28} color="#F44336" />
-                <Text style={styles.arduinoText}>
-                  {arduinoData.temperature} cm
-                </Text>
                 <Text style={styles.dataLabel}>Distancia</Text>
+                <ProgressChart
+                  data={{
+                    labels: ["Distancia"], // Etiqueta
+                    data: [arduinoData.distancia / 100], // Normaliza la distancia (0 a 1)
+                  }}
+                  width={Dimensions.get("window").width / 2}
+                  height={100}
+                  strokeWidth={8}
+                  radius={32}
+                  chartConfig={{
+                    backgroundGradientFrom: "#FFF",
+                    backgroundGradientTo: "#FFF",
+                    color: (opacity = 1) => `rgba(54, 162, 235, ${opacity})`,
+                  }}
+                  hideLegend={true}
+                />
+                <Text style={styles.arduinoText}>
+                  {arduinoData.distancia} cm
+                </Text>
               </View>
+
               <View style={styles.dataItem}>
-                <Icon name="water-drop" size={28} color="#2196F3" />
-                <Text style={styles.arduinoText}>{arduinoData.humidity}</Text>
                 <Text style={styles.dataLabel}>Cajas Detectadas</Text>
+                <Icon
+                  name={
+                    arduinoData.cajas === 0
+                      ? "error-outline"
+                      : arduinoData.cajas === 1
+                      ? "inbox"
+                      : "inventory"
+                  }
+                  size={50}
+                  color={arduinoData.cajas > 0 ? "#4CAF50" : "#F44336"}
+                />
+                <Text style={styles.arduinoText}>{arduinoData.cajas}</Text>
               </View>
             </View>
+            {arduinoError && (
+              <View style={styles.errorContainer}>
+                <Icon name="error-outline" size={20} color="#F44336" />
+                <Text style={styles.errorText}>{arduinoError}</Text>
+              </View>
+            )}
           </Animatable.View>
         </Animatable.View>
       </ScrollView>

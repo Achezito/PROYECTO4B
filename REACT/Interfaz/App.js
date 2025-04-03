@@ -52,7 +52,7 @@ function LoginScreen({ navigation }) {
     formData.append("username", username);
     formData.append("password", password);
 
-    fetch("http://192.168.0.108/PROYECTO4B-1/phpfiles/config/login.php", {
+    fetch("http://10.194.1.109/PROYECTO4B-1/phpfiles/config/login.php", {
       method: "POST",
       body: formData,
     })
