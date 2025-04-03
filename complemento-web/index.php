@@ -46,7 +46,7 @@ if ($ordenar === 'asc') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Productos</title>
+    <title>Catalogos</title>
     <link href="css/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">

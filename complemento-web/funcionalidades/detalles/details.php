@@ -31,7 +31,7 @@ $battery = $productData['data']['Inside']['Battery'] ?? [];
 
         <div class="row row-cols-md-2">
             <div class="col" style="display: flex; justify-content: center; align-items: center; "  >
-                <img src="<?= $imagen; ?>" alt="Imagen del producto" style="width: 60%;" >
+                <img src="<?= $imagen; ?>" alt="Imagen del producto" style="width: 60%;" onerror="this.onerror=null;this.src='../../images/laptop.png';">
             </div>
             <div class="col">
                 <div class="section-title">Información del Producto</div>
@@ -95,35 +95,10 @@ $battery = $productData['data']['Inside']['Battery'] ?? [];
 </div>
 
 <?php
-$url = 'https://api.mockaroo.com/api/c0c5aaa0?count=6&key=39d3ed90';
+include("../resenas/resenas.php");
 
-$reseña_data = file_get_contents($url);
-
-$reseñas = json_decode($reseña_data, true);
+include("../../contactanos.php");
 ?>
-
-    <div class="containdor" style="width: 80%; ">
-        <div class="section-title">Reseñas</div>
-        <div class="row">
-        <?php foreach ($reseñas as $reseña): ?>
-            <div class="col-md-12 reseña" style="margin-bottom: 15px;">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= htmlspecialchars($reseña['review_title']) ?></h5>
-                        <p class="card-text">
-                            <strong>Usuario:</strong> <?= htmlspecialchars($reseña['user_name']) ?><br>
-                            <strong>Calificación:</strong> 
-                            <span class="rating" style="color: #FFD700; font-size: 16px;"><?= str_repeat("★", $reseña['rating']) . str_repeat("☆", 5 - $reseña['rating']) ?></span> (<?= $reseña['rating'] ?> estrellas)<br>
-                            <strong>Fecha de Reseña:</strong> <?= $reseña['review_date'] ?><br><br>
-                            <strong>Comentario:</strong><br>
-                            <?= nl2br(htmlspecialchars($reseña['review_text'])) ?>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
 
     <br><br>
 </body>
