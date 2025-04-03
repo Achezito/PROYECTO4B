@@ -54,32 +54,39 @@ class Supply
 
     // Obtener todos los suministros
 
-    public static function getSupplies()
-    {
+
+public static function getSupplies()
+{
+    try {
         $connection = Conexion::get_connection();
         if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
+            throw new Exception("Error en la conexión: " . $connection->connect_error);
         }
 
         $query = "
-        SELECT 
-            sp.id_supply AS id_supply,
-            sp.id_order AS order_id,
-            st.description AS supply_status,
-            sp.quantity AS quantity,
-            COALESCE(mh.model, mc.model, mp.model) AS model,
-            mt.name AS material_type
-        FROM SUPPLY sp
-        JOIN SUPPLIER s ON sp.id_supplier = s.id_supplier
-        LEFT JOIN ORDERS o ON sp.id_order = o.id_order
-        LEFT JOIN STATUS st ON sp.id_status = st.id_status
-        LEFT JOIN MATERIAL_HARDWARE mh ON sp.id_material_hardware = mh.id_material
-        LEFT JOIN MATERIAL_COMPONENT mc ON sp.id_material_component = mc.id_material
-        LEFT JOIN MATERIAL_PHYSICAL mp ON sp.id_material_physical = mp.id_material
-        LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type)
+            SELECT 
+                s.id_supply,
+                s.quantity,
+                s.created_at,
+                s.updated_at,
+                sup.name AS supplier_name,
+                COALESCE(mh.model, mc.model, mp.model) AS material_model,
+                COALESCE(mh.brand, mc.brand, mp.brand) AS material_brand,
+                mt.name AS material_type
+            FROM SUPPLY s
+            LEFT JOIN SUPPLIER sup ON s.id_supplier = sup.id_supplier
+            LEFT JOIN MATERIAL_LINK ml ON s.id_supply = ml.id_supply
+            LEFT JOIN MATERIAL_HARDWARE mh ON ml.id_material_hardware = mh.id_material
+            LEFT JOIN MATERIAL_COMPONENT mc ON ml.id_material_component = mc.id_material
+            LEFT JOIN MATERIAL_PHYSICAL mp ON ml.id_material_physical = mp.id_material
+            LEFT JOIN MATERIAL_TYPE mt ON mt.id_type = COALESCE(mh.id_type, mc.id_type, mp.id_type)
         ";
 
         $command = $connection->prepare($query);
+        if (!$command) {
+            throw new Exception("Error en la preparación de la consulta: " . $connection->error);
+        }
+
         $command->execute();
         $result = $command->get_result();
 
@@ -92,7 +99,13 @@ class Supply
         $connection->close();
 
         return $supplies;
+    } catch (Exception $e) {
+        return [
+            "success" => false,
+            "message" => $e->getMessage()
+        ];
     }
+}
 
     public static function getSuppliesByOrder($id_order)
     {

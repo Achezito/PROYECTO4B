@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   View,
   Text,
@@ -21,7 +22,7 @@ export default function EditProveedorScreen({ route, navigation }) {
       return;
     }
 
-    fetch("http://localhost/PROYECTO4B-1/phpfiles/react/supplier_api.php", {
+    fetch(`${BASE_URL}/PROYECTO4B-1/phpfiles/react/supplier_api.php`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -39,7 +40,7 @@ export default function EditProveedorScreen({ route, navigation }) {
         } else {
           Alert.alert(
             "Error",
-            data.error || "No se pudo actualizar el proveedor.",
+            data.error || "No se pudo actualizar el proveedor."
           );
         }
       })

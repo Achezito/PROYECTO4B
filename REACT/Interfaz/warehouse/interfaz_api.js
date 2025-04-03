@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "../config";
 import {
   Dimensions,
   FlatList,
@@ -21,7 +22,7 @@ export default function InterfazWarehouse({ navigation }) {
   const getWarehouses = async () => {
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/warehouse_api.php`
       );
       const data = await response.json();
       console.log("Almacenes ", data);

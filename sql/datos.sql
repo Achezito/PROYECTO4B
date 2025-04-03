@@ -5,6 +5,8 @@ use inventario;
 
 
 
+DESCRIBE SUPPLY;
+
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS material_component;

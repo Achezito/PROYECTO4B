@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   View,
   Text,
@@ -12,7 +13,7 @@ export default function ProveedoresScreen({ route, navigation }) {
   const [proveedores, setProveedores] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost/PROYECTO4B-1/phpfiles/react/supplier_api.php?`)
+    fetch(`${BASE_URL}/PROYECTO4B-1/phpfiles/react/supplier_api.php?`)
       .then((response) => response.json())
       .then((data) => setProveedores(data))
       .catch((error) => console.error("Error al cargar proveedores:", error));

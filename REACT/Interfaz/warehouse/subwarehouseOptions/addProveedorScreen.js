@@ -7,6 +7,7 @@ import {
   Alert,
   StyleSheet,
 } from "react-native";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 
 export default function AddProveedorScreen({ route, navigation }) {
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ export default function AddProveedorScreen({ route, navigation }) {
       return;
     }
 
-    fetch("http://localhost/PROYECTO4B-1/phpfiles/react/supplier_api.php", {
+    fetch(`${BASE_URL}/PROYECTO4B-1/phpfiles/react/supplier_api.php`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, contact_info: contactInfo, address }),

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   StyleSheet,
   View,
@@ -29,7 +30,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
   const fetchSubWarehouses = async () => {
     try {
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php?id=${warehouseId}`,
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php?id=${warehouseId}`
       );
       const data = await response.json();
       setSubWarehouses(data);
@@ -42,10 +43,10 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/category_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/category_api.php`,
         {
           method: "GET",
-        },
+        }
       );
       const data = await response.json();
       setCategories(data);
@@ -59,7 +60,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
     if (!selectedSubWarehouse) {
       Alert.alert(
         "Error",
-        "Por favor, selecciona un subalmacén para actualizar.",
+        "Por favor, selecciona un subalmacén para actualizar."
       );
       return;
     }
@@ -67,7 +68,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
     if (!location || !capacity || !selectedCategory) {
       Alert.alert(
         "Error",
-        "Por favor, completa todos los campos antes de enviar.",
+        "Por favor, completa todos los campos antes de enviar."
       );
       return;
     }
@@ -81,7 +82,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
 
     try {
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php`,
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php`,
         {
           method: "PUT",
           headers: {
@@ -93,7 +94,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
             capacity: parseInt(capacity, 10),
             id_category: selectedCategory,
           }),
-        },
+        }
       );
 
       const result = await response.json();
@@ -101,7 +102,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
       if (response.ok) {
         Alert.alert(
           "Éxito",
-          `Subalmacén "${location}" actualizado correctamente.`,
+          `Subalmacén "${location}" actualizado correctamente.`
         );
         setLocation("");
         setCapacity("");
@@ -111,7 +112,7 @@ export default function UpdateSubWarehouseScreen({ route, navigation }) {
       } else {
         Alert.alert(
           "Error",
-          result.message || "No se pudo actualizar el subalmacén.",
+          result.message || "No se pudo actualizar el subalmacén."
         );
       }
     } catch (error) {

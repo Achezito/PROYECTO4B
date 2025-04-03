@@ -8,7 +8,9 @@ import {
   View,
   ActivityIndicator,
 } from "react-native";
-import { Picker } from "@react-native-picker/picker"; // Asegúrate de instalar este paquete si no lo tienes
+import { Picker } from "@react-native-picker/picker";
+// Asegúrate de instalar este paquete si no lo tienes
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 
 export default function AddSubWarehouseScreen({ route, navigation }) {
   const { warehouseId } = route.params; // Recibe el ID del almacén principal
@@ -25,10 +27,10 @@ export default function AddSubWarehouseScreen({ route, navigation }) {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/category_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/category_api.php`,
         {
           method: "GET",
-        },
+        }
       );
       const data = await response.json();
       setCategories(data);
@@ -42,7 +44,7 @@ export default function AddSubWarehouseScreen({ route, navigation }) {
     if (!location || !capacity || !selectedCategory) {
       Alert.alert(
         "Error",
-        "Por favor, completa todos los campos antes de enviar.",
+        "Por favor, completa todos los campos antes de enviar."
       );
       return;
     }
@@ -56,7 +58,7 @@ export default function AddSubWarehouseScreen({ route, navigation }) {
 
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php`,
         {
           method: "POST",
           headers: {
@@ -68,7 +70,7 @@ export default function AddSubWarehouseScreen({ route, navigation }) {
             warehouse_id: warehouseId,
             id_category: selectedCategory, // Envía el ID de la categoría seleccionada
           }),
-        },
+        }
       );
       console.log({
         location: location,
@@ -81,7 +83,7 @@ export default function AddSubWarehouseScreen({ route, navigation }) {
       if (response.ok) {
         Alert.alert(
           "Éxito",
-          `Subalmacén en "${location}" añadido correctamente.`,
+          `Subalmacén en "${location}" añadido correctamente.`
         );
         setLocation("");
         setCapacity("");
@@ -90,7 +92,7 @@ export default function AddSubWarehouseScreen({ route, navigation }) {
       } else {
         Alert.alert(
           "Error",
-          result.message || "No se pudo añadir el subalmacén.",
+          result.message || "No se pudo añadir el subalmacén."
         );
       }
     } catch (error) {

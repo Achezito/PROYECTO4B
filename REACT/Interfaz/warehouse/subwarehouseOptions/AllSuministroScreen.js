@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "../../config.js";
 import {
   ActivityIndicator,
   Alert,
@@ -22,17 +23,19 @@ export default function SuministrosScreen({ route, navigation }) {
     try {
       setLoading(true);
       const url = id_sub_warehouse
-        ? `http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php?id_sub_warehouse=${id_sub_warehouse}`
-        : `http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php`;
+        ? `${BASE_URL}/PROYECTO4B-1/phpfiles/react/supply_api.php?id_sub_warehouse=${id_sub_warehouse}`
+        : `${BASE_URL}/PROYECTO4B-1/phpfiles/react/supply_api.php`;
 
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(
-          `Error en la respuesta del servidor: ${response.status}`,
+          `Error en la respuesta del servidor: ${response.status}`
         );
       }
 
       const data = await response.json();
+      console.log("Datos recibidos:", data); // Depuración
+
       if (Array.isArray(data)) {
         setSuministros(data);
         setFilteredSuministros(data); // Inicializa los suministros filtrados
@@ -43,7 +46,7 @@ export default function SuministrosScreen({ route, navigation }) {
       console.error("Error al cargar suministros:", error);
       Alert.alert(
         "Error",
-        "No se pudieron cargar los suministros. Intenta nuevamente.",
+        "No se pudieron cargar los suministros. Intenta nuevamente."
       );
     } finally {
       setLoading(false);
@@ -82,26 +85,14 @@ export default function SuministrosScreen({ route, navigation }) {
         {item.material_type || "Tipo de material no especificado"}
       </Text>
       <Text style={styles.cardSubtitle}>
-        Pertenece a la orden: {item.order_id || "Orden no especificada"}
+        Cantidad: {item.quantity || "No especificada"}
       </Text>
-
-      <View style={styles.detailContainer}>
-        <Text style={styles.cardText}>
-          Cantidad: {item.quantity || "No especificada"}
-        </Text>
-        <Text style={styles.cardText}>
-          Proveedor: {item.supplier_name || "Sin proveedor"}
-        </Text>
-        <Text style={styles.cardText}>
-          Contacto: {item.supplier_contact || "Sin contacto"}
-        </Text>
-        <Text style={styles.cardText}>
-          Dirección: {item.supplier_address || "Sin dirección"}
-        </Text>
-        <Text style={styles.cardText}>
-          Estado del Suministro: {item.supply_status || "No especificado"}
-        </Text>
-      </View>
+      <Text style={styles.cardSubtitle}>
+        Proveedor: {item.supplier_name || "Sin proveedor"}
+      </Text>
+      <Text style={styles.cardSubtitle}>
+        Marca: {item.material_brand || "Sin marca"}
+      </Text>
     </TouchableOpacity>
   );
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   View,
   Text,
@@ -18,7 +19,7 @@ export default function RecepcionForm({ navigation }) {
   useEffect(() => {
     // Cargar suministros pendientes
     fetch(
-      "http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php?status=Pendiente",
+      `${BASE_URL}/PROYECTO4B-1/phpfiles/react/supply_api.php?status=Pendiente`
     )
       .then((response) => {
         if (!response.ok) {
@@ -29,7 +30,7 @@ export default function RecepcionForm({ navigation }) {
       .then((data) => {
         if (!Array.isArray(data)) {
           throw new Error(
-            "El formato de los datos de suministros no es válido.",
+            "El formato de los datos de suministros no es válido."
           );
         }
         setSupplies(data);
@@ -38,12 +39,12 @@ export default function RecepcionForm({ navigation }) {
         console.error("Error al cargar suministros:", error);
         Alert.alert(
           "Error",
-          "No se pudieron cargar los suministros pendientes.",
+          "No se pudieron cargar los suministros pendientes."
         );
       });
 
     // Cargar categorías
-    fetch("http://localhost/PROYECTO4B-1/phpfiles/react/category_api.php")
+    fetch(`${BASE_URL}/PROYECTO4B-1/phpfiles/react/category_api.php`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Error al cargar categorías: ${response.status}`);
@@ -53,7 +54,7 @@ export default function RecepcionForm({ navigation }) {
       .then((data) => {
         if (!Array.isArray(data)) {
           throw new Error(
-            "El formato de los datos de categorías no es válido.",
+            "El formato de los datos de categorías no es válido."
           );
         }
         setCategories(data);
@@ -69,7 +70,7 @@ export default function RecepcionForm({ navigation }) {
 
     // Cargar materiales del suministro seleccionado
     fetch(
-      `http://localhost/PROYECTO4B-1/phpfiles/react/materials_api.php?id_supply=${supply.id_supply}`,
+      `${BASE_URL}/PROYECTO4B-1/phpfiles/react/materials_api.php?id_supply=${supply.id_supply}`
     )
       .then((response) => {
         if (!response.ok) {
@@ -80,7 +81,7 @@ export default function RecepcionForm({ navigation }) {
       .then((data) => {
         if (!Array.isArray(data)) {
           throw new Error(
-            "El formato de los datos de materiales no es válido.",
+            "El formato de los datos de materiales no es válido."
           );
         }
         setMaterials(data);
@@ -89,7 +90,7 @@ export default function RecepcionForm({ navigation }) {
         console.error("Error al cargar materiales:", error);
         Alert.alert(
           "Error",
-          "No se pudieron cargar los materiales del suministro seleccionado.",
+          "No se pudieron cargar los materiales del suministro seleccionado."
         );
       });
   };
@@ -111,14 +112,11 @@ export default function RecepcionForm({ navigation }) {
     };
     console.log("Payload enviado:", payload);
 
-    fetch(
-      "http://localhost/PROYECTO4B-1/phpfiles/react/received_material_api.php",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      },
-    )
+    fetch(`${BASE_URL}/PROYECTO4B-1/phpfiles/react/received_material_api.php`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -131,19 +129,19 @@ export default function RecepcionForm({ navigation }) {
           Alert.alert("Éxito", "Material registrado con éxito");
           // Recargar los datos de los suministros
           fetch(
-            "http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php?status=Pendiente",
+            `${BASE_URL}/PROYECTO4B-1/phpfiles/react/supply_api.php?status=Pendiente`
           )
             .then((response) => {
               if (!response.ok) {
                 throw new Error(
-                  `Error al recargar suministros: ${response.status}`,
+                  `Error al recargar suministros: ${response.status}`
                 );
               }
               return response.json();
             })
             .then((data) => setSupplies(data))
             .catch((error) =>
-              console.error("Error al recargar suministros:", error),
+              console.error("Error al recargar suministros:", error)
             );
 
           navigation.goBack();

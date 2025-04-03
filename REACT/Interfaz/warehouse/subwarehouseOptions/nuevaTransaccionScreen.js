@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
+import { Picker } from "@react-native-picker/picker";
+
 import {
   Alert,
-  Picker,
   StyleSheet,
   Text,
   TextInput,
@@ -24,12 +26,16 @@ export default function NuevaTransaccionScreen({ route, navigation }) {
   const fetchMaterials = async () => {
     try {
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_material_api.php?id_sub_warehouse=${id}`,
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/sub_warehouse_material_api.php?id_sub_warehouse=${id}`
       );
       const data = await response.json();
-      if (response.ok) {
-        setMaterials(data);
+
+      console.log("Datos recibidos del servidor:", data);
+
+      if (response.ok && Array.isArray(data.data)) {
+        setMaterials(data.data);
       } else {
+        console.error("Respuesta inesperada:", data);
         Alert.alert("Error", "No se pudieron cargar los materiales.");
       }
     } catch (error) {
@@ -40,7 +46,7 @@ export default function NuevaTransaccionScreen({ route, navigation }) {
 
   const handleMaterialChange = (materialId) => {
     const material = materials.find(
-      (m) => m.id_material === parseInt(materialId),
+      (m) => m.id_material === parseInt(materialId)
     );
     setSelectedMaterial(materialId);
     setAvailableQuantity(material ? material["Cantidad Disponible"] : 0);
@@ -55,7 +61,7 @@ export default function NuevaTransaccionScreen({ route, navigation }) {
     if (type === "outbound" && parseInt(quantity) > availableQuantity) {
       Alert.alert(
         "Error",
-        "La cantidad no puede exceder la cantidad disponible.",
+        "La cantidad no puede exceder la cantidad disponible."
       );
       return;
     }
@@ -67,7 +73,7 @@ export default function NuevaTransaccionScreen({ route, navigation }) {
 
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/transaction_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/transaction_api.php`,
         {
           method: "POST",
           headers: {
@@ -79,7 +85,7 @@ export default function NuevaTransaccionScreen({ route, navigation }) {
             type,
             quantity: parseInt(quantity),
           }),
-        },
+        }
       );
 
       const data = await response.json();
@@ -89,7 +95,7 @@ export default function NuevaTransaccionScreen({ route, navigation }) {
       } else {
         Alert.alert(
           "Error",
-          data.error || "Hubo un problema al registrar la transacción.",
+          data.error || "Hubo un problema al registrar la transacción."
         );
       }
     } catch (error) {

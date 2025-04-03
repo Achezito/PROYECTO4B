@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { MaterialIcons, FontAwesome5, Entypo } from "@expo/vector-icons"; // Asegúrate de instalar @expo/vector-icons
+import { MaterialIcons, FontAwesome5, Entypo } from "@expo/vector-icons";
 
 export default function SubWarehouseDetails({ route, navigation }) {
   const { id, location } = route.params; // Recibe los parámetros de navegación

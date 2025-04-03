@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   Alert,
   FlatList,
@@ -43,7 +44,7 @@ export default function TransactionScreen() {
     try {
       setLoading(true); // Activa el indicador de carga
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/transaction_api.php`, // Elimina el `id` de la URL
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/transaction_api.php` // Elimina el `id` de la URL
       );
 
       if (!response.ok) {
