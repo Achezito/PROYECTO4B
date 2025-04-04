@@ -1,18 +1,20 @@
-<?php 
-require_once 'vendor/autoload.php'; // Asegúrate de que Guzzle está instalado
+<?php
+include("menu.php");
 
+require_once 'vendor/autoload.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-$apiId = "67e4a2198ef8a6bad72e7e06";  
-$apiKey = "19dd28ac-0bc1-4dc3-bd69-e80ae90eb358";  
-$productId = "6458ca1dc795b59dc7c501bb"; // ID del producto a consultar
-
+$apiId = "67e4a2198ef8a6bad72e7e06";
+$apiKey = "19dd28ac-0bc1-4dc3-bd69-e80ae90eb358";
 $client = new Client();
 
+$productos = [];
+
 try {
-    // Realizar la solicitud a la API con el ID del producto
-    $response = $client->request('GET', "https://api.techspecs.io/v5/products/$productId", [
+    $url = "https://api.techspecs.io/v5/products/search?category=Laptops&keepCasing=true&page=0&size=20";
+    
+    $response = $client->request('GET', $url, [
         'headers' => [
             'X-API-ID' => $apiId,
             'X-API-KEY' => $apiKey,
@@ -20,20 +22,13 @@ try {
             'Content-Type' => 'application/json',
         ]
     ]);
-
-    // Obtener la respuesta del cuerpo
-    $responseBody = $response->getBody();
-
-    // Mostrar la respuesta en pantalla
-    echo $responseBody;
-
-    // Guardar la respuesta en un archivo JSON
-    $filePath = "product_productId.json";
-    file_put_contents($filePath, $responseBody);
-    echo "\nLa información del producto se ha guardado en '$filePath'.\n";
     
+    $data = json_decode($response->getBody(), true);
+    $productos = $data['data'] ?? [];
 } catch (RequestException $e) {
-    // Manejar errores
-    echo "Error en la solicitud: " . $e->getMessage();
+    echo "Error al obtener productos: " . $e->getMessage();
 }
+
+header('Content-Type: application/json');
+echo json_encode($productos, JSON_PRETTY_PRINT);
 ?>

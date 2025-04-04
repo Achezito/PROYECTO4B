@@ -1,12 +1,38 @@
 <?php
 include("../../menu.php");
 
+require_once '../../vendor/autoload.php'; // Asegúrate de que Guzzle está instalado
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
+$apiId = "67e4a2198ef8a6bad72e7e06";  
+$apiKey = "19dd28ac-0bc1-4dc3-bd69-e80ae90eb358";  
+
 $id = $_GET['id'];
 $imagen = $_GET['thumbnail'];
 $precio = $_GET['precio'];
 
-$productJson = 'product_productid.json';
-$productData = json_decode(file_get_contents($productJson), true);
+$client = new Client();
+$productData = [];
+
+try {
+    $response = $client->request('GET', "https://api.techspecs.io/v5/products/$id", [
+        'headers' => [
+            'X-API-ID' => $apiId,
+            'X-API-KEY' => $apiKey,
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+        ]
+    ]);
+
+    $productData = json_decode($response->getBody(), true);
+} catch (RequestException $e) {
+    echo "Error al obtener los detalles del producto: " . $e->getMessage();
+    exit;
+}
+
+// Extraer datos del producto
 $product = $productData['data']['Product'] ?? [];
 $design = $productData['data']['Design'] ?? [];
 $display = $productData['data']['Display'] ?? [];
@@ -30,7 +56,7 @@ $battery = $productData['data']['Inside']['Battery'] ?? [];
         <h1 class="text-center mb-4"><?= $product['Model'] ?? 'Modelo desconocido'; ?></h1>
 
         <div class="row row-cols-md-2">
-            <div class="col" style="display: flex; justify-content: center; align-items: center; "  >
+            <div class="col" style="display: flex; justify-content: center; align-items: center;">
                 <img src="<?= $imagen; ?>" alt="Imagen del producto" style="width: 60%;" onerror="this.onerror=null;this.src='../../images/laptop.png';">
             </div>
             <div class="col">
@@ -44,61 +70,58 @@ $battery = $productData['data']['Inside']['Battery'] ?? [];
 
                 <div class="section-title"><label style="font-size: 20pt;"><?= "\$MXN " . number_format($precio, 2) ?? 'N/A'; ?></label></div>
 
-            <div style="display: flex; flex-direction:row; margin-top:3px; justify-content:center; align-items:center;">
-                <form action="../carrito/carrito_agregar.php" method="POST" style="width: 85%;">
-                    <input type="hidden" name="producto-carrito[id]" value="<?=$id?>">
-                    <input type="hidden" name="producto-carrito[Category]" value="<?=$product['Category']?>">
-                    <input type="hidden" name="producto-carrito[Model]" value="<?=$product['Model']?>">
-                    <input type="hidden" name="producto-carrito[Thumbnail]" value="<?=$imagen?>">
-                    <input type="hidden" name="producto-carrito[Price]" value="<?=$precio?>">
+                <div style="display: flex; flex-direction:row; margin-top:3px; justify-content:center; align-items:center;">
+                    <form action="../carrito/carrito_agregar.php" method="POST" style="width: 85%;">
+                        <input type="hidden" name="producto-carrito[id]" value="<?=$id?>">
+                        <input type="hidden" name="producto-carrito[Category]" value="<?=$product['Category']?>">
+                        <input type="hidden" name="producto-carrito[Model]" value="<?=$product['Model']?>">
+                        <input type="hidden" name="producto-carrito[Thumbnail]" value="<?=$imagen?>">
+                        <input type="hidden" name="producto-carrito[Price]" value="<?=$precio?>">
 
-                    <button type="submit" class="btn-add-cart" >Añadir al Carrito</button>
-                </form>
-                <form action="../favoritos/lista.php" method="POST">
-                    <input type="hidden" name="producto-deseado[id]" value="<?=$id?>">
-                    <input type="hidden" name="producto-deseado[Category]" value="<?=$product['Category']?>">
-                    <input type="hidden" name="producto-deseado[Model]" value="<?=$product['Model']?>">
-                    <input type="hidden" name="producto-deseado[Thumbnail]" value="<?=$imagen?>">
-                    
-                    <button type="submit" style="background: none; border:none; font-size:27pt;" >
-                    <?php
-                    $producto = [ 'id' => $id, 'Category' => $product['Category'], 'Model' => $product['Model'], 'Thumbnail' => $imagen ];
+                        <button type="submit" class="btn-add-cart">Añadir al Carrito</button>
+                    </form>
+                    <form action="../favoritos/lista.php" method="POST">
+                        <input type="hidden" name="producto-deseado[id]" value="<?=$id?>">
+                        <input type="hidden" name="producto-deseado[Category]" value="<?=$product['Category']?>">
+                        <input type="hidden" name="producto-deseado[Model]" value="<?=$product['Model']?>">
+                        <input type="hidden" name="producto-deseado[Thumbnail]" value="<?=$imagen?>">
 
-                    if (array_search($producto, $_SESSION['deseados']) === false) {
-                        echo "<i class='fas fa-plus-circle' ></i>";
-                    } else {
-                        echo "<i class='fas fa-bookmark' style='color: red;'></i>";
-                    }
-                    ?>
-                    </button>
-                </form>
+                        <button type="submit" style="background: none; border:none; font-size:27pt;">
+                        <?php
+                        $producto = [ 'id' => $id, 'Category' => $product['Category'], 'Model' => $product['Model'], 'Thumbnail' => $imagen ];
+
+                        if (array_search($producto, $_SESSION['deseados']) === false) {
+                            echo "<i class='fas fa-plus-circle'></i>";
+                        } else {
+                            echo "<i class='fas fa-bookmark' style='color: red;'></i>";
+                        }
+                        ?>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="section-title">Diseño</div>
+                <table class="table">
+                    <tr><th>Tipo</th><td><?= $design['Body']['Type'] ?? 'N/A'; ?></td></tr>
+                    <tr><th>Color</th><td><?= $design['Body']['Colors'] ?? 'N/A'; ?></td></tr>
+                    <tr><th>Peso</th><td><?= $design['Body']['Weight'] ?? 'N/A'; ?></td></tr>
+                </table>
+            </div>
+            <div class="col">
+                <table class="table">
+                    <div class="section-title"> </div>
+                    <tr><th>Dimensión</th><td><?= $display['Diagonal'] ?? 'N/A'; ?></td></tr>
+                    <tr><th>Resolución</th><td><?= $display['Resolution (H x W)'] ?? 'N/A'; ?></td></tr>
+                    <tr><th>Relación de aspecto</th><td><?= $display['Aspect Ratio'] ?? 'N/A'; ?></td></tr>
+                </table>
             </div>
         </div>
-    <div class="col">
-    <div class="section-title">Diseño</div>
-        <table class="table">
-            <tr><th>Tipo</th><td><?= $design['Body']['Type'] ?? 'N/A'; ?></td></tr>
-            <tr><th>Color</th><td><?= $design['Body']['Colors'] ?? 'N/A'; ?></td></tr>
-            <tr><th>Peso</th><td><?= $design['Body']['Weight'] ?? 'N/A'; ?></td></tr>
-        </table>
+        <a href="../componentes/details_component.php?id=<?=$id?>" class="btn-consultar-componentes">Consultar Componentes</a>
     </div>
-    <div class="col">
-        <table class="table">
-            <div class="section-title"> </div>
-            <tr><th>Dimension</th><td><?= $display['Diagonal'] ?? 'N/A'; ?></td></tr>
-            <tr><th>Resolución</th><td><?= $display['Resolution (H x W)'] ?? 'N/A'; ?></td></tr>
-            <tr><th>Relación de aspecto</th><td><?= $display['Aspect Ratio'] ?? 'N/A'; ?></td></tr>
-        </table>
-    </div>
-</div>
-<a href="../componentes/details_component.php?id=<?=$id?>" class="btn-consultar-componentes">Consultar Componentes</a>
-</div>
 
-<?php
-include("../resenas/resenas.php");
-
-include("../../contactanos.php");
-?>
+    <?php include("../resenas/resenas.php"); ?>
+    <?php include("../../contactanos.php"); ?>
 
     <br><br>
 </body>

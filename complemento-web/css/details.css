@@ -4,6 +4,7 @@ body {
     background-color: rgb(238, 238, 238);
 }
 .containdor {
+    width: 80%;
     background: white;
     padding: 20px;
     border-radius: 10px;
