@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { BASE_URL } from "./config"; // Si está en el directorio padre
 import {
   Animated,
   ScrollView,
@@ -36,25 +37,38 @@ export default function Dashboard({ navigation }) {
     distancia: 0,
     cajas: 0,
   });
+
+  const sections = [
+    { title: "Dashboard", icon: "bar-chart", screen: "Dashboard" },
+    { title: "Recepcion", icon: "inbox", screen: "RecepcionScreen" },
+    { title: "Proveedores", icon: "local-shipping", screen: "AllProovedores" },
+    { title: "Suministros", icon: "inventory", screen: "AllSuministros" },
+    { title: "Almacenes", icon: "store", screen: "InterfazWarehouse" },
+    { title: "Órdenes", icon: "assignment", screen: "AllOrders" },
+    { title: "Reportes", icon: "bar-chart", screen: "AllTransacciones" },
+    { title: "Configuración", icon: "settings", screen: "SettingsScreen" },
+  ];
+
   const [arduinoError, setArduinoError] = useState("");
   const { width } = Dimensions.get("window");
   const translateX = useRef(new Animated.Value(-width)).current;
 
   const toggleMenu = () => {
     Animated.timing(translateX, {
-      toValue: menuOpen ? -width : 0,
+      toValue: menuOpen ? -width * 0.7 : 0,
       duration: 300,
       useNativeDriver: true,
     }).start();
     setMenuOpen(!menuOpen);
   };
+
   const shortenText = (text, maxLength = 0) =>
     text.length > maxLength ? `${text.substring(5, maxLength)}...` : text;
 
   // Material por Sub Almacén
   useEffect(() => {
     fetch(
-      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=sub_almacen"
+      `${BASE_URL}/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=sub_almacen`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -75,7 +89,7 @@ export default function Dashboard({ navigation }) {
   // Materiales por Tipo
   useEffect(() => {
     fetch(
-      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=materiales_por_tipo"
+      `${BASE_URL}/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=materiales_por_tipo`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -97,7 +111,7 @@ export default function Dashboard({ navigation }) {
   const fetchArduinoData = async () => {
     try {
       const response = await fetch(
-        "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/arduinoApi.php"
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/arduinoApi.php`
       );
       if (!response.ok) {
         throw new Error("Error al obtener datos del Arduino");
@@ -121,7 +135,7 @@ export default function Dashboard({ navigation }) {
 
   useEffect(() => {
     fetch(
-      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=suministros"
+      `${BASE_URL}/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=suministros`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -141,7 +155,7 @@ export default function Dashboard({ navigation }) {
   // Progreso de Inventario
   useEffect(() => {
     fetch(
-      "http://10.194.1.109/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=progreso_inventario"
+      `${BASE_URL}/PROYECTO4B-1/phpfiles/react/graficasApi.php?type=progreso_inventario`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -199,10 +213,29 @@ export default function Dashboard({ navigation }) {
       <Animated.View style={[styles.sidebar, { transform: [{ translateX }] }]}>
         <ScrollView contentContainerStyle={styles.sidebarContent}>
           <TouchableOpacity onPress={toggleMenu} style={styles.closeButton}>
-            <Icon name="close" size={30} color="black" />
+            <Icon name="close" size={30} color="#333" />
           </TouchableOpacity>
           <Text style={styles.sidebarTitle}>Menú</Text>
-          {/* Opciones del menú aquí */}
+
+          {/* Opciones del menú */}
+          {sections.map((section, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.menuItem}
+              onPress={() => {
+                toggleMenu();
+                navigation.navigate(section.screen);
+              }}
+            >
+              <Icon
+                name={section.icon}
+                size={24}
+                color="#007BFF"
+                style={styles.menuIcon}
+              />
+              <Text style={styles.menuText}>{section.title}</Text>
+            </TouchableOpacity>
+          ))}
         </ScrollView>
       </Animated.View>
 
@@ -416,44 +449,59 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     position: "absolute",
-    top: 15,
-    left: 20,
+    top: 10,
+    left: 10,
     backgroundColor: "#007BFF", // Azul profesional
     padding: 10,
     borderRadius: 5,
     zIndex: 2,
   },
+
   sidebar: {
     position: "absolute",
     top: 0,
     left: 0,
-    width: "80%",
+    width: "75%", // Reduce el ancho del menú
     height: "100%",
-    backgroundColor: "#E8F1F5", // Azul claro
+    backgroundColor: "#FFFFFF", // Fondo blanco
     zIndex: 1,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 5,
+    paddingVertical: 20,
   },
   sidebarContent: {
     flexGrow: 1,
-    padding: 20,
-    paddingTop: 50,
+    paddingHorizontal: 20,
   },
   closeButton: {
-    position: "absolute",
-    top: 10,
-    right: 10,
-    padding: 10,
+    alignSelf: "flex-end",
+    marginBottom: 20,
   },
   sidebarTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
     color: "#007BFF", // Azul profesional
     marginBottom: 20,
   },
+  menuItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: "#EEEEEE",
+  },
+  menuIcon: {
+    marginRight: 10,
+  },
+  menuText: {
+    fontSize: 16,
+    color: "#333",
+    fontWeight: "500",
+  },
+
   elevatedCard: {
     backgroundColor: "#FFFFFF",
     borderRadius: 12,

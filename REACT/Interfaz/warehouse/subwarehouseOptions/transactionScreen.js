@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   View,
   Text,
@@ -44,7 +45,7 @@ export default function TransactionScreen({ route }) {
     try {
       setLoading(true); // Activa el indicador de carga
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/transaction_api.php?id_sub_warehouse=${id}`,
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/transaction_api.php?id_sub_warehouse=${id}`
       );
 
       if (!response.ok) {

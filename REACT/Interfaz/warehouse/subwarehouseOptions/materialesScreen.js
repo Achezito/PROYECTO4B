@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TextInput } from "react-native";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 
 export default function MaterialsScreen({ route }) {
   const { id } = route.params; // Recibe el ID del subalmacén
@@ -32,7 +33,7 @@ export default function MaterialsScreen({ route }) {
     try {
       setLoading(true); // Activa el indicador de carga
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_material_api.php?id_sub_warehouse=${id}`,
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/sub_warehouse_material_api.php?id_sub_warehouse=${id}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

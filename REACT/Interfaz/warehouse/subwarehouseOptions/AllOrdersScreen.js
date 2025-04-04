@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 
 export default function OrdersScreen() {
   const [orders, setOrders] = useState([]);
@@ -34,7 +35,7 @@ export default function OrdersScreen() {
     try {
       setLoading(true);
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/order_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/order_api.php`
       );
 
       if (!response.ok) {

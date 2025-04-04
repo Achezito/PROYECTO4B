@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useRef, useState } from "react";
+import { BASE_URL } from "./config";
 import {
   Button,
   Dimensions,
@@ -52,7 +53,7 @@ function LoginScreen({ navigation }) {
     formData.append("username", username);
     formData.append("password", password);
 
-    fetch("http://10.194.1.109/PROYECTO4B-1/phpfiles/config/login.php", {
+    fetch(`${BASE_URL}/PROYECTO4B-1/phpfiles/config/login.php`, {
       method: "POST",
       body: formData,
     })

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "C:/xampp/htdocs/PROYECTO4B-1/REACT/Interfaz/config";
 import {
   ActivityIndicator,
   Alert,
@@ -8,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { Beaker } from "lucide-react";
 
 export default function SuministrosScreen({ route, navigation }) {
   const { id_sub_warehouse } = route.params || {}; // ID del subalmacén (si se pasa como parámetro)
@@ -19,13 +21,13 @@ export default function SuministrosScreen({ route, navigation }) {
     try {
       setLoading(true);
       const url = id_sub_warehouse
-        ? `http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php?id_sub_warehouse=${id_sub_warehouse}`
-        : `http://localhost/PROYECTO4B-1/phpfiles/react/supply_api.php`;
+        ? `${BASE_URL}/PROYECTO4B-1/phpfiles/react/supply_api.php?id_sub_warehouse=${id_sub_warehouse}`
+        : `${BASE_URL}/PROYECTO4B-1/phpfiles/react/supply_api.php`;
 
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(
-          `Error en la respuesta del servidor: ${response.status}`,
+          `Error en la respuesta del servidor: ${response.status}`
         );
       }
 
@@ -39,7 +41,7 @@ export default function SuministrosScreen({ route, navigation }) {
       console.error("Error al cargar suministros:", error);
       Alert.alert(
         "Error",
-        "No se pudieron cargar los suministros. Intenta nuevamente.",
+        "No se pudieron cargar los suministros. Intenta nuevamente."
       );
     } finally {
       setLoading(false);

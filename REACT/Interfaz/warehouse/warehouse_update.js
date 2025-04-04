@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import {
   Alert,
   FlatList,
@@ -8,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { BASE_URL } from "../config";
 
 export default function UpdateWarehouseScreen({ navigation }) {
   const [warehouses, setWarehouses] = useState([]); // Lista de almacenes
@@ -24,10 +26,10 @@ export default function UpdateWarehouseScreen({ navigation }) {
   const fetchWarehouses = async () => {
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/warehouse_api.php`,
         {
           method: "GET",
-        },
+        }
       );
       const data = await response.json();
       setWarehouses(data);
@@ -57,7 +59,7 @@ export default function UpdateWarehouseScreen({ navigation }) {
 
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/warehouse_api.php`,
         {
           method: "PUT",
           headers: {
@@ -69,7 +71,7 @@ export default function UpdateWarehouseScreen({ navigation }) {
             location: location,
             capacity: parseInt(capacity, 10),
           }),
-        },
+        }
       );
 
       const result = await response.json();
@@ -77,7 +79,7 @@ export default function UpdateWarehouseScreen({ navigation }) {
       if (response.ok) {
         Alert.alert(
           "Success",
-          `Warehouse "${warehouseName}" updated successfully!`,
+          `Warehouse "${warehouseName}" updated successfully!`
         );
         setWarehouseName("");
         setLocation("");

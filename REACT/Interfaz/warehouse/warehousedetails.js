@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { BASE_URL } from "../config";
 
 export default function WarehouseDetails({ route, navigation }) {
   const { id, name } = route.params;
@@ -21,7 +22,7 @@ export default function WarehouseDetails({ route, navigation }) {
   const fetchSubWarehouses = async () => {
     try {
       const response = await fetch(
-        `http://localhost/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php?id=${id}`,
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/sub_warehouse_api.php?id=${id}`
       );
       const data = await response.json();
       setSubWarehouses(data);

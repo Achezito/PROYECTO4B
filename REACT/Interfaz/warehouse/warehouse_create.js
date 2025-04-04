@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { BASE_URL } from "../config";
 
 export default function CreateWarehouseScreen({ navigation }) {
   const [warehouseName, setWarehouseName] = useState("");
@@ -29,7 +30,7 @@ export default function CreateWarehouseScreen({ navigation }) {
 
     try {
       const response = await fetch(
-        "http://localhost/PROYECTO4B-1/phpfiles/react/warehouse_api.php",
+        `${BASE_URL}/PROYECTO4B-1/phpfiles/react/warehouse_api.php`,
         {
           method: "POST",
           headers: {
@@ -40,7 +41,7 @@ export default function CreateWarehouseScreen({ navigation }) {
             location: location,
             capacity: parseInt(capacity, 10),
           }),
-        },
+        }
       );
 
       const result = await response.json();
@@ -48,7 +49,7 @@ export default function CreateWarehouseScreen({ navigation }) {
       if (response.ok) {
         Alert.alert(
           "Success",
-          `Warehouse "${warehouseName}" created successfully!`,
+          `Warehouse "${warehouseName}" created successfully!`
         );
         setWarehouseName("");
         setLocation("");
