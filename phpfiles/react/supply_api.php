@@ -42,7 +42,39 @@ switch ($method) {
         }
         break;
 
+    case 'POST': // Crear un nuevo suministro
+        $data = json_decode(file_get_contents("php://input"), true);
+
+        if (!isset($data['id_order']) || !isset($data['quantity']) || !isset($data['id_supplier']) || !isset($data['id_status'])) {
+            http_response_code(400); // Bad Request
+            echo json_encode(["error" => "Datos incompletos. Se requiere id_order, quantity, id_supplier e id_status."]);
+            exit();
+        }
+
+        $id_order = intval($data['id_order']);
+        $quantity = intval($data['quantity']);
+        $id_supplier = intval($data['id_supplier']);
+        $id_status = intval($data['id_status']);
+
+        try {
+            $response = Supply::insert($id_order, $quantity, $id_supplier, $id_status);
+
+            if ($response === true) {
+                http_response_code(201); // Created
+                echo json_encode(["message" => "Suministro creado exitosamente."]);
+            } else {
+                http_response_code(500); // Internal Server Error
+                echo json_encode(["error" => "Error al crear el suministro."]);
+            }
+        } catch (Exception $e) {
+            error_log("Error interno del servidor: " . $e->getMessage());
+            http_response_code(500); // Internal Server Error
+            echo json_encode(["error" => "Error interno del servidor: " . $e->getMessage()]);
+        }
+        break;
+
     default:
+        http_response_code(405); // Method Not Allowed
         echo json_encode(["error" => "Método de solicitud no válido"]);
 }
 ?>

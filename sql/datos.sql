@@ -97,6 +97,8 @@ INSERT INTO MATERIAL_TYPE (id_type, `name`) VALUES
 (14,'Altavoces'),
 (15,'Batteria (Fuente de Alimentacion)');
 
+INSERT INTO RECEIVED_MATERIAL (id_supply, description, serial_number, id_category, volume)
+VALUES (1, 'Material de prueba', 'SN123456', 2, 10.5);
 
 ----------------------- Supplier -----------------------
 INSERT INTO SUPPLIER (id_supplier, name, contact_info, address) VALUES

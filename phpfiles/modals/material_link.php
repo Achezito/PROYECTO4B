@@ -29,43 +29,81 @@ class MaterialLink {
     public function getIdMaterialPhysical() { return $this->id_material_physical; }
     public function setIdMaterialPhysical($id_material_physical) { $this->id_material_physical = $id_material_physical; }
 
-    // Obtener todos los registros
+
+
+
     public static function getAll() {
-        $data = array();
         $connection = Conexion::get_connection();
-        
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
+        $query = "SELECT * FROM MATERIAL_LINK";
+        $result = $connection->query($query);
+
+        $links = [];
+        while ($row = $result->fetch_assoc()) {
+            $links[] = $row;
         }
 
-        $query = "SELECT id_material, id_material_hardware, id_material_component, id_material_physical FROM MATERIAL_LINK";
-        $command = $connection->prepare($query);
-        $command->execute();
-        $command->bind_result($id_material, $id_material_hardware, $id_material_component, $id_material_physical);
-
-        while ($command->fetch()) {
-            $data[] = new MaterialLink($id_material, $id_material_hardware, $id_material_component, $id_material_physical);
-        }
-
-        return $data;
+        return $links;
     }
 
-    public static function insert($id_material, $id_material_hardware, $id_material_component, $id_material_physical) {
+    public static function getHardware() {
         $connection = Conexion::get_connection();
-        
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
+        $query = "SELECT id_material, model, brand FROM MATERIAL_HARDWARE";
+        $result = $connection->query($query);
+
+        $materials = [];
+        while ($row = $result->fetch_assoc()) {
+            $materials[] = $row;
         }
-    
-        $command = $connection->prepare("INSERT INTO MATERIAL_LINK (id_material, id_material_hardware, id_material_component, id_material_physical) VALUES (?, ?, ?, ?)");
-        $command->bind_param('iiii', $id_material, $id_material_hardware, $id_material_component, $id_material_physical);
-    
-        if ($command->execute()) {
-            return "Enlace de material agregado correctamente";
+
+        return $materials;
+    }
+
+    public static function getComponents() {
+        $connection = Conexion::get_connection();
+        $query = "SELECT id_material, model, brand FROM MATERIAL_COMPONENT";
+        $result = $connection->query($query);
+
+        $materials = [];
+        while ($row = $result->fetch_assoc()) {
+            $materials[] = $row;
+        }
+
+        return $materials;
+    }
+
+    public static function getPhysical() {
+        $connection = Conexion::get_connection();
+        $query = "SELECT id_material, model, brand FROM MATERIAL_PHYSICAL";
+        $result = $connection->query($query);
+
+        $materials = [];
+        while ($row = $result->fetch_assoc()) {
+            $materials[] = $row;
+        }
+
+        return $materials;
+    }
+
+    public static function insert($id_supply, $id_material_hardware, $id_material_component, $id_material_physical) {
+        $connection = Conexion::get_connection();
+        $query = "INSERT INTO MATERIAL_LINK (id_supply, id_material_hardware, id_material_component, id_material_physical)
+                  VALUES (?, ?, ?, ?)";
+
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("iiii", $id_supply, $id_material_hardware, $id_material_component, $id_material_physical);
+
+        if ($stmt->execute()) {
+            return true;
         } else {
-            return "Error al agregar enlace de material: " . $connection->error;
+            return false;
         }
     }
+
+
+  
+
+
+
 
     // Eliminar registro
     public function delete() {

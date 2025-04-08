@@ -17,11 +17,12 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 try {
     switch ($method) {
-        case 'GET': // Obtener materiales por subalmacén
+        case 'GET': // Obtener materiales por subalmacén o todos los materiales
             // Obtener el parámetro id_sub_warehouse de la solicitud GET
             $id_sub_warehouse = isset($_GET['id_sub_warehouse']) ? intval($_GET['id_sub_warehouse']) : null;
 
             if ($id_sub_warehouse) {
+                // Obtener materiales específicos de un subalmacén
                 $materials = SubWarehouseMaterial::getMaterialsBySubWarehouseId($id_sub_warehouse);
 
                 if (is_array($materials) && !empty($materials)) {
@@ -31,7 +32,15 @@ try {
                     http_response_code(404);
                 }
             } else {
-                throw new Exception("Falta el parámetro id_sub_warehouse");
+                // Obtener todos los materiales de todos los subalmacenes
+                $allMaterials = SubWarehouseMaterial::getAll();
+
+                if (is_array($allMaterials) && !empty($allMaterials)) {
+                    echo json_encode(["success" => true, "data" => $allMaterials]);
+                } else {
+                    echo json_encode(["success" => false, "message" => "No se encontraron materiales en ningún subalmacén."]);
+                    http_response_code(404);
+                }
             }
             break;
 

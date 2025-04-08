@@ -136,34 +136,25 @@ class ReceivedMaterial
     // Obtener todos los materiales recibidos
  
 
-    public static function getAllMaterials()
-    {
+    public static function getAll() {
         $connection = Conexion::get_connection();
+
         if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
+            throw new Exception("Error en la conexión: " . $connection->connect_error);
         }
-    
-        $query = "SELECT id_material, description, serial_number, id_supply, id_category, volume, created_at, updated_at 
-                  FROM RECEIVED_MATERIAL";
-        $command = $connection->prepare($query);
-        $command->execute();
-        $command->bind_result($id_material, $description, $serial_number, $id_supply, $id_category, $volume, $created_at, $updated_at);
-    
-        $materials = [];
-        while ($command->fetch()) {
-            $materials[] = [
-                "id_material" => $id_material,
-                "description" => $description,
-                "serial_number" => $serial_number,
-                "id_supply" => $id_supply,
-                "id_category" => $id_category,
-                "volume" => $volume,
-                "created_at" => $created_at,
-                "updated_at" => $updated_at
-            ];
+
+        $query = "SELECT * FROM RECEIVED_MATERIAL";
+        $result = $connection->query($query);
+
+        if ($result->num_rows > 0) {
+            $materials = [];
+            while ($row = $result->fetch_assoc()) {
+                $materials[] = $row;
+            }
+            return $materials;
+        } else {
+            return null;
         }
-    
-        return $materials;
     }
 
     // Obtener un material recibido por ID
@@ -202,23 +193,29 @@ class ReceivedMaterial
         }
     }
 
-    public static function insert($name, $description, $quantity, $batch_number, $serial_number, $date_received, $id_supply, $id_type, $id_category, $rotation, $volume)
-    {
+    public static function insert($id_supply, $description, $serial_number, $id_category, $id_rotation, $volume, $id_material_hardware = null, $id_material_component = null, $id_material_physical = null) {
         $connection = Conexion::get_connection();
 
         if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
+            throw new Exception("Error en la conexión: " . $connection->connect_error);
         }
 
-        $command = $connection->prepare("INSERT INTO RECEIVED_MATERIAL (`name`, `description`, quantity, batch_number, serial_number, date_received, id_supply, id_type, id_category, rotation, volume) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $command->bind_param('ssiiisiiisi', $name, $description, $quantity, $batch_number, $serial_number, $date_received, $id_supply, $id_type, $id_category, $rotation, $volume);
+        $query = "INSERT INTO RECEIVED_MATERIAL (id_supply, description, serial_number, id_category, id_rotation, volume, id_material_hardware, id_material_component, id_material_physical) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $connection->prepare($query);
 
-        if ($command->execute()) {
-            return "Material recibido agregado correctamente";
+        if (!$stmt) {
+            throw new Exception("Error al preparar la consulta: " . $connection->error);
+        }
+
+        $stmt->bind_param("issiidiii", $id_supply, $description, $serial_number, $id_category, $id_rotation, $volume, $id_material_hardware, $id_material_component, $id_material_physical);
+
+        if ($stmt->execute()) {
+            return true;
         } else {
-            return "Error al agregar material recibido: " . $connection->error;
+            throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
         }
     }
+
 
     public static function exists($id_material)
     {

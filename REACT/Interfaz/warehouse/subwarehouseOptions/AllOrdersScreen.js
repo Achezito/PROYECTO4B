@@ -82,7 +82,9 @@ export default function OrdersScreen() {
             <View style={styles.card}>
               <Text style={styles.cardTitle}>ID Orden: {item.id_order}</Text>
               <Text style={styles.cardText}>Fecha: {item.created_at}</Text>
-              <Text style={styles.cardText}>Estado: {item.id_status}</Text>
+              <Text style={styles.cardText}>
+                Estado: {item.status_description}
+              </Text>
               <Text style={styles.cardText}>
                 Cantidad: {item.supply_quantity}
               </Text>

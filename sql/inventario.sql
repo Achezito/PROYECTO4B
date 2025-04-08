@@ -67,11 +67,7 @@ CREATE TABLE SUPPLY (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_supplier) REFERENCES SUPPLIER(id_supplier),
     FOREIGN KEY (id_status) REFERENCES STATUS(id_status),
-    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order),
-    FOREIGN KEY (id_supply) REFERENCES SUPPLY(id_supply),
-    FOREIGN KEY (id_material_hardware) REFERENCES MATERIAL_HARDWARE(id_material),
-    FOREIGN KEY (id_material_component) REFERENCES MATERIAL_COMPONENT(id_material),
-    FOREIGN KEY (id_material_physical) REFERENCES MATERIAL_PHYSICAL(id_material)
+    FOREIGN KEY (id_order) REFERENCES ORDERS(id_order)
     );
 
 

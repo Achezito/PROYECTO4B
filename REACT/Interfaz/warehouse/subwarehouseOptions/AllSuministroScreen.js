@@ -77,7 +77,19 @@ export default function SuministrosScreen({ route, navigation }) {
 
   // Renderizar cada suministro en la lista
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => {
+        if (item.id_order) {
+          navigation.navigate("OrderDetails", { id_order: item.id_order });
+        } else {
+          Alert.alert(
+            "Información",
+            "Este suministro no tiene una orden asociada."
+          );
+        }
+      }}
+    >
       <Text style={styles.cardTitle}>
         {item.material_model || "Material sin nombre"}
       </Text>

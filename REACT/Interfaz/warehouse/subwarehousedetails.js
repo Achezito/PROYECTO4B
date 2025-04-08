@@ -24,6 +24,16 @@ export default function SubWarehouseDetails({ route, navigation }) {
       navigation.navigate("ProveedoresScreen", { id });
     } else if (option === "Suministros") {
       navigation.navigate("Suministros", { id });
+    } else if (option === "AllOrders") {
+      navigation.navigate("AllOrders", { id });
+    } else if (option === "AllSuministros") {
+      navigation.navigate("AllSuministros", { id });
+    } else if (option === "RecepcionScreen") {
+      navigation.navigate("RecepcionScreen", { id });
+    } else if (option === "asignarScreen") {
+      navigation.navigate("asignarScreen", { id });
+    } else {
+      console.log("Opción no válida");
     }
   };
 
@@ -44,18 +54,56 @@ export default function SubWarehouseDetails({ route, navigation }) {
         <View style={styles.menuContainer}>
           <TouchableOpacity
             style={styles.menuButton}
-            onPress={() => handleNavigation("Materiales")}
-          >
-            <MaterialIcons name="inventory" size={24} color="white" />
-            <Text style={styles.menuText}>Materiales</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.menuButton}
             onPress={() => handleNavigation("Órdenes")}
           >
             <FontAwesome5 name="clipboard-list" size={24} color="white" />
             <Text style={styles.menuText}>Órdenes</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation("AllOrders")}
+          >
+            <FontAwesome5 name="clipboard-list" size={24} color="white" />
+            <Text style={styles.menuText}>Ver ordenes</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation("Suministros")}
+          >
+            <MaterialIcons name="storage" size={24} color="white" />
+            <Text style={styles.menuText}>Suministros</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation("AllSuministros")}
+          >
+            <MaterialIcons name="storage" size={24} color="white" />
+            <Text style={styles.menuText}>Ver suministros</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation("RecepcionScreen")}
+          >
+            <MaterialIcons name="storage" size={24} color="white" />
+            <Text style={styles.menuText}>Recibir materiales</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation("asignarScreen")}
+          >
+            <MaterialIcons name="storage" size={24} color="white" />
+            <Text style={styles.menuText}>Asignar</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => handleNavigation("Materiales")}
+          >
+            <MaterialIcons name="inventory" size={24} color="white" />
+            <Text style={styles.menuText}>Materiales</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -80,14 +128,6 @@ export default function SubWarehouseDetails({ route, navigation }) {
           >
             <Entypo name="users" size={24} color="white" />
             <Text style={styles.menuText}>Proveedores</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.menuButton}
-            onPress={() => handleNavigation("Suministros")}
-          >
-            <MaterialIcons name="storage" size={24} color="white" />
-            <Text style={styles.menuText}>Suministros</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

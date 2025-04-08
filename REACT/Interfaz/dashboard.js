@@ -39,14 +39,10 @@ export default function Dashboard({ navigation }) {
   });
 
   const sections = [
-    { title: "Dashboard", icon: "bar-chart", screen: "Dashboard" },
-    { title: "Recepcion", icon: "inbox", screen: "RecepcionScreen" },
-    { title: "Proveedores", icon: "local-shipping", screen: "AllProovedores" },
-    { title: "Suministros", icon: "inventory", screen: "AllSuministros" },
     { title: "Almacenes", icon: "store", screen: "InterfazWarehouse" },
+    { title: "Dashboard", icon: "bar-chart", screen: "Dashboard" },
     { title: "Órdenes", icon: "assignment", screen: "AllOrders" },
-    { title: "Reportes", icon: "bar-chart", screen: "AllTransacciones" },
-    { title: "Configuración", icon: "settings", screen: "SettingsScreen" },
+    { title: "Proveedores", icon: "local-shipping", screen: "AllProovedores" },
   ];
 
   const [arduinoError, setArduinoError] = useState("");
@@ -280,33 +276,6 @@ export default function Dashboard({ navigation }) {
           </Animatable.View>
 
           {/* Gráfica de Líneas - Materiales por Tipo */}
-          <Animatable.View
-            animation="fadeInRight"
-            delay={400}
-            style={[styles.chartContainer, styles.elevatedCard]}
-          >
-            <View style={styles.chartHeader}>
-              <Icon name="show-chart" size={24} color="#FF6F00" />
-              <Text style={styles.chartTitle}>Tendencia de Materiales</Text>
-            </View>
-            {lineChartData.labels.length > 0 ? (
-              <LineChart
-                data={lineChartData}
-                width={Dimensions.get("window").width - 40}
-                height={220}
-                chartConfig={{
-                  ...chartConfig,
-                  color: (opacity = 1) => `rgba(55, 111, 111, ${opacity})`, // Naranja vibrante
-                }}
-                bezier
-                style={styles.chartStyle}
-              />
-            ) : (
-              <View style={styles.loadingContainer}>
-                <Text style={styles.loadingText}>Cargando datos...</Text>
-              </View>
-            )}
-          </Animatable.View>
 
           {/* Gráfica de Barras - Comparación de Suministros */}
           <Animatable.View

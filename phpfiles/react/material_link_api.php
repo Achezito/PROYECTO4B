@@ -13,16 +13,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 header("Content-Type: application/json");
 
-$method = $_SERVER['REQUEST_METHOD']; // Se lee el método para llamar diferentes datos dependiendo del método
+$method = $_SERVER['REQUEST_METHOD']; // Se lee el método para manejar diferentes operaciones
 
 switch ($method) {
-    case 'GET': // Obtener todos los registros de material_link
-        $links = MaterialLink::getAll();
+    case 'GET': // Obtener registros
+        if (isset($_GET['material_type'])) {
+            // Obtener materiales según el tipo
+            $materialType = $_GET['material_type'];
 
-        if (is_array($links)) {
-            echo json_encode($links, true);
+            switch ($materialType) {
+                case 'hardware':
+                    $materials = MaterialLink::getHardware();
+                    break;
+                case 'component':
+                    $materials = MaterialLink::getComponents();
+                    break;
+                case 'physical':
+                    $materials = MaterialLink::getPhysical();
+                    break;
+                default:
+                    http_response_code(400);
+                    echo json_encode(["error" => "Tipo de material no válido"]);
+                    exit();
+            }
+
+            echo json_encode($materials);
         } else {
-            echo json_encode(["error" => "No se encontraron registros de material_link"]);
+            // Obtener todos los registros de material_link
+            $links = MaterialLink::getAll();
+
+            if (is_array($links)) {
+                http_response_code(200); // OK
+                echo json_encode($links, true);
+            } else {
+                http_response_code(404); // No encontrado
+                echo json_encode(["error" => "No se encontraron registros de material_link"]);
+            }
         }
         break;
 
@@ -30,25 +56,35 @@ switch ($method) {
         $data = json_decode(file_get_contents("php://input"), true);
 
         if (
-            isset($data['id_material']) &&
-            isset($data['id_material_hardware']) &&
-            isset($data['id_material_component']) &&
-            isset($data['id_material_physical'])
+            isset($data['id_supply']) &&
+            (
+                isset($data['id_material_hardware']) ||
+                isset($data['id_material_component']) ||
+                isset($data['id_material_physical'])
+            )
         ) {
             $response = MaterialLink::insert(
-                intval($data['id_material']),
-                intval($data['id_material_hardware']),
-                intval($data['id_material_component']),
-                intval($data['id_material_physical'])
+                intval($data['id_supply']),
+                isset($data['id_material_hardware']) ? intval($data['id_material_hardware']) : null,
+                isset($data['id_material_component']) ? intval($data['id_material_component']) : null,
+                isset($data['id_material_physical']) ? intval($data['id_material_physical']) : null
             );
 
-            echo json_encode(["message" => $response]);
+            if ($response) {
+                http_response_code(201); // Creado
+                echo json_encode(["message" => "Registro creado con éxito"]);
+            } else {
+                http_response_code(500); // Error interno
+                echo json_encode(["error" => "Error al crear el registro"]);
+            }
         } else {
+            http_response_code(400); // Solicitud incorrecta
             echo json_encode(["error" => "Datos incompletos para crear material_link"]);
         }
         break;
 
     default:
+        http_response_code(405); // Método no permitido
         echo json_encode(["error" => "Método no permitido"]);
 }
 ?>

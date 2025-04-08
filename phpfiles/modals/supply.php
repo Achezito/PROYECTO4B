@@ -177,37 +177,29 @@ public static function getSupplies()
         }
     }
 
-    public static function insertSupply($quantity, $id_supplier, $id_order, $id_material_hardware, $id_material_component, $id_material_physical) {
-        $connection = Conexion::get_connection();
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
-        }
-    
-        $query = "INSERT INTO SUPPLY (quantity, id_supplier, id_order, id_material_hardware, id_material_component, id_material_physical) VALUES (?, ?, ?, ?, ?, ?)";
-        
-        $command = $connection->prepare($query);
-        if (!$command) {
-            return "Error en la preparación de la consulta: " . $connection->error;
-        }
-        
-        $command->bind_param("iiiiii", $quantity, $id_supplier, $id_order, $id_material_hardware, $id_material_component, $id_material_physical);
-        
-        $result = $command->execute();
-        if (!$result) {
-            return "Error en la ejecución de la consulta: " . $command->error;
-        }
-        
-        $inserted_id = $command->insert_id;
-        
-        $command->close();
-        $connection->close();
-        
-        return [
-            "success" => true,
-            "message" => "Supply insertado correctamente.",
-            "id_supply" => $inserted_id
-        ];
+   
+public static function insert($id_order, $quantity, $id_supplier, $id_status) {
+    $connection = Conexion::get_connection();
+
+    if ($connection->connect_error) {
+        throw new Exception("Error en la conexión: " . $connection->connect_error);
     }
+
+    $query = "INSERT INTO SUPPLY (id_order, quantity, id_supplier, id_status) VALUES (?, ?, ?, ?)";
+    $stmt = $connection->prepare($query);
+
+    if (!$stmt) {
+        throw new Exception("Error al preparar la consulta: " . $connection->error);
+    }
+
+    $stmt->bind_param("iiii", $id_order, $quantity, $id_supplier, $id_status);
+
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+    }
+}
     
 
 

@@ -86,42 +86,26 @@ class SubWarehouse
         $this->updated_at = $updated_at;
     }
 
+   
 
-    public static function getSubWarehouses()
-    {
-        $connection = Conexion::get_connection();
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
-        }
 
-        $query = "SELECT id_sub_warehouse, location, capacity, id_warehouse, id_category, created_at, updated_at FROM SUB_WAREHOUSE";
-        $command = $connection->prepare($query);
-        $command->execute();
-        $command->bind_result(
-            $id_sub_warehouse,
-            $location,
-            $capacity,
-            $id_warehouse,
-            $id_category,
-            $created_at,
-            $updated_at
-        );
 
+
+public static function getSubWarehouses() {
+    $connection = Conexion::get_connection();
+    $query = "SELECT id_sub_warehouse, location, capacity, id_warehouse, id_category FROM SUB_WAREHOUSE";
+    $result = $connection->query($query);
+
+    if ($result->num_rows > 0) {
         $subWarehouses = [];
-        while ($command->fetch()) {
-            $subWarehouses[] = [
-                "id_sub_warehouse" => $id_sub_warehouse,
-                "location" => $location,
-                "capacity" => $capacity,
-                "id_warehouse" => $id_warehouse,
-                "id_category" => $id_category,
-                "created_at" => $created_at,
-                "updated_at" => $updated_at
-            ];
+        while ($row = $result->fetch_assoc()) {
+            $subWarehouses[] = $row;
         }
-
         return $subWarehouses;
+    } else {
+        return [];
     }
+}
 
     public static function getSubWarehouseById($id_sub_warehouse)
     {

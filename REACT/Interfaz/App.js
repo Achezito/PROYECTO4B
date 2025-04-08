@@ -32,7 +32,7 @@ import AllTransactions from "./warehouse/subwarehouseOptions/AlltransactionScree
 import EditProveedorScreen from "./warehouse/subwarehouseOptions/editProveedorScreen";
 import MaterialesScreen from "./warehouse/subwarehouseOptions/materialesScreen";
 import NuevaTransaccionScreen from "./warehouse/subwarehouseOptions/nuevaTransaccionScreen";
-import OrdersScreen from "./warehouse/subwarehouseOptions/ordersScreen";
+import OrdersScreen from "./warehouse/subwarehouseOptions/ordersForm";
 import ProveedoresScreen from "./warehouse/subwarehouseOptions/proveedoresScreen";
 import Suministros from "./warehouse/subwarehouseOptions/suministrosScreen";
 import TransaccionesScreen from "./warehouse/subwarehouseOptions/transactionScreen";
@@ -41,6 +41,9 @@ import CreateWarehouseScreen from "./warehouse/warehouse_create";
 import UpdateWarehouseScreen from "./warehouse/warehouse_update";
 import WarehouseDetails from "./warehouse/warehousedetails";
 import RecepcionScreen from "./warehouse/subwarehouseOptions/recepcionScreen";
+import ordersForm from "./warehouse/subwarehouseOptions/ordersForm";
+import MaterialLinkForm from "./warehouse/subwarehouseOptions/materialLinkScreen";
+import asignarScreen from "./warehouse/subwarehouseOptions/asignarMateriales";
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
@@ -224,6 +227,9 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="AllTransactions" component={AllTransactions} />
         <Stack.Screen name="RecepcionScreen" component={RecepcionScreen} />
+        <Stack.Screen name="ordersForm" component={ordersForm} />
+        <Stack.Screen name="MaterialLinkForm" component={MaterialLinkForm} />
+        <Stack.Screen name="asignarScreen" component={asignarScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

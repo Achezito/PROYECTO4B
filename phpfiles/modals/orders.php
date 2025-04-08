@@ -204,6 +204,31 @@ public static function getOrdersByConfirmation($confirmation){
 }
 
 
+public static function getAll() {
+    $connection = Conexion::get_connection();
+
+    if ($connection->connect_error) {
+        throw new Exception("Error en la conexión: " . $connection->connect_error);
+    }
+
+    $query = "SELECT o.id_order, o.supply_quantity, o.id_status, s.description AS status_description, 
+                     o.confirmation, o.created_at, o.updated_at
+              FROM ORDERS o
+              INNER JOIN STATUS s ON o.id_status = s.id_status";
+
+    $result = $connection->query($query);
+
+    if (!$result) {
+        throw new Exception("Error al ejecutar la consulta: " . $connection->error);
+    }
+
+    $orders = [];
+    while ($row = $result->fetch_assoc()) {
+        $orders[] = $row;
+    }
+
+    return $orders;
+}
     // Obtener una orden por ID
     public static function getOrderById($id_order){
         $connection = Conexion::get_connection();
@@ -249,22 +274,29 @@ public static function getOrdersByConfirmation($confirmation){
         return $orders;
     }
 
-    public static function insert($quantity) {
-        $connection = Conexion::get_connection();
-        
-        if ($connection->connect_error) {
-            return "Error en la conexión: " . $connection->connect_error;
-        }
-    
-        $command = $connection->prepare("INSERT INTO ORDERS (supply_quantity) VALUES (?)");
-        $command->bind_param('i', $quantity);
-    
-        if ($command->execute()) {
-            return "Orden agregada correctamente";
-        } else {
-            return "Error al agregar orden: " . $connection->error;
-        }
+   
+public static function insert($id_status,$supply_quantity, $confirmation) {
+    $connection = Conexion::get_connection(); // Obtener la conexión directamente
+
+    if ($connection->connect_error) {
+        throw new Exception("Error en la conexión: " . $connection->connect_error);
     }
+
+    $query = "INSERT INTO ORDERS (id_status, supply_quantity, confirmation) VALUES (?, ?, ?)";
+    $stmt = $connection->prepare($query);
+
+    if (!$stmt) {
+        throw new Exception("Error al preparar la consulta: " . $connection->error);
+    }
+
+    $stmt->bind_param("iii",$id_status, $supply_quantity, $confirmation);
+
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+    }
+}
 
 
     public static function updateOrderConfirmation($id_order, $confirmation) {
@@ -359,4 +391,6 @@ WHERE
     
         return $orders;
     }
+
+
 }
