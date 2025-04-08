@@ -1,0 +1,62 @@
+.producto-card {
+    transition: transform 0.3s ease-in-out;
+}
+.producto-card:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+.card img {
+}
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.botons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.añadir{
+    width: 100%;
+    border-radius: 17px;
+    padding: 14px;
+    color:white;
+    background:rgb(0, 140, 255);
+    border: none;
+}
+.eliminar{
+    width: 100%;
+    border-radius: 17px;
+    padding: 14px;
+    color:white;
+    background:rgb(255, 0, 0);
+    border: none;
+}
+.formul{
+    justify-content: space-evenly;
+    font-size: 16pt;
+}
+
+.imagen{
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+}

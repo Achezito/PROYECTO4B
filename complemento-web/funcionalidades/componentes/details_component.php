@@ -1,12 +1,37 @@
 <?php
-
 include("../../menu.php");
 $id = $_GET['id'];
 
-$productJson = 'product_productid.json';
-$productData = json_decode(file_get_contents($productJson), true);
+require_once '../../vendor/autoload.php'; // Asegúrate de que Guzzle está instalado
 
-// Extraemos todos los datos del JSON
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
+$apiId = "67e4a2198ef8a6bad72e7e06";  
+$apiKey = "19dd28ac-0bc1-4dc3-bd69-e80ae90eb358";  
+
+$client = new Client();
+
+try {
+    // Realizar la solicitud a la API con el ID del producto
+    $response = $client->request('GET', "https://api.techspecs.io/v5/products/$id", [
+        'headers' => [
+            'X-API-ID' => $apiId,
+            'X-API-KEY' => $apiKey,
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+        ]
+    ]);
+
+    // Obtener la respuesta del cuerpo
+    $responseBody = $response->getBody();
+    $productData = json_decode($responseBody, true);
+} catch (RequestException $e) {
+    echo "Error en la solicitud: " . $e->getMessage();
+    exit;
+}
+
+// Extraemos todos los datos de la respuesta
 $product = $productData['data']['Product'] ?? [];
 $design = $productData['data']['Design'] ?? [];
 $display = $productData['data']['Display'] ?? [];
@@ -22,7 +47,6 @@ $battery = $productData['data']['Inside']['Battery'] ?? [];
 $ports = $productData['data']['Inside']['Ports'] ?? [];
 $camera = $productData['data']['Camera'] ?? [];
 $keyAspects = $productData['data']['Key Aspects'] ?? [];
-
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +61,7 @@ $keyAspects = $productData['data']['Key Aspects'] ?? [];
     <div class="containdor">
     <br><br><br><br>
 
-        <h1 class="text-center mb-4"><?= $product['Model'] ?? 'Modelo desconocido'; ?> - Componentes</h1>
+        <h1 class="text-center mb-4"><?= $product['Model'] ?? 'Modelo desconocido'; ?></h1>
 
         <!-- Información del producto -->
 
@@ -180,5 +204,10 @@ $keyAspects = $productData['data']['Key Aspects'] ?? [];
             </div>
         </div>
     </div>
+
+    <pre>
+        <?php print_r($productData); ?>
+    </pre>
+
 </body>
 </html>

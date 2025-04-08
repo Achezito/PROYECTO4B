@@ -4,7 +4,9 @@ $url = 'https://api.mockaroo.com/api/c0c5aaa0?count=6&key=39d3ed90';
 
 $reseña_data = file_get_contents($url);
 
-$reseñas = json_decode($reseña_data, true);
+if (isset($reseña_data)) {
+    $reseñas = json_decode($reseña_data, true);
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +19,12 @@ $reseñas = json_decode($reseña_data, true);
 </head>
 <body style="display: flex; flex-direction:column;">
 
-    <?php  if ($reseñas) { ?>
-
     <div class="containdor" style="width: 80%; ">
         <div class="section-title">Reseñas</div>
             <div class="row">
-            <?php foreach ($reseñas as $reseña): ?>
+            <?php
+            try {
+            foreach ($reseñas as $reseña): ?>
                 <div class="col-md-12 reseña" style="margin-bottom: 15px;">
                     <div class="card">
                         <div class="card-body">
@@ -38,11 +40,13 @@ $reseñas = json_decode($reseña_data, true);
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+            } catch (\Throwable $th) {
+                echo "No Se Encontraron Reseñas";
+            }
+            ?>
         </div>
     </div>
-
-    <?php } ?>
 
 <br><br>
 </body>

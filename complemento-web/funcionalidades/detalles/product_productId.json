@@ -1,1 +1,191 @@
-{"status":"success","data":{"_id":"6458ca1dc795b59dc7c501bb","Product":{"Part Number":"90NB0HX2-M00800","Brand":"ASUS","Family":"VivoBook","Series":"Pro","Model Name":"Performance Laptop","Version":"Performance Laptop","Model":"ASUS VivoBook Pro Performance Laptop","Category":"Laptops","english_id":"6458ca1dc795b59dc7c501bb","Is Translated":true},"Design":{"Body":{"Type":"Notebook","Style":"Clamshell","Width (Longer Side)":"381 mm","Weight":"2.27 kg","Height (Shorter Side)":"256.5 mm","Thickness":"20.3 mm","Additional Features":"","Colors":"Gold","Colors_Array":["Gold"],"Width (Longer Side)_mm":381,"Width (Longer Side)_in":15.000000000000002,"Height (Shorter Side)_mm":256.5,"Height (Shorter Side)_in":10.098425196850396,"Weight_g":2270,"Weight_oz":80.07189362554753,"Weight_lb":5.004493351596721,"Thickness_mm":20.3,"Thickness_in":0.799212598425197},"Touchpad":{"Pointing Device":"Touchpad"},"Security":{"Additional Features":""},"Docking Station":{"Additional Features":""},"Keyboard":{"Additional Features":"Backlight, Numeric Keypad"}},"No":{"Touchscreen":"Touchscreen"},"Display":{"Aspect Ratio":"16:9","Resolution (H x W)":"3840 x 2160 pixels","Definition":"4K Ultra HD","Additional Features":"","Diagonal":"15.6 inch"},"Inside":{"CPU":{"Generation":"8th gen Intel Core i7","Lithography":"14 nm","Socket":"BGA 1440","Number of Cores":"6","Clock Speed":"2.2 GHz","Family":"Intel Core i7","Model":"i7-8750H","Number of Threads":"12","Cache":"9 MB","Code Name":"Coffee Lake","Max Turbo Speed":"4.1 GHz","Thermal Design Power":"45 W","Brand":"Intel","Motherboard Chipset":"Intel HM175","Additional Features":""},"RAM":{"Capacity":"16 GB","Type":"DDR4-SDRAM","Maximum Capacity":"16 GB","Additional Features":"","Capacity_Array":["16 GB"]},"GPU":{"Integrated Card DirectX Version":"12.0","Dedicated Card Memory":"4 GB","Integrated Card Dynamic Clock Speed":"1100 MHz","Dedicated Card Model":"NVIDIA GeForce GTX 1050","Integrated Card Model":"Intel UHD Graphics 630","Integrated Card Base Clock Speed":"350 MHz","Integrated Card Family":"Intel UHD Graphics","Integrated Card Maximum Memory":"64 GB","Integrated Card OpenGL Version":"4.5","Integrated Card ID":"0x3E9B","Integrated Card Maximum Dedicated Memory":"64 GB","Integrated Card Clock Speed":"350 MHz","Integrated Card Maximum Clock Speed":"1100 MHz","Additional Features":"Dedicated Graphics Adapter, Dedicated Graphics Card, Integrated Graphics Adapter, Integrated Graphics Card"},"SSD":{"Storage Type":"SSD"},"Storage":{"Total Capacity":"512 GB","Additional Features":""},"Wireless":{"WiFi Standards":"802.11a, Wi-Fi 5 (802.11ac), 802.11b, 802.11g, Wi-Fi 4 (802.11n)","Bluetooth Version":"4.2","Additional Features":"Bluetooth Module, WiFi Module"},"Audio":{"Number of Headphone Output Ports":"1","Additional Features":"Headphone Microphone Combo Jack, Microphone"},"Software":{"Operating System Version":"Windows 10 Pro","Operating System Bit Version":"64-bit","Additional Features":""},"Battery":{"Capacity (Watt-hours)":"47 Wh","Type":"Lithium-Ion (Li-Ion)","Capacity (mAh)":"47 Wh","Number of Cells":"3","Additional Features":""},"Optical Drive":{"Additional Features":""},"Security":{"Additional Features":""},"HDD":{"Additional Features":""},"Location":{"Features":""},"Wired":{"Additional Features":"Ethernet Card"},"Sensors":{"Sensors":""},"Ports":{"Expansion":"SDXC","Number of USB 3,0 Type C Ports":"1","Number of HDMI Ports":"1","Number of Ethernet LAN (RJ-45) Ports":"1","Number of USB 3,0 Type A Ports":"1","Number of USB 2,0 Ports":"2","Number of USB 3,2 Gen 1 Type A Ports":"1","Number of USB 3,2 Gen 1 Type C Ports":"1","Additional Features":"Card Reader"}},"Camera":{"Front Camera":{"Definition":"HD","Additional Features":"Camera Module"},"Back Camera":{"Additional Features":""}},"Ratings":{"average_rating":"","total_ratings":""},"Key Aspects":{"Release Date":"2018-06-22","Colors":"Gold","Processor":"i7-8750H","RAM":"16 GB","Storage":"512 GB","Integrated Graphics Card":"Intel UHD Graphics 630","Dedicated Graphics Card":"NVIDIA GeForce GTX 1050","Battery":"47 Wh"},"english_id":"6458ca1dc795b59dc7c501bb","is_translated":true,"added_on":"2023-05-08T10:08:29.000Z","Metadata":{"Source":"laptoparena"}}}
+{
+    "status": "success",
+    "data": {
+        "_id": "6458ca1dc795b59dc7c501bb",
+            "Product": {
+            "Part Number": "90NB0HX2-M00800",
+            "Brand": "ASUS",
+            "Family": "VivoBook",
+            "Series": "Pro",
+            "Model Name": "Performance Laptop",
+            "Version": "Performance Laptop",
+            "Model": "ASUS VivoBook Pro Performance Laptop",
+            "Category": "Laptops",
+            "english_id": "6458ca1dc795b59dc7c501bb",
+            "Is Translated": true
+        },
+    "Design": {
+        "Body": {
+          "Type": "Notebook",
+          "Style": "Clamshell",
+          "Width (Longer Side)": "381 mm",
+          "Weight": "2.27 kg",
+          "Height (Shorter Side)": "256.5 mm",
+          "Thickness": "20.3 mm",
+          "Additional Features": "",
+          "Colors": "Gold",
+          "Colors_Array": ["Gold"],
+          "Width (Longer Side)_mm": 381,
+          "Width (Longer Side)_in": 15.000000000000002,
+          "Height (Shorter Side)_mm": 256.5,
+          "Height (Shorter Side)_in": 10.098425196850396,
+          "Weight_g": 2270,
+          "Weight_oz": 80.07189362554753,
+          "Weight_lb": 5.004493351596721,
+          "Thickness_mm": 20.3,
+          "Thickness_in": 0.799212598425197
+        },
+        "Touchpad": {
+          "Pointing Device": "Touchpad"
+        },
+        "Security": {
+          "Additional Features": ""
+        },
+        "Docking Station": {
+          "Additional Features": ""
+        },
+        "Keyboard": {
+          "Additional Features": "Backlight, Numeric Keypad"
+        }
+      },
+      "No": {
+        "Touchscreen": "Touchscreen"
+      },
+      "Display": {
+        "Aspect Ratio": "16:9",
+        "Resolution (H x W)": "3840 x 2160 pixels",
+        "Definition": "4K Ultra HD",
+        "Additional Features": "",
+        "Diagonal": "15.6 inch"
+      },
+      "Inside": {
+        "CPU": {
+          "Generation": "8th gen Intel Core i7",
+          "Lithography": "14 nm",
+          "Socket": "BGA 1440",
+          "Number of Cores": "6",
+          "Clock Speed": "2.2 GHz",
+          "Family": "Intel Core i7",
+          "Model": "i7-8750H",
+          "Number of Threads": "12",
+          "Cache": "9 MB",
+          "Code Name": "Coffee Lake",
+          "Max Turbo Speed": "4.1 GHz",
+          "Thermal Design Power": "45 W",
+          "Brand": "Intel",
+          "Motherboard Chipset": "Intel HM175",
+          "Additional Features": ""
+        },
+        "RAM": {
+          "Capacity": "16 GB",
+          "Type": "DDR4-SDRAM",
+          "Maximum Capacity": "16 GB",
+          "Additional Features": "",
+          "Capacity_Array": ["16 GB"]
+        },
+        "GPU": {
+          "Integrated Card DirectX Version": "12.0",
+          "Dedicated Card Memory": "4 GB",
+          "Integrated Card Dynamic Clock Speed": "1100 MHz",
+          "Dedicated Card Model": "NVIDIA GeForce GTX 1050",
+          "Integrated Card Model": "Intel UHD Graphics 630",
+          "Integrated Card Base Clock Speed": "350 MHz",
+          "Integrated Card Family": "Intel UHD Graphics",
+          "Integrated Card Maximum Memory": "64 GB",
+          "Integrated Card OpenGL Version": "4.5",
+          "Integrated Card ID": "0x3E9B",
+          "Integrated Card Maximum Dedicated Memory": "64 GB",
+          "Integrated Card Clock Speed": "350 MHz",
+          "Integrated Card Maximum Clock Speed": "1100 MHz",
+          "Additional Features": "Dedicated Graphics Adapter, Dedicated Graphics Card, Integrated Graphics Adapter, Integrated Graphics Card"
+        },
+        "SSD": {
+          "Storage Type": "SSD"
+        },
+        "Storage": {
+          "Total Capacity": "512 GB",
+          "Additional Features": ""
+        },
+        "Wireless": {
+          "WiFi Standards": "802.11a, Wi-Fi 5 (802.11ac), 802.11b, 802.11g, Wi-Fi 4 (802.11n)",
+          "Bluetooth Version": "4.2",
+          "Additional Features": "Bluetooth Module, WiFi Module"
+        },
+        "Audio": {
+          "Number of Headphone Output Ports": "1",
+          "Additional Features": "Headphone Microphone Combo Jack, Microphone"
+        },
+        "Software": {
+          "Operating System Version": "Windows 10 Pro",
+          "Operating System Bit Version": "64-bit",
+          "Additional Features": ""
+        },
+        "Battery": {
+          "Capacity (Watt-hours)": "47 Wh",
+          "Type": "Lithium-Ion (Li-Ion)",
+          "Capacity (mAh)": "47 Wh",
+          "Number of Cells": "3",
+          "Additional Features": ""
+        },
+        "Optical Drive": {
+          "Additional Features": ""
+        },
+        "Security": {
+          "Additional Features": ""
+        },
+        "HDD": {
+          "Additional Features": ""
+        },
+        "Location": {
+          "Features": ""
+        },
+        "Wired": {
+          "Additional Features": "Ethernet Card"
+        },
+        "Sensors": {
+          "Sensors": ""
+        },
+        "Ports": {
+          "Expansion": "SDXC",
+          "Number of USB 3.0 Type C Ports": "1",
+          "Number of HDMI Ports": "1",
+          "Number of Ethernet LAN (RJ-45) Ports": "1",
+          "Number of USB 3.0 Type A Ports": "1",
+          "Number of USB 2.0 Ports": "2",
+          "Number of USB 3.2 Gen 1 Type A Ports": "1",
+          "Number of USB 3.2 Gen 1 Type C Ports": "1",
+          "Additional Features": "Card Reader"
+        }
+      },
+      "Camera": {
+        "Front Camera": {
+          "Definition": "HD",
+          "Additional Features": "Camera Module"
+        },
+        "Back Camera": {
+          "Additional Features": ""
+        }
+      },
+      "Ratings": {
+        "average_rating": "",
+        "total_ratings": ""
+      },
+      "Key Aspects": {
+        "Release Date": "2018-06-22",
+        "Colors": "Gold",
+        "Processor": "i7-8750H",
+        "RAM": "16 GB",
+        "Storage": "512 GB",
+        "Integrated Graphics Card": "Intel UHD Graphics 630",
+        "Dedicated Graphics Card": "NVIDIA GeForce GTX 1050",
+        "Battery": "47 Wh"
+      },
+      "english_id": "6458ca1dc795b59dc7c501bb",
+      "is_translated": true,
+      "added_on": "2023-05-08T10:08:29.000Z",
+      "Metadata": {
+        "Source": "laptoparena"
+      }
+    }
+  }
+  

@@ -29,7 +29,7 @@ include("../../menu.php");
                         <p><strong>Precio:</strong> Mex$ <?= $producto['Price'] ?></p>
                     </div>
                     <div class="cart-actions">
-                        <form action="carrito_eliminar.php" method="POST">
+                        <form action="carrito_eliminar.php" method="POST"> <!-- Formulario para elimnar productos -->
                             <input type="hidden" name="producto-carrito[id]" value="<?= $producto['id'] ?>">
                             <input type="hidden" name="producto-carrito[Category]" value="<?= $producto['Category'] ?>">
                             <input type="hidden" name="producto-carrito[Model]" value="<?= $producto['Category'] ?>">
