@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"] ?? '';
     $password = $_POST["password"] ?? '';
 
-    // Validar que los campos no estén vacíos
-     /* if (empty($username) || empty($password)) {
+   // Validar que los campos no estén vacíos
+     if (empty($username) || empty($password)) {
         echo json_encode([
             "success" => false,
             "message" => "Usuario y contraseña son obligatorios."
         ]);
         exit();
-    } */
+    } 
 
     // Intentar iniciar sesión
     $user = User::Login($username, $password);

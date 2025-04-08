@@ -65,7 +65,6 @@ function LoginScreen({ navigation }) {
         if (data.success) {
           navigation.navigate("Dashboard"); // Navegar al Dashboard si el inicio de sesión es exitoso
         } else {
-          navigation.navigate("Dashboard");
           setErrorMessage(data.message || "Credenciales incorrectas");
         }
       })
